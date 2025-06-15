@@ -1,0 +1,560 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.training-program {
+  background: #0A0A0A;
+  margin: 0 auto;
+  max-width: 480px;
+}
+
+.header {
+  background-color: #0A0A0A;
+  width: 100%;
+  margin: 0 auto;
+  height: 60dvh;
+  background: url("/src/assets/images/фоновые\ крастинки.png"), url("/src/assets/images/верз\ свет\ свет.png"),
+    url("/src/assets/images/низ\ свет.png");
+  background-size: cover, 100%, 100%;
+  background-position: center top, -200px -140px, 150px 100px;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.training-program__nav {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  padding: 7px;
+  background: rgba(38, 38, 38, 0.6);
+  backdrop-filter: blur(5.7px);
+  border-radius: 69px;
+  position: fixed;
+  z-index: 3 !important;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+}
+
+.training-program__nav-item {
+  font-style: normal;
+  font-weight: 900;
+  font-size: 9px;
+  line-height: normal;
+  text-align: center;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  transition: color 0.3s linear;
+  cursor: pointer;
+  padding: 7px;
+  border-radius: 69px;
+
+
+}
+
+.training-program__nav-item:hover {
+  background-color: #151515;
+}
+
+.training-program__hero {
+  width: 90%;
+  margin: 0 auto;
+}
+
+
+.training-program__title {
+  font-size: 28px;
+  width: 70%;
+  line-height: 0.85;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 2px;
+}
+
+.training-program__title span {
+  color: #00ff57;
+}
+
+.training-program__description {
+  font-size: 11px;
+  width: 45%;
+  text-align: left;
+  line-height: 110%;
+  margin-top: 8px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+}
+
+.training-program-img {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 300px;
+  background-image: url("/src/assets/images/bizon.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: 85px -10px;
+  overflow: hidden !important;
+  right: 0;
+  z-index: 1;
+}
+
+.card {
+
+  position: relative;
+  z-index: 2 !important;
+  background-image: url("/src/assets/images/Mask\ group.png") !important;
+  margin-top: -80px;
+
+}
+
+.training-program__course-section {
+  width: 100%;
+  height: auto;
+  background-image: url("/src/assets/images/Плашка.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 20px;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 900;
+  line-height: 0.85;
+  text-transform: uppercase;
+  color: #FFFFFF;
+
+
+}
+
+.course {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 210px;
+  text-align: center;
+  padding: 15px 0;
+  background: #21CD5A;
+  box-shadow: -31px 40px 79.5px rgba(33, 205, 90, 0.22);
+  border-radius: 106px;
+  transform: rotate(-7.19deg);
+
+
+}
+
+.top_img {
+  position: absolute;
+  top: 0;
+  width: 50px;
+}
+
+.course span {
+  color: black;
+  font-size: 28px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.title span {
+  color: #21CD5A;
+}
+
+.training-program__card-img {
+  position: relative;
+  height: 200px;
+  box-shadow: 0px 11px 10px rgba(21, 21, 21, 0.5);
+  border-radius: 10px;
+}
+
+.card .training-program__card-img {
+  margin-top: 35px;
+
+}
+
+.training-program__card-img .bottom_img {
+  position: absolute;
+  bottom: -4px;
+  transform: translateX(-50%);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  left: 50%;
+  height: 20px;
+  z-index: -1;
+  width: 95%;
+
+}
+
+.training-program__card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.training-program__list {
+  margin-top: 20px;
+  padding-left: 20px;
+}
+
+.training-program__list li {
+
+  color: #FFFFFF;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.training-program__list li .highlight {
+  color: #21CD5A;
+}
+
+/* .training-program__course-label {
+  background: linear-gradient(to right, #00ff57, #00c44a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.training-program__course-button {
+  background: #00ff57;
+  color: #000;
+  padding: 6px 20px;
+  border-radius: 999px;
+  font-weight: bold;
+}
+
+.training-program__card {
+  background: #191919;
+  border-radius: 16px;
+  margin-top: 20px;
+  padding: 16px;
+}
+
+.training-program__card--smart {
+  background: linear-gradient(135deg, #111, #1d1d1d);
+}
+
+.training-program__card-header {
+  background: #ff1c1c;
+  border-radius: 8px;
+  padding: 6px 12px;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.training-program__card-title {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.training-program__card-title span {
+  color: #00ff57;
+}
+
+.training-program__card-img--smart {
+  background: url('/images/smart-money.png') no-repeat center/cover;
+  width: 100%;
+  height: 140px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.training-program__list {
+  list-style: disc;
+  padding-left: 20px;
+  font-size: 0.85rem;
+  color: #dcdcdc;
+}
+
+.training-program__list li {
+  margin-bottom: 8px;
+}
+
+.highlight {
+  color: #00ff57;
+  font-weight: bold;
+} */
+.footer {
+  width: 100%;
+  height: auto;
+  /* background-color: #0A0A0A; */
+  background: url("/src/assets/images/фоновые\ крастинки.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.container h2 {
+  margin-bottom: 20px;
+}
+
+.contents {
+
+  margin-bottom: 30px;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-radius: 20px;
+
+}
+
+.content p {
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 12px;
+
+}
+
+.content_one p {
+  color: #0A0A0A;
+}
+
+.content_three p {
+  color: #FFFFFF;
+}
+
+.content_two {
+  background-color: #FFFFFF;
+  transform: rotate(-2.33deg);
+  transform-origin: center;
+}
+
+.content_three {
+  background-color: #1F1F1F;
+  z-index: -1;
+}
+
+.content_four {
+  transform: rotate(1.45deg);
+}
+
+.content p .span1 {
+  color: #FFFFFF;
+}
+
+.content p .span2 {
+  color: #21CD5A;
+}
+
+.content p .span3 {
+  color: #21CD5A;
+}
+
+.content_one {
+  background-color: #21CD5A;
+}
+
+.mini_card {
+  background-image: url("/src/assets/images/mini\ 1.png");
+  width: 100%;
+  height: auto;
+  height: 200px;
+  background-size: cover;
+  background-position: top left;
+  padding: 20px;
+  position: relative;
+}
+
+.mini_card p {
+  color: #FFFFFF;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-top: 20px;
+  font-size: 12px;
+}
+
+.mini_card p span {
+  color: #21CD5A;
+}
+
+.card_detail {
+  width: 180px;
+  border-radius: 20px;
+  position: absolute;
+  padding: 10px 10px;
+  text-align: center;
+  bottom: -5px;
+}
+
+
+.first_detail {
+  background-color: #00ff57;
+  left: 15px;
+  transform: rotate(-3.93deg);
+  text-align: left;
+}
+
+.first_detail span {
+  font-size: 10px;
+  font-weight: 900;
+  color: #FFFFFF;
+}
+
+.first_detail h3 {
+  font-size: 23px;
+  font-weight: 900;
+  color: #0A0A0A;
+}
+
+.last_detail {
+  background-color: #FFFFFF;
+  transform: rotate(3.93deg);
+  /* bottom: 0; */
+  /* left: 0; */
+  right: 15px;
+  bottom: -20px;
+}
+
+.last_detail span {
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.last_detail h3 {
+  font-size: 23px;
+  font-weight: 700;
+  text-align: center;
+  color: #039333;
+
+}
+
+.nout_card {
+  width: 100%;
+  margin-top: 30px;
+
+}
+
+.nout_card img {
+  width: 100%;
+  background: transparent;
+}
+
+.card_group {
+  position: relative;
+  margin-top: -200px;
+  background: transparent !important;
+}
+
+.card1 {
+  transform: rotate(1.22deg);
+  background: linear-gradient(to right, #0A0A0A, #21CD5A);
+  border-radius: 20px;
+  padding: 10px 10px;
+  text-align: center;
+  width: 320px;
+  right: 10px;
+  position: absolute;
+  color: white;
+  border: 1px solid #FFFFFF;
+}
+
+.card1 p {
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+.card1 p span{
+  color: #21CD5A;
+}
+.card2{
+  cursor: pointer;
+  display: flex;
+  width: 170px;
+  padding: 10px;
+  background-color: #00ff57;
+  align-items: center;
+  gap: 10px;
+  border-radius: 20px;
+  background-color: #0A0A0A;
+  position: absolute;
+  top: 120px;
+  transform: rotate(6.52deg);
+  border: 1px solid #FFFFFF;
+  left: 10px;
+
+}
+
+.card2 img {
+  width: 40px;
+}
+.card2 p{
+  color: #FFFFFF;
+  font-size: 20px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+.card3{
+  cursor: pointer;
+  display: flex;
+  width: 170px;
+  padding: 10px;
+  background-color: #00ff57;
+  align-items: center;
+  gap: 10px;
+  border-radius: 20px;
+  background-color: #21CD5A;
+  position: absolute;
+  top: 120px;
+  transform: rotate(-6.52deg);
+  border: 1px solid #FFFFFF;
+  right:  10px;
+}
+.card3 img{
+  width: 40px;
+}
+.card3 p {
+  color: #0A0A0A;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+
+@media screen and (max-width: 380px) {
+  .training-program__nav-item {
+    font-size: 8px;
+    padding: 6px;
+  }
+
+  .training-program__nav {
+    padding: 6px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .title {
+    font-size: 20px;
+  }
+
+  .course {
+    width: 170px;
+    padding: 10px 0;
+  }
+
+  .course span {
+    font-size: 20px;
+  }
+}
