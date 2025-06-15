@@ -297,6 +297,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom;
+  padding-bottom: 60px;
 }
 
 .container {
@@ -455,8 +456,9 @@
 
 .card_group {
   position: relative;
-  margin-top: -200px;
   background: transparent !important;
+  height: 300px;
+  margin-top: -200px;
 }
 
 .card1 {
