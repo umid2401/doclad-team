@@ -392,7 +392,7 @@
 }
 
 .card_detail {
-  width: 180px;
+  width: 160px;
   border-radius: 20px;
   position: absolute;
   padding: 10px 10px;
@@ -465,7 +465,7 @@
   border-radius: 20px;
   padding: 10px 10px;
   text-align: center;
-  width: 320px;
+  width: 240px;
   right: 10px;
   position: absolute;
   color: white;
@@ -483,7 +483,7 @@
 .card2{
   cursor: pointer;
   display: flex;
-  width: 170px;
+  width: 160px;
   padding: 10px;
   background-color: #00ff57;
   align-items: center;
@@ -491,7 +491,7 @@
   border-radius: 20px;
   background-color: #0A0A0A;
   position: absolute;
-  top: 120px;
+  top: 150px;
   transform: rotate(6.52deg);
   border: 1px solid #FFFFFF;
   left: 10px;
@@ -510,7 +510,7 @@
 .card3{
   cursor: pointer;
   display: flex;
-  width: 170px;
+  width: 160px;
   padding: 10px;
   background-color: #00ff57;
   align-items: center;
