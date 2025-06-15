@@ -96,7 +96,7 @@ const TrainingProgram = () => {
                     </ul>
                 </div>
             </main>
-            <footer className='footer'>
+            <footer className='footer' >
                 <div className="container">
 
                     <h2 className='title'>
@@ -180,7 +180,7 @@ const TrainingProgram = () => {
                     </div>
                 </div>
                 <div className="nout_card">
-                    <img src="../assets/images/ноут 1.png" alt="Rasm kelmadi" />
+                    <img src="/public/images/ноут 1.png" alt="Rasm kelmadi" />
                 </div>
                 <div className="card_group">
                     <div className="card1">
@@ -197,6 +197,7 @@ const TrainingProgram = () => {
                     </div>
 
                 </div>
+
             </footer>
 
 
