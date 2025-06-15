@@ -36,8 +36,8 @@ const TrainingProgram = () => {
                         <span>курс</span>
                     </div>
                     <div className="training-program__card-img">
-                        <img src="/src/assets/images/Rectangle 105.png" alt="" className="bottom_img" />
-                        <img src="/src/assets/images/WHO IS 2.png" alt="Who is" />
+                        <img src="/images/Rectangle 105.png" alt="" className="bottom_img" />
+                        <img src="/images/WHO IS 2.png" alt="Who is" />
 
                     </div>
                     <ul className="training-program__list">
@@ -52,8 +52,8 @@ const TrainingProgram = () => {
 
 
                     <div className="training-program__card-img">
-                        <img src="/src/assets/images/Rectangle 105.png" alt="" className="bottom_img" />
-                        <img src="/src/assets/images/WHO IS 2.png" alt="Who is" />
+                        <img src="/images/Rectangle 105.png" alt="" className="bottom_img" />
+                        <img src="/images/WHO IS 2.png" alt="Who is" />
 
                     </div>
                     <ul className="training-program__list">
@@ -68,8 +68,8 @@ const TrainingProgram = () => {
 
 
                     <div className="training-program__card-img">
-                        <img src="/src/assets/images/Rectangle 105.png" alt="" className="bottom_img" />
-                        <img src="/src/assets/images/WHO IS 2.png" alt="Who is" />
+                        <img src="/images/Rectangle 105.png" alt="" className="bottom_img" />
+                        <img src="/images/WHO IS 2.png" alt="Who is" />
 
                     </div>
                     <ul className="training-program__list">
@@ -84,8 +84,8 @@ const TrainingProgram = () => {
 
 
                     <div className="training-program__card-img">
-                        <img src="/src/assets/images/Rectangle 105.png" alt="" className="bottom_img" />
-                        <img src="/src/assets/images/WHO IS 2.png" alt="Who is" />
+                        <img src="/images/Rectangle 105.png" alt="" className="bottom_img" />
+                        <img src="/images/WHO IS 2.png" alt="Who is" />
 
                     </div>
                     <ul className="training-program__list">
@@ -188,11 +188,11 @@ const TrainingProgram = () => {
                             свяжитесь с нами:</p>
                     </div>
                     <div className="card2">
-                        <img src="/src/assets/images/Mask group 1.png" alt="" />
+                        <img src="/images/Mask group 1.png" alt="" />
                         <p>ПаРВИЗ</p>
                     </div>
                      <div className="card3">
-                        <img src="/src/assets/images/Mask group 2.png" alt="" />
+                        <img src="/images/Mask group 2.png" alt="" />
                         <p>ярослав</p>
                     </div>
 
