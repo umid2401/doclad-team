@@ -180,7 +180,7 @@ const TrainingProgram = () => {
                     </div>
                 </div>
                 <div className="nout_card">
-                    <img src="/public/images/ноут 1.png" alt="Rasm kelmadi" />
+                    <img src="/images/ноут 1.png" alt="Rasm kelmadi" />
                 </div>
                 <div className="card_group">
                     <div className="card1">
