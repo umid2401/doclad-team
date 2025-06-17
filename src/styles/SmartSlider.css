@@ -78,6 +78,24 @@
     z-index: 3;
 }
 
+.smart .dots{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.smart .dots .dot{
+    width: 14px;
+    height:14px;
+    border-radius: 50%;
+    background: #D9D9D9;
+}
+.dots .active {
+    width: 32px !important;
+    border-radius: 20px !important;
+    background: #21CD5A !important;
+}
+
 .smart h2 {
     font-size: 40px;
     text-transform: uppercase;

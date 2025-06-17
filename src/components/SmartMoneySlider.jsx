@@ -11,6 +11,11 @@ const SmartMoneySlider = () => {
         <img src="/images/шв.png" className="shv" alt="" />
         <img src="/images/бизон 2 1.png" alt="" className="hero" />
         <div className="smart">
+             <div className="dots">
+                <div className="dot active"></div>
+                <div className="dot"></div>
+                <div className="dot"></div>
+             </div>
             <h2>Smart <br /> <span>Money</span></h2>
             <p> <span>Научись </span> смотреть на график и видеть ситуации для <span>заработка,</span> а не шум и манипуляции!</p>
             <Link to="/courses" className="link">узнать больше</Link>
