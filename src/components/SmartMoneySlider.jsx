@@ -9,7 +9,7 @@ const SmartMoneySlider = () => {
         <img src="/images/доллар 4.png" className="dollar_1" alt="" />
         <img src="/images/фунт.png" className="funt" alt="" />
         <img src="/images/шв.png" className="shv" alt="" />
-        <img src="/images/бизон 2 1.png" alt="" className="hero" />
+        <img src="/images/бизон 1 1.png" alt="" className="hero" />
         <div className="smart">
              <div className="dots">
                 <div className="dot active"></div>
