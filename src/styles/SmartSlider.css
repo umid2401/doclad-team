@@ -2,8 +2,8 @@
     max-width: 480px;
     width: 100%;
     height: 100vh;
-    background: url("/public/images/доп\ свет.png"), url("/public/images/линии.png"), url("/public/images/график.png"),
-        url("/public/images/верх\ свет.png"), url("/public/images/середина\ свет.png"), url("/public/images/ниж\ свет.png");
+    background: url("/images/доп\ свет.png"), url("/images/линии.png"), url("/images/график.png"),
+        url("/images/верх\ свет.png"), url("/images/середина\ свет.png"), url("/images/ниж\ свет.png");
     background-color: #000000;
     background-repeat: no-repeat, no-repeat, repeat-x, no-repeat, no-repeat;
     background-size: cover, cover, 840px, contain, 100%, contain;
