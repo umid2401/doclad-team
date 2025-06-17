@@ -13,7 +13,7 @@ const SmartMoneySlider = () => {
         <div className="smart">
             <h2>Smart <br /> <span>Money</span></h2>
             <p> <span>Научись </span> смотреть на график и видеть ситуации для <span>заработка,</span> а не шум и манипуляции!</p>
-            <Link to="/course" className="link">узнать больше</Link>
+            <Link to="/courses" className="link">узнать больше</Link>
         </div>
 
     </div>
