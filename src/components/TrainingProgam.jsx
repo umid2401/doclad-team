@@ -5,7 +5,6 @@ const TrainingProgram = () => {
     return (
         <div className="training-program">
             <header className="header">
-
                 <ul className="training-program__nav">
                     <li className="training-program__nav-item">Программа обучения</li>
                     <li className="training-program__nav-item">формат обучения</li>
@@ -16,19 +15,15 @@ const TrainingProgram = () => {
                     <div className="training-program__text">
                         <h1 className="training-program__title">ПРОГРАММА <span>ОБУЧЕНИЯ</span></h1>
                         <p className="training-program__description">
-                            Полная система обучения по концепции Smart Money: структура, ликвидность, рыночные ловушки и многое другое в деталях.
+                            Полная информация об основных инструментах <span>Smart Money-концепции:</span> их механика, логика работы и правильное применение в анализе
                         </p>
                     </div>
                     <div className="training-program-img">
-
-
                     </div>
-
                 </section>
             </header>
             <main>
                 <div className="training-program__course-section card">
-
                     <h2 className='title'>из чего <br />
                         <span> состоит</span>
                     </h2>
@@ -37,7 +32,7 @@ const TrainingProgram = () => {
                     </div>
                     <div className="training-program__card-img">
                         <img src="/images/Rectangle 105.png" alt="" className="bottom_img" />
-                        <img src="/images/WHO IS 2.png" alt="Who is" />
+                        {/* <img src="/images/WHO IS 2.png" alt="Who is" /> */}
 
                     </div>
                     <ul className="training-program__list">
@@ -191,7 +186,7 @@ const TrainingProgram = () => {
                         <img src="/images/Mask group 1.png" alt="" />
                         <p>ПаРВИЗ</p>
                     </div>
-                     <div className="card3">
+                    <div className="card3">
                         <img src="/images/Mask group 2.png" alt="" />
                         <p>ярослав</p>
                     </div>

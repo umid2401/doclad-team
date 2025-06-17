@@ -1,0 +1,128 @@
+.smartslider {
+    max-width: 480px;
+    width: 100%;
+    height: 100vh;
+    background: url("/public/images/доп\ свет.png"), url("/public/images/линии.png"), url("/public/images/график.png"),
+        url("/public/images/верх\ свет.png"), url("/public/images/середина\ свет.png"), url("/public/images/ниж\ свет.png");
+    background-color: #000000;
+    background-repeat: no-repeat, no-repeat, repeat-x, no-repeat, no-repeat;
+    background-size: cover, cover, 840px, contain, 100%, contain;
+    background-position: top, top, -100px, -100px -50px, center right, 80px 500px;
+    margin: 0 auto;
+    position: relative;
+
+}
+
+.smartslider p {
+    color: red;
+}
+
+.smartslider .euro {
+    position: absolute;
+    width: 250px;
+    top: -40px;
+    left: -100px;
+    z-index: 2;
+}
+
+.smartslider .dollar {
+    position: absolute;
+    width: 130px;
+    right: -50px;
+    z-index: 2;
+}
+
+.smartslider .dollar_1 {
+    position: absolute;
+    width: 100px;
+    left: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+.smartslider .funt {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-120%);
+    width: 170px;
+    z-index: 2;
+
+}
+
+.smartslider .shv {
+    width: 80px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(40%);
+    z-index: 2;
+}
+
+.smartslider .hero {
+    width: 320px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.smartslider .smart {
+    position: absolute;
+    bottom: 40px;
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+}
+
+.smart h2 {
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    letter-spacing: 11px;
+    line-height: 83%;
+    margin-bottom: 10px;
+
+}
+
+.smart h2 span {
+    color: #21CD5A;
+}
+
+.smart p {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.1;
+    font-style: normal;
+    color: #FFFFFF;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.smart p span {
+    color: #21CD5A;
+}
+
+.smart .link {
+    width: 100%;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    color: #000000;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 6px;
+    font-style: italic;
+    height: 50px;
+    background: #21CD5A;
+    border-radius: 25px;
+    background: rgba(33, 205, 90, 1);
+    box-shadow: 0px 0px 8px 8px rgba(255, 255, 255, 0.46);
+}
