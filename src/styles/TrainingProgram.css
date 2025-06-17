@@ -183,8 +183,8 @@
   border-radius: 10px;
   background:  url("/images/WHO\ IS\ 2.png");
   background-size: cover;
-  background-position: 0 -30px;
-  background-blend-mode: plus-lighter;
+  overflow: hidden;
+  background-repeat: no-repeat;
   
 
 }
