@@ -8,21 +8,44 @@ const slides = [
     id: 1,
     hero: "/images/бизон 1 1.png",
     color: "#21CD5A",
-    buttonColor: "rgba(33, 205, 90, 0.7)",
-    font:"#000"
+    buttonColor: "#21CD5A",
+    font: "#000",
+    currencies: [
+      { src: "/images/евро.png", className: "euro" },
+      { src: "/images/доллар 2.png", className: "dollar" },
+      { src: "/images/доллар 4.png", className: "dollar_1" },
+      { src: "/images/фунт.png", className: "funt" },
+      { src: "/images/шв.png", className: "shv" },
+    ],
   },
   {
     id: 2,
     hero: "/images/медведь 2.png",
-    color: "rgba(222, 44, 5, 1)",
-    buttonColor: "rgba(222, 44, 5, 1)",
+    color: "#DE2C05",
+    buttonColor: "#DE2C05",
+    font: "#fff",
+    currencies: [
+      { src: "/images/доллар ред 1.png", className: "dollar" },
+      { src: "/images/доллар ред 2.png", className: "dollar_1" },
+      { src: "/images/евро ред 1.png", className: "euro" },
+      { src: "/images/фунт ред 1.png", className: "funt" },
+      { src: "/images/шв ред 1.png", className: "shv" },
+    ],
   },
   {
     id: 3,
     hero: "/images/бизон 2 1.png",
     color: "#21CD5A",
-    buttonColor: "rgba(33, 205, 90, 0.7)",
-    font:"#000"  },
+    buttonColor: "#21CD5A",
+    font: "#fff",
+     currencies: [
+      { src: "/images/евро.png", className: "euro" },
+      { src: "/images/доллар 2.png", className: "dollar" },
+      { src: "/images/доллар 4.png", className: "dollar_1" },
+      { src: "/images/фунт.png", className: "funt" },
+      { src: "/images/шв.png", className: "shv" },
+    ],
+  },
 ];
 
 const SmartMoneySlider = () => {
@@ -50,14 +73,6 @@ const SmartMoneySlider = () => {
   const enterRotate = 90;
   const exitRotate = -90;
 
-  const currencyImages = [
-    { src: "евро.png", className: "euro" },
-    { src: "доллар 2.png", className: "dollar" },
-    { src: "доллар 4.png", className: "dollar_1" },
-    { src: "фунт.png", className: "funt" },
-    { src: "шв.png", className: "shv" },
-  ];
-
   return (
     <motion.div
       className="smartslider"
@@ -66,6 +81,7 @@ const SmartMoneySlider = () => {
       dragElastic={0.1}
       dragMomentum={false}
       onDragEnd={handleDragEnd}
+      style={{ overflow: "hidden", touchAction: "pan-y" }}
     >
       <AnimatePresence mode="wait">
         <motion.div
@@ -81,10 +97,10 @@ const SmartMoneySlider = () => {
       </AnimatePresence>
 
       <AnimatePresence mode="wait">
-        {currencyImages.map((item) => (
+        {slide.currencies.map((item) => (
           <motion.img
             key={`${item.src}-${index}`}
-            src={`/images/${item.src}`}
+            src={item.src}
             className={item.className}
             initial={{ x: enterX, rotate: enterRotate, opacity: 0 }}
             animate={{ x: 0, rotate: 0, opacity: 1 }}
@@ -135,7 +151,7 @@ const SmartMoneySlider = () => {
         <Link
           to="/courses"
           className="link"
-          style={{ backgroundColor: slide.buttonColor, color:slide.font }}
+          style={{ backgroundColor: slide.buttonColor, color: slide.font }}
         >
           узнать больше
         </Link>
