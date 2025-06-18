@@ -8,19 +8,22 @@ const slides = [
     id: 1,
     hero: "/images/бизон 1 1.png",
     color: "#21CD5A",
-    buttonColor: "rgba(33, 205, 90, 1)",
+    buttonColor: "rgba(33, 205, 90, 0.7)",
+    fontcolor:"#000"
   },
   {
     id: 2,
     hero: "/images/медведь 2.png",
-    color: "#F44336",
-    buttonColor: "#F44336",
+    color: "#DE2C05",
+    buttonColor: "#DE2C05",
+    fontColor:"#fff"
   },
   {
     id: 3,
     hero: "/images/бизон 2 1.png",
     color: "#21CD5A",
-    buttonColor: "rgba(33, 205, 90, 1)",
+    buttonColor: "rgba(33, 205, 90, 0.7))",
+    fontcolor:"#000"
   },
 ];
 
@@ -154,7 +157,7 @@ const SmartMoneySlider = () => {
         <Link
           to="/courses"
           className="link"
-          style={{ backgroundColor: slide.buttonColor }}
+          style={{ backgroundColor: slide.buttonColor, color: slide.fontColor }}
         >
           узнать больше
         </Link>
