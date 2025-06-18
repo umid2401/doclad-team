@@ -40,7 +40,6 @@ const SmartMoneySlider = () => {
 
   return (
     <div className="smartslider">
-      <img src="/public/images/бизон 1 1.png" />
       <AnimatePresence mode="wait">
         <motion.div
           key={slide.hero}
