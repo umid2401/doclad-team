@@ -44,6 +44,13 @@ const SmartMoneySlider = () => {
 
   const slide = slides[index];
 
+  const getEnterRotation = (index) => {
+    return index % 2 === 0 ? 25 : -25;
+  };
+  const getExitRotation = (index) => {
+    return index % 2 === 0 ? -25 : 25;
+  };
+
   return (
     <motion.div
       className="smartslider"
@@ -52,7 +59,7 @@ const SmartMoneySlider = () => {
       onDragEnd={handleDragEnd}
     >
       <AnimatePresence mode="wait">
-       <motion.div
+        <motion.div
           key={slide.hero}
           className="hero"
           initial={{ x: "-50%", y: "-50%", opacity: 0 }}
@@ -64,52 +71,52 @@ const SmartMoneySlider = () => {
         </motion.div>
       </AnimatePresence>
 
-      {/* Currency icons – animated slide + light rotation */}
+      {/* Currency icons – animated slide + stronger rotation */}
       <AnimatePresence mode="wait">
         <motion.img
           key={`euro-${index}`}
           src="/images/евро.png"
           className="euro"
-          initial={{ x: 200, rotate: 15, opacity: 0 }}
+          initial={{ x: 300, rotate: getEnterRotation(index), opacity: 0 }}
           animate={{ x: 0, rotate: 0, opacity: 1 }}
-          exit={{ x: -200, rotate: -15, opacity: 0 }}
-          transition={{ duration: 0.6 }}
+          exit={{ x: -300, rotate: getExitRotation(index), opacity: 0 }}
+          transition={{ duration: 0.7 }}
         />
         <motion.img
           key={`dollar-${index}`}
           src="/images/доллар 2.png"
           className="dollar"
-          initial={{ x: 200, rotate: 10, opacity: 0 }}
+          initial={{ x: 300, rotate: getEnterRotation(index), opacity: 0 }}
           animate={{ x: 0, rotate: 0, opacity: 1 }}
-          exit={{ x: -200, rotate: -10, opacity: 0 }}
-          transition={{ duration: 0.6 }}
+          exit={{ x: -300, rotate: getExitRotation(index), opacity: 0 }}
+          transition={{ duration: 0.7 }}
         />
         <motion.img
           key={`dollar1-${index}`}
           src="/images/доллар 4.png"
           className="dollar_1"
-          initial={{ x: 200, rotate: 10, opacity: 0 }}
+          initial={{ x: 300, rotate: getEnterRotation(index), opacity: 0 }}
           animate={{ x: 0, rotate: 0, opacity: 1 }}
-          exit={{ x: -200, rotate: -10, opacity: 0 }}
-          transition={{ duration: 0.6 }}
+          exit={{ x: -300, rotate: getExitRotation(index), opacity: 0 }}
+          transition={{ duration: 0.7 }}
         />
         <motion.img
           key={`funt-${index}`}
           src="/images/фунт.png"
           className="funt"
-          initial={{ x: 200, rotate: 20, opacity: 0 }}
+          initial={{ x: 300, rotate: getEnterRotation(index), opacity: 0 }}
           animate={{ x: 0, rotate: 0, opacity: 1 }}
-          exit={{ x: -200, rotate: -20, opacity: 0 }}
-          transition={{ duration: 0.6 }}
+          exit={{ x: -300, rotate: getExitRotation(index), opacity: 0 }}
+          transition={{ duration: 0.7 }}
         />
         <motion.img
           key={`shv-${index}`}
           src="/images/шв.png"
           className="shv"
-          initial={{ x: 200, rotate: 10, opacity: 0 }}
+          initial={{ x: 300, rotate: getEnterRotation(index), opacity: 0 }}
           animate={{ x: 0, rotate: 0, opacity: 1 }}
-          exit={{ x: -200, rotate: -10, opacity: 0 }}
-          transition={{ duration: 0.6 }}
+          exit={{ x: -300, rotate: getExitRotation(index), opacity: 0 }}
+          transition={{ duration: 0.7 }}
         />
       </AnimatePresence>
 
@@ -132,10 +139,18 @@ const SmartMoneySlider = () => {
             Money
           </motion.span>
         </h2>
-        <p>
+
+        <motion.p
+          key={index}
+          initial={{ x: 100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          exit={{ x: -100, opacity: 0 }}
+          transition={{ duration: 0.6 }}
+        >
           <span>Научись </span> смотреть на график и видеть ситуации для {" "}
           <span>заработка,</span> а не шум и манипуляции!
-        </p>
+        </motion.p>
+
         <Link
           to="/courses"
           className="link"
