@@ -5,22 +5,16 @@ import { useEffect } from "react";
 import { init, isTMA, viewport } from "@telegram-apps/sdk";
 const useTelegram = () => {
   useEffect(() => {
-    console.log(viewport.requestFullscreen.isAvailable())
     const initTg = async () => {
       if (await isTMA()) {
-        await init(); // Telegram appni ishga tushiramiz
+        await init(); // Telegram appni ishga tushuramiz
 
         if (viewport.mount.isAvailable()) {
           await viewport.mount();
-          viewport.expand(); // Avval viewport'ni kengaytiramiz
+          viewport.expand(); // Faqat viewport'ni kengaytiramiz
         }
 
-        if (viewport.requestFullscreen.isAvailable()) {
-          await viewport.requestFullscreen(); // Keyin fullscreen rejimni yoqamiz
-          console.log("Fullscreen mode enabled!");
-        } else {
-          console.log("Fullscreen not supported!");
-        }
+        console.log("Telegram Mini App ichida ishlayapti");
       } else {
         console.log("Not inside Telegram Mini App.");
       }
