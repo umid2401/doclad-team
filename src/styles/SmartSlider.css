@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .smartslider {
     max-width: 480px;
     overflow: hidden;

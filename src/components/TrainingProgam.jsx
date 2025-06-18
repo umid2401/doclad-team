@@ -298,19 +298,19 @@ const TrainingProgram = () => {
                             <p>
                                 <span className="span2">Материалы</span> - это видеоуроки + задания + записи эфиров.
                             </p>
-                            <img width={60} src="/public/images/1_1.png" alt="1_1" />
+                            <img width={60} src="/images/1_2.png" alt="1_1" />
 
                         </div>
                         <div className="content content_three">
                             <p>
                                 В канале <span className="span3">2 раза в неделю</span> проводятся созвоны, на которых вы получаете <span className="span3">ответы на вопросы</span> и проверку домашних заданий.
                             </p>
-                             <img width={60} src="/public/images/1_1.png" alt="1_2" />
+                             <img width={60} src="/images/1_1.png" alt="1_2" />
 
                         </div>
                         <div className="content content_one content_four">
                             <p><span className="span1">Доступ</span>  к каналу остается у вас навсегда. </p>
-                             <img width={60} src="/public/images/1_3.png" alt="1_3" />
+                             <img width={60} src="/images/1_3.png" alt="1_3" />
                         </div>
                     </div>
 
