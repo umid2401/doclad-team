@@ -27,33 +27,32 @@ const slides = [
 const SmartMoneySlider = () => {
   const [index, setIndex] = useState(0);
 
-  // Avtomatik o'tish har 4 sekundda
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % slides.length);
     }, 4000);
-
     return () => clearInterval(interval);
   }, []);
 
   const handleDragEnd = (e, info) => {
     if (info.offset.x < -50) {
-      setCurrent((prev) => (prev + 1) % slides.length);
+      setIndex((prev) => (prev + 1) % slides.length);
     } else if (info.offset.x > 50) {
-      setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
+      setIndex((prev) => (prev - 1 + slides.length) % slides.length);
     }
   };
-    const slide = slides[index];
 
+  const slide = slides[index];
 
   return (
     <motion.div
       className="smartslider"
       drag="x"
       dragConstraints={{ left: 0, right: 0 }}
-      onDragEnd={handleDragEnd}>
+      onDragEnd={handleDragEnd}
+    >
       <AnimatePresence mode="wait">
-        <motion.div
+       <motion.div
           key={slide.hero}
           className="hero"
           initial={{ x: "-50%", y: "-50%", opacity: 0 }}
@@ -63,54 +62,53 @@ const SmartMoneySlider = () => {
         >
           <img src={slide.hero} alt="Hero" />
         </motion.div>
-
       </AnimatePresence>
 
-      {/* Currency icons — rotation animatsiya */}
+      {/* Currency icons – animated slide + light rotation */}
       <AnimatePresence mode="wait">
         <motion.img
           key={`euro-${index}`}
           src="/images/евро.png"
           className="euro"
-          initial={{ rotate: -45, opacity: 0 }}
-          animate={{ rotate: 0, opacity: 1 }}
-          exit={{ rotate: 45, opacity: 0 }}
+          initial={{ x: 200, rotate: 15, opacity: 0 }}
+          animate={{ x: 0, rotate: 0, opacity: 1 }}
+          exit={{ x: -200, rotate: -15, opacity: 0 }}
           transition={{ duration: 0.6 }}
         />
         <motion.img
           key={`dollar-${index}`}
           src="/images/доллар 2.png"
           className="dollar"
-          initial={{ rotate: 20, opacity: 0 }}
-          animate={{ rotate: 0, opacity: 1 }}
-          exit={{ rotate: -20, opacity: 0 }}
+          initial={{ x: 200, rotate: 10, opacity: 0 }}
+          animate={{ x: 0, rotate: 0, opacity: 1 }}
+          exit={{ x: -200, rotate: -10, opacity: 0 }}
           transition={{ duration: 0.6 }}
         />
         <motion.img
           key={`dollar1-${index}`}
           src="/images/доллар 4.png"
           className="dollar_1"
-          initial={{ rotate: -15, opacity: 0 }}
-          animate={{ rotate: 0, opacity: 1 }}
-          exit={{ rotate: 15, opacity: 0 }}
+          initial={{ x: 200, rotate: 10, opacity: 0 }}
+          animate={{ x: 0, rotate: 0, opacity: 1 }}
+          exit={{ x: -200, rotate: -10, opacity: 0 }}
           transition={{ duration: 0.6 }}
         />
         <motion.img
           key={`funt-${index}`}
           src="/images/фунт.png"
           className="funt"
-          initial={{ rotate: 90, opacity: 0 }}
-          animate={{ rotate: 0, opacity: 1 }}
-          exit={{ rotate: -90, opacity: 0 }}
+          initial={{ x: 200, rotate: 20, opacity: 0 }}
+          animate={{ x: 0, rotate: 0, opacity: 1 }}
+          exit={{ x: -200, rotate: -20, opacity: 0 }}
           transition={{ duration: 0.6 }}
         />
         <motion.img
           key={`shv-${index}`}
           src="/images/шв.png"
           className="shv"
-          initial={{ rotate: 30, opacity: 0 }}
-          animate={{ rotate: 0, opacity: 1 }}
-          exit={{ rotate: -30, opacity: 0 }}
+          initial={{ x: 200, rotate: 10, opacity: 0 }}
+          animate={{ x: 0, rotate: 0, opacity: 1 }}
+          exit={{ x: -200, rotate: -10, opacity: 0 }}
           transition={{ duration: 0.6 }}
         />
       </AnimatePresence>
@@ -135,7 +133,7 @@ const SmartMoneySlider = () => {
           </motion.span>
         </h2>
         <p>
-          <span>Научись </span> смотреть на график и видеть ситуации для{" "}
+          <span>Научись </span> смотреть на график и видеть ситуации для {" "}
           <span>заработка,</span> а не шум и манипуляции!
         </p>
         <Link

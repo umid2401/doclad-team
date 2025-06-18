@@ -209,14 +209,10 @@
   overflow: hidden;
   position: relative;
   z-index: 2;
-
 }
-
 .card .training-program__card-img {
   margin-top: 35px;
-
 }
-
  .bottom_img {
  width: 90%;
   height: 10px !important;
