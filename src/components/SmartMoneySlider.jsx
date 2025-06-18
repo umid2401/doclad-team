@@ -36,15 +36,27 @@ const SmartMoneySlider = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const slide = slides[index];
+  const handleDragEnd = (e, info) => {
+    if (info.offset.x < -50) {
+      setCurrent((prev) => (prev + 1) % slides.length);
+    } else if (info.offset.x > 50) {
+      setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
+    }
+  };
+    const slide = slides[index];
+
 
   return (
-    <div className="smartslider">
+    <motion.div
+      className="smartslider"
+      drag="x"
+      dragConstraints={{ left: 0, right: 0 }}
+      onDragEnd={handleDragEnd}>
       <AnimatePresence mode="wait">
         <motion.div
           key={slide.hero}
           className="hero"
-          initial={{ x: "-50%", y:"-50%", opacity: 0 }}
+          initial={{ x: "-50%", y: "-50%", opacity: 0 }}
           animate={{ x: "-50%", opacity: 1 }}
           exit={{ x: -300, opacity: 0 }}
           transition={{ duration: 0.8 }}
@@ -134,7 +146,7 @@ const SmartMoneySlider = () => {
           узнать больше
         </Link>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
