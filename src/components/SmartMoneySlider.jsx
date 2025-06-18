@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import "../styles/SmartSlider.css";
@@ -74,11 +74,18 @@ const slides = [
 ];
 
 const SmartMoneySlider = () => {
-  const [index, setIndex] = useState(0);
+    const [index, setIndex] = useState(0);
   const isAnimating = useRef(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      updateIndex((index + 1) % slides.length);
+    }, 3000); // 3 sekundda bir o'zgaradi
+    return () => clearInterval(interval);
+  }, [index]);
+
   const handleDragEnd = (e, info) => {
     if (isAnimating.current) return;
-
     if (info.offset.x < -50) {
       updateIndex((index + 1) % slides.length);
     }
