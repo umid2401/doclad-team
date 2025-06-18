@@ -7,34 +7,36 @@ const TrainingProgram = () => {
     const priceRef = useRef(null);
     const startRef = useRef(null);
     const navRef = useRef(null);
+    const textRef = useRef(null);
     const [navHeight, setNavHeight] = useState(0);
     useEffect(() => {
-    if (navRef.current) {
-      const height = navRef.current.getBoundingClientRect().height;
-      setNavHeight(height);
-    }
-  }, []);
+        if (navRef.current) {
+            const height = navRef.current.getBoundingClientRect().height;
+            setNavHeight(height);
+        }
+    }, []);
 
     const scrollTo = (ref) => {
-    if (ref.current) {
-      const offsetTop = ref.current.offsetTop;
-      window.scrollTo({
-        top: offsetTop - navHeight-30,
-        behavior: 'smooth',
-      });
-    }
-  };
+        if (ref.current) {
+            const offsetTop = ref.current.offsetTop;
+            window.scrollTo({
+                top: offsetTop - navHeight - 30,
+                behavior: 'smooth',
+            });
+        }
+    };
+   
     return (
         <div className="training-program">
             <header className="header">
                 <ul ref={navRef} className="training-program__nav">
-                    <li onClick={()=>scrollTo(programRef)} className="training-program__nav-item">Программа обучения</li>
-                    <li onClick={()=>scrollTo(formatRef)} className="training-program__nav-item">формат обучения</li>
-                    <li onClick={()=>scrollTo(priceRef)} className="training-program__nav-item">стоимоть обучения</li>
-                    <li onClick={()=>scrollTo(startRef)} className="training-program__nav-item">начать обучениe</li>
+                    <li onClick={() => scrollTo(programRef)} className="training-program__nav-item">Программа обучения</li>
+                    <li onClick={() => scrollTo(formatRef)} className="training-program__nav-item">формат обучения</li>
+                    <li onClick={() => scrollTo(priceRef)} className="training-program__nav-item">стоимоть обучения</li>
+                    <li onClick={() => scrollTo(startRef)} className="training-program__nav-item">начать обучениe</li>
                 </ul>
-                <div ref={programRef} className="training-program__hero">
-                    <div className="training-program__text">
+                <div ref={programRef}  className="training-program__hero">
+                    <div ref={textRef} className="training-program__text">
                         <h1 className="training-program__title">ПРОГРАММА <span>ОБУЧЕНИЯ</span></h1>
                         <p className="training-program__description">
                             Полная информация об основных инструментах <span>Smart Money-концепции:</span> их механика, логика работы и правильное применение в анализе
@@ -53,8 +55,8 @@ const TrainingProgram = () => {
                         <span>курс</span>
                     </div>
                     <div className="training-program__card-img">
-                        <img src="/images/Rectangle 105.png" alt="" className="bottom_img" />
-                        <img src="/images/WHO IS 2.png" alt="Who is" />
+                        <img loading='lazy' src="/images/WHO IS 2.png" alt="Who is" />
+                        <img loading='lazy' src="/images/Rectangle 105.png" alt="Rectangle" className="bottom_img" />
 
                     </div>
                     <ul className="training-program__list">
@@ -66,8 +68,8 @@ const TrainingProgram = () => {
                 </div>
                 <div className="premium training-program__course-section ">
                     <div className="training-program__card-img">
-                        <img src="/images/Rectangle 105.png" alt="" className="bottom_img" />
-                        <img src="/images/WHO IS 2.png" alt="Who is" />
+                        <img loading='lazy' src="/public/images/фото.png" alt="Who is" />
+                        <img loading='lazy' src="/images/Rectangle 105.png" alt="Rectangle" className="bottom_img" />
                     </div>
                     <ul className="training-program__list">
                         <li>ЧТО ТАКОЕ <span class="highlight">ФРАКТАЛ</span>.</li>
@@ -287,7 +289,6 @@ const TrainingProgram = () => {
             </main>
             <footer className='footer' >
                 <div ref={formatRef} className="container">
-
                     <h2 className='title'>
                         ФОРМАТ <br /> <span>ОБУЧЕНИЯ</span>
                     </h2>
