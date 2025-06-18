@@ -36,15 +36,15 @@
     position: absolute;
     width: 100px;
     left: 0px;
-    top: 50%;
+    top: 40%;
     transform: translateY(-50%);
     z-index: 2;
 }
 
 .smartslider .funt {
     position: absolute;
-    right: 5%;
-    top: 50%;
+    top: 20%;
+    right: 10px;
     transform: translateY(-120%);
     width: 170px;
     z-index: 2;
