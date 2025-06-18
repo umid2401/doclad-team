@@ -2,7 +2,26 @@ import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import "../styles/SmartSlider.css";
+const SlideText1 = () => (
+  <>
+    Это не разовое обучение, а <span>пожизненное  сопровождение </span>  и  <span>готовые сетапы</span>  для торговли на каждый день!
+    <span>Научись </span>
+    смотреть на график и видеть ситуации для
+    <span> заработка,</span> а не шум и манипуляции!
+  </>
+);
 
+const SlideText2 = () => (
+  <>
+    Это не очередной курс по трейдингу, а логичная <span className="s">пошаговая инструкция</span> — для торговли вместе с крупными игроками, а не <span className="s">против</span> них!
+  </>
+);
+
+const SlideText3 = () => (
+  <>
+    <span>Научись</span> смотреть на график и видеть ситуации для <span>заработка,</span> а не шум и манипуляции!
+  </>
+);
 const slides = [
   {
     id: 1,
@@ -10,6 +29,8 @@ const slides = [
     color: "#21CD5A",
     buttonColor: "#21CD5A",
     font: "#000",
+    bgClass: "bg_1",
+    descriptionComponent: SlideText1,
     currencies: [
       { src: "/images/евро.png", className: "euro" },
       { src: "/images/доллар 2.png", className: "dollar" },
@@ -24,6 +45,8 @@ const slides = [
     color: "#DE2C05",
     buttonColor: "#DE2C05",
     font: "#fff",
+    bgClass: "bg_2",
+    descriptionComponent: SlideText2,
     currencies: [
       { src: "/images/доллар ред 1.png", className: "dollar" },
       { src: "/images/доллар ред 2.png", className: "dollar_1" },
@@ -37,8 +60,10 @@ const slides = [
     hero: "/images/бизон 2 1.png",
     color: "#21CD5A",
     buttonColor: "#21CD5A",
-    font: "#fff",
-     currencies: [
+    font: "#000",
+    bgClass: "bg_1",
+    descriptionComponent: SlideText3,
+    currencies: [
       { src: "/images/евро.png", className: "euro" },
       { src: "/images/доллар 2.png", className: "dollar" },
       { src: "/images/доллар 4.png", className: "dollar_1" },
@@ -51,7 +76,6 @@ const slides = [
 const SmartMoneySlider = () => {
   const [index, setIndex] = useState(0);
   const isAnimating = useRef(false);
-
   const handleDragEnd = (e, info) => {
     if (isAnimating.current) return;
 
@@ -68,6 +92,8 @@ const SmartMoneySlider = () => {
   };
 
   const slide = slides[index];
+  const Description = slide.descriptionComponent;
+
   const enterX = 300;
   const exitX = -300;
   const enterRotate = 90;
@@ -75,8 +101,7 @@ const SmartMoneySlider = () => {
 
   return (
     <motion.div
-      className="smartslider"
-      drag="x"
+      className={`smartslider ${slide.bgClass}`} drag="x"
       dragConstraints={{ left: 0, right: 0 }}
       dragElastic={0.1}
       dragMomentum={false}
@@ -111,11 +136,13 @@ const SmartMoneySlider = () => {
       </AnimatePresence>
 
       <div className="smart">
-        <div className="dots">
+        <div className="dots" >
           {slides.map((_, i) => (
             <div
               key={i}
+              // style={{backgroundColor:_.color}}
               className={`dot ${i === index ? "active" : ""}`}
+              style={{ background: i === index ? slides[i].color : undefined }}
               onClick={() => {
                 if (i > index) updateIndex(i);
               }}
@@ -143,8 +170,7 @@ const SmartMoneySlider = () => {
             exit={{ x: exitX, opacity: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <span>Научись </span> смотреть на график и видеть ситуации для {" "}
-            <span>заработка,</span> а не шум и манипуляции!
+            <Description />
           </motion.p>
         </AnimatePresence>
 
