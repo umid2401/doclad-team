@@ -66,7 +66,6 @@ const SmartMoneySlider = () => {
       dragElastic={0.1}
       dragMomentum={false}
       onDragEnd={handleDragEnd}
-      style={{ overflow: "hidden", touchAction: "pan-y" }}
     >
       <AnimatePresence mode="wait">
         <motion.div

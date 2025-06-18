@@ -5,7 +5,7 @@
 }
 .smartslider {
     max-width: 480px;
-    overflow: hidden;
+    overflow: hidden !important;
     height: 100dvh;
     background: url("/images/доп\ свет.png"), url("/images/линии.png"), url("/images/график.png"),
         url("/images/верх\ свет.png"), url("/images/середина\ свет.png"), url("/images/ниж\ свет.png");
