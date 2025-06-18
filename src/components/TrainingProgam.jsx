@@ -68,7 +68,7 @@ const TrainingProgram = () => {
                 </div>
                 <div className="premium training-program__course-section ">
                     <div className="training-program__card-img">
-                        <img loading='lazy' src="/public/images/фото.png" alt="Who is" />
+                        <img loading='lazy' src="/images/фото.png" alt="Who is" />
                         <img loading='lazy' src="/images/Rectangle 105.png" alt="Rectangle" className="bottom_img" />
                     </div>
                     <ul className="training-program__list">
