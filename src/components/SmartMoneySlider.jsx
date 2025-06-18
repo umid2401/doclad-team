@@ -38,6 +38,8 @@ const slides = [
       { src: "/images/фунт.png", className: "funt" },
       { src: "/images/шв.png", className: "shv" },
     ],
+        plus:"/images/+(1).png",
+
   },
   {
     id: 2,
@@ -48,12 +50,14 @@ const slides = [
     bgClass: "bg_2",
     descriptionComponent: SlideText2,
     currencies: [
-      { src: "/images/доллар ред 1.png", className: "dollar" },
-      { src: "/images/доллар ред 2.png", className: "dollar_1" },
+      { src: "/images/доллар ред 1.png", className: "dol_1" },
+      { src: "/images/доллар ред 1.png", className: "dol" },
       { src: "/images/евро ред 1.png", className: "euro" },
       { src: "/images/фунт ред 1.png", className: "funt" },
       { src: "/images/шв ред 1.png", className: "shv" },
     ],
+        plus:"/images/+.png",
+
   },
   {
     id: 3,
@@ -70,6 +74,7 @@ const slides = [
       { src: "/images/фунт.png", className: "funt" },
       { src: "/images/шв.png", className: "shv" },
     ],
+    plus:"/images/+(1).png",
   },
 ];
 
@@ -156,8 +161,8 @@ const SmartMoneySlider = () => {
             ></div>
           ))}
         </div>
-
-        <h2>
+        <div className="item">
+          <h2>
           Smart <br />
           <motion.span
             key={slide.color}
@@ -168,6 +173,18 @@ const SmartMoneySlider = () => {
             Money
           </motion.span>
         </h2>
+         <motion.img
+            key={slide.plus + index}
+            src="/images/блик 2.png"
+            alt="Qanisan"
+            className="blik"
+            initial={{ x:"-50%", rotate: 0 }}
+            animate={{ y:0, rotate: 360 }}
+            transition={{ duration: 1 }}
+          />
+          <img src={slide.plus} className="plus" alt="plus" />
+        </div>
+        
 
         <AnimatePresence mode="wait">
           <motion.p
