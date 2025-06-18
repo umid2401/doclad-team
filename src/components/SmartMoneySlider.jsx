@@ -8,48 +8,47 @@ const slides = [
     id: 1,
     hero: "/images/бизон 1 1.png",
     color: "#21CD5A",
-    buttonColor: "rgba(33, 205, 90, 1)",
+    buttonColor: "rgba(33, 205, 90, 0.7)",
+    font:"#000"
   },
   {
     id: 2,
     hero: "/images/медведь 2.png",
-    color: "#F44336",
-    buttonColor: "#F44336",
+    color: "rgba(222, 44, 5, 1)",
+    buttonColor: "rgba(222, 44, 5, 1)",
   },
   {
     id: 3,
     hero: "/images/бизон 2 1.png",
     color: "#21CD5A",
-    buttonColor: "rgba(33, 205, 90, 1)",
-  },
+    buttonColor: "rgba(33, 205, 90, 0.7)",
+    font:"#000"  },
 ];
 
 const SmartMoneySlider = () => {
   const [index, setIndex] = useState(0);
-  const [direction, setDirection] = useState("left");
-  const isChanging = useRef(false);
+  const isAnimating = useRef(false);
 
   const handleDragEnd = (e, info) => {
-    if (isChanging.current) return;
+    if (isAnimating.current) return;
 
     if (info.offset.x < -50) {
-      setDirection("left");
-      isChanging.current = true;
-      setIndex((prev) => (prev + 1) % slides.length);
-    } else if (info.offset.x > 50) {
-      setDirection("right");
-      isChanging.current = true;
-      setIndex((prev) => (prev - 1 + slides.length) % slides.length);
+      updateIndex((index + 1) % slides.length);
     }
-    setTimeout(() => (isChanging.current = false), 600);
+  };
+
+  const updateIndex = (newIndex) => {
+    if (isAnimating.current || newIndex === index) return;
+    isAnimating.current = true;
+    setIndex(newIndex);
+    setTimeout(() => (isAnimating.current = false), 700);
   };
 
   const slide = slides[index];
-
-  const enterX = direction === "left" ? 300 : -300;
-  const exitX = direction === "left" ? -300 : 300;
-  const enterRotate = direction === "left" ? 90 : -90;
-  const exitRotate = direction === "left" ? -90 : 90;
+  const enterX = 300;
+  const exitX = -300;
+  const enterRotate = 90;
+  const exitRotate = -90;
 
   const currencyImages = [
     { src: "евро.png", className: "euro" },
@@ -66,13 +65,12 @@ const SmartMoneySlider = () => {
       dragConstraints={{ left: 0, right: 0 }}
       dragElastic={0.1}
       dragMomentum={false}
-      onDragStart={(e) => e.preventDefault()}
       onDragEnd={handleDragEnd}
       style={{ overflow: "hidden", touchAction: "pan-y" }}
     >
-      <AnimatePresence mode="wait" custom={direction}>
+      <AnimatePresence mode="wait">
         <motion.div
-          key={slide.hero + direction + index}
+          key={slide.hero + index}
           className="hero"
           initial={{ x: "-50%", y: "-50%", opacity: 0 }}
           animate={{ x: "-50%", opacity: 1 }}
@@ -83,10 +81,10 @@ const SmartMoneySlider = () => {
         </motion.div>
       </AnimatePresence>
 
-      <AnimatePresence mode="wait" custom={direction}>
+      <AnimatePresence mode="wait">
         {currencyImages.map((item) => (
           <motion.img
-            key={`${item.src}-${index}-${direction}`}
+            key={`${item.src}-${index}`}
             src={`/images/${item.src}`}
             className={item.className}
             initial={{ x: enterX, rotate: enterRotate, opacity: 0 }}
@@ -100,7 +98,13 @@ const SmartMoneySlider = () => {
       <div className="smart">
         <div className="dots">
           {slides.map((_, i) => (
-            <div key={i} className={`dot ${i === index ? "active" : ""}`}></div>
+            <div
+              key={i}
+              className={`dot ${i === index ? "active" : ""}`}
+              onClick={() => {
+                if (i > index) updateIndex(i);
+              }}
+            ></div>
           ))}
         </div>
 
@@ -116,9 +120,9 @@ const SmartMoneySlider = () => {
           </motion.span>
         </h2>
 
-        <AnimatePresence mode="wait" custom={direction}>
+        <AnimatePresence mode="wait">
           <motion.p
-            key={index + direction}
+            key={index}
             initial={{ x: enterX, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: exitX, opacity: 0 }}
@@ -132,7 +136,7 @@ const SmartMoneySlider = () => {
         <Link
           to="/courses"
           className="link"
-          style={{ backgroundColor: slide.buttonColor}}
+          style={{ backgroundColor: slide.buttonColor, color:slide.font }}
         >
           узнать больше
         </Link>
