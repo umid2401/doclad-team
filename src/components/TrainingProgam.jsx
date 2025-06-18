@@ -146,7 +146,7 @@ const TrainingProgram = () => {
                 <div className="power training-program__course-section ">
                     <div className="training-program__card-img">
                         <img src="/images/Rectangle 105.png" alt="" className="bottom_img" />
-                        <img src="/public/images/Power Blocks_ 1.png" alt="Who is" />
+                        <img src="/images/Power Blocks_ 1.png" alt="Who is" />
                     </div>
                     <ul className="training-program__list">
                         <li>ЧТО ТАКОЕ <span class="highlight">POI</span>.</li>
