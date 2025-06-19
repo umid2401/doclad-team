@@ -38,7 +38,7 @@ const slides = [
       { src: "/images/фунт.png", className: "funt" },
       { src: "/images/шв.png", className: "shv" },
     ],
-        plus:"/images/+(1).png",
+    plus: "/images/+(1).png",
 
   },
   {
@@ -56,7 +56,7 @@ const slides = [
       { src: "/images/фунт ред 1.png", className: "funt" },
       { src: "/images/шв ред 1.png", className: "shv" },
     ],
-        plus:"/images/+.png",
+    plus: "/images/+.png",
 
   },
   {
@@ -74,12 +74,12 @@ const slides = [
       { src: "/images/фунт.png", className: "funt" },
       { src: "/images/шв.png", className: "shv" },
     ],
-    plus:"/images/+(1).png",
+    plus: "/images/+(1).png",
   },
 ];
 
 const SmartMoneySlider = () => {
-    const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(0);
   const isAnimating = useRef(false);
 
   useEffect(() => {
@@ -152,7 +152,6 @@ const SmartMoneySlider = () => {
           {slides.map((_, i) => (
             <div
               key={i}
-              // style={{backgroundColor:_.color}}
               className={`dot ${i === index ? "active" : ""}`}
               style={{ background: i === index ? slides[i].color : undefined }}
               onClick={() => {
@@ -163,29 +162,30 @@ const SmartMoneySlider = () => {
         </div>
         <div className="item">
           <h2>
-          Smart <br />
-          <motion.span
-            key={slide.color}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1, color: slide.color }}
-            transition={{ duration: 1 }}
-          >
-            Money
-          </motion.span>
-        </h2>
-         <motion.img
-            key={slide.plus + index}
-            src="/images/блик 2.png"
-            alt="Qanisan"
-            className="blik"
-            initial={{  rotate: 0 }}
-            animate={{  rotate: 360 }}
-            transition={{ duration: 1 }}
-            style={{ transformOrigin: "center" }}
-          />
-          <img src={slide.plus} className="plus" alt="plus" />
+            Smart <br />
+            <motion.span
+              key={slide.color}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1, color: slide.color }}
+              transition={{ duration: 1 }}
+            >
+              Money
+            </motion.span>
+          </h2>
+          <div className="box">
+            <motion.img
+              key={slide.plus + index}
+              alt="Qanisan"
+              src="/images/+.png"
+              className="blik"
+              initial={{ rotate: 0 }}
+              animate={{ rotate: 360 }}
+              transition={{ duration: 1, ease: "linear" }} style={{ transformOrigin: "center" }}
+            />
+            <img src={slide.plus} className="plus" alt="plus" />
+          </div>
         </div>
-        
+
 
         <AnimatePresence mode="wait">
           <motion.p

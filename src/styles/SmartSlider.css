@@ -160,9 +160,7 @@
     letter-spacing: 6px;
     line-height: 83%;
     margin-bottom: 10px;
-        font-family: "Rimma" !important;
-
-
+    font-family: "Rimma" !important;
 }
 
 .smart h2 span {
@@ -180,24 +178,27 @@
 }
 
 .item {
+    display: flex;
+    gap: 20px;
+    align-items: end;
+
+}
+
+.item .box{
     position: relative;
 }
-
-.item .blik {
-    position: absolute;
-    left: 67%;
-    bottom: -40%;
-    width: 130px;
-    transform-origin: center center;
-    z-index: 1;
+.blik{
+    width: 60px;
 }
 
-.item .plus {
-    position: absolute;
-    left: 80%;
+.item .box .plus {
     width: 40px;
-    bottom: 0;
-    z-index: 2;
+   z-index: 2;
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
 }
 
 .smart p span {

@@ -1,21 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import '../styles/TrainingProgram.css';
-const useDebouncedScroll = (callback, delay) => {
-  const timeout = useRef();
 
-  useEffect(() => {
-    const handler = () => {
-      clearTimeout(timeout.current);
-      timeout.current = setTimeout(callback, delay);
-    };
 
-    window.addEventListener("scroll", handler);
-    return () => {
-      clearTimeout(timeout.current);
-      window.removeEventListener("scroll", handler);
-    };
-  }, [callback, delay]);
-};
+ 
 
 const TrainingProgram = () => {
     const programRef = useRef(null);
@@ -42,23 +29,26 @@ const TrainingProgram = () => {
             });
         }
     };
-  useEffect(() => {
-    let ticking = false;
+useEffect(() => {
+  const handleScroll = () => {
+    const offset = window.scrollY;
+    const shouldShrink = offset > 30;
 
-    const handleScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          const offset = window.scrollY;
-          setIsShrunk(offset > 30);
-          ticking = false;
-        });
-        ticking = true;
+    setIsShrunk((prev) => {
+      if (prev !== shouldShrink) {
+        return shouldShrink;
       }
-    };
+      return prev;
+    });
+  };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  window.addEventListener("scroll", handleScroll, { passive: true });
+
+  return () => {
+    window.removeEventListener("scroll", handleScroll);
+  };
+}, []);
+
 
 
     return (
