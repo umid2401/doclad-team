@@ -42,7 +42,7 @@
 .smartslider .euro {
     position: absolute;
     width: 250px;
-    top: -40px;
+    top: -60px;
     left: -100px;
     z-index: 2;
 }
@@ -53,6 +53,7 @@
     right: -50px;
     z-index: 2;
     top: -30px;
+    transform: rotate(-45deg);
 }
 
 .smartslider .dollar_1 {
@@ -75,7 +76,7 @@
 .smartslider .dol {
     position: absolute;
     width: 200px;
-    left: -10px;
+    left: 0px;
     top: 30%;
     z-index: 2;
 }
