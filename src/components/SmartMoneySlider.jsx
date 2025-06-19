@@ -124,8 +124,8 @@ const SmartMoneySlider = () => {
         <motion.div
           key={slide.hero + index}
           className="hero"
-          initial={{ x: "-50%", y: "-50%", opacity: 0 }}
-          animate={{ x: "-50%", opacity: 1 }}
+          initial={{  y: "-50%", opacity: 0 }}
+          animate={{ x:"-50%" ,opacity: 1 }}
           exit={{ x: exitX, opacity: 0 }}
           transition={{ duration: 1 }}
         >
