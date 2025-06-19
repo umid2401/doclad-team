@@ -12,7 +12,6 @@ const TrainingProgram = () => {
     const navRef = useRef(null);
     const textRef = useRef(null);
     const [navHeight, setNavHeight] = useState(0);
- const [isShrunk, setIsShrunk] = useState(false);
     useEffect(() => {
         if (navRef.current) {
             const height = navRef.current.getBoundingClientRect().height;
@@ -29,25 +28,17 @@ const TrainingProgram = () => {
             });
         }
     };
+    const containerRef = useRef(null);
 useEffect(() => {
-  const handleScroll = () => {
-    const offset = window.scrollY;
-    const shouldShrink = offset > 30;
+    const handleScroll = () => {
+      if (!programRef.current) return;
+      const isScrolled = window.scrollY > 10;
+      containerRef.current.classList.toggle("scrolled", isScrolled);
+    };
 
-    setIsShrunk((prev) => {
-      if (prev !== shouldShrink) {
-        return shouldShrink;
-      }
-      return prev;
-    });
-  };
-
-  window.addEventListener("scroll", handleScroll, { passive: true });
-
-  return () => {
-    window.removeEventListener("scroll", handleScroll);
-  };
-}, []);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
 
 
@@ -60,7 +51,7 @@ useEffect(() => {
                     <li onClick={() => scrollTo(priceRef)} className="training-program__nav-item">стоимоть обучения</li>
                     <li onClick={() => scrollTo(startRef)} className="training-program__nav-item">начать обучениe</li>
                 </ul>
-                <div ref={programRef}  className={`training-program__hero ${isShrunk ? "scrolled" : ""}`}>
+                <div ref={programRef}  className="training-program__hero">
                     <div ref={textRef} className="training-program__text">
                         <h1 className="training-program__title">ПРОГРАММА <span>ОБУЧЕНИЯ</span></h1>
                         <p className="training-program__description">

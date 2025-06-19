@@ -67,7 +67,7 @@
 .training-program__hero {
   width: 90%;
   margin: 0 auto;
-  transition: all 0.4s ease;
+  transition: 0.3s linear;
 }
 
 
@@ -107,12 +107,12 @@ transition: transform 0.25s ease-out;
 .training-program-img {
 transition: transform 0.25s ease-out;}
 
-.training-program__hero.scrolled .training-program__text {
+.training-program__hero .scrolled .training-program__text {
   transform: scale(0.7);
   position: relative;
 }
 
-.training-program__hero.scrolled .training-program-img {
+.training-program__hero .scrolled .training-program-img {
   transform: translateY(-40px);
 }
 .training-program-img {
