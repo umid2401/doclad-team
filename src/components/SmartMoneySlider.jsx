@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "../styles/SmartSlider.css";
 const SlideText1 = () => (
   <>
-    Это не разовое обучение, а <span>пожизненное  сопровождение </span>  и  <span>готовые сетапы</span>  для торговли на каждый день!
+    {/* Это не разовое обучение, а <span>пожизненное  сопровождение </span>  и  <span>готовые сетапы</span>  для торговли на каждый день! */}
     <span>Научись </span>
     смотреть на график и видеть ситуации для
     <span> заработка,</span> а не шум и манипуляции!
@@ -85,7 +85,7 @@ const SmartMoneySlider = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       updateIndex((index + 1) % slides.length);
-    }, 3000); // 3 sekundda bir o'zgaradi
+    }, 4000); // 3 sekundda bir o'zgaradi
     return () => clearInterval(interval);
   }, [index]);
 
@@ -127,7 +127,7 @@ const SmartMoneySlider = () => {
           initial={{ x: "-50%", y: "-50%", opacity: 0 }}
           animate={{ x: "-50%", opacity: 1 }}
           exit={{ x: exitX, opacity: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 1 }}
         >
           <img src={slide.hero} alt="Hero" />
         </motion.div>
@@ -142,7 +142,7 @@ const SmartMoneySlider = () => {
             initial={{ x: enterX, rotate: enterRotate, opacity: 0 }}
             animate={{ x: 0, rotate: 0, opacity: 1 }}
             exit={{ x: exitX, rotate: exitRotate, opacity: 0 }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 1 }}
           />
         ))}
       </AnimatePresence>
@@ -168,7 +168,7 @@ const SmartMoneySlider = () => {
             key={slide.color}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, color: slide.color }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 1 }}
           >
             Money
           </motion.span>
@@ -178,9 +178,10 @@ const SmartMoneySlider = () => {
             src="/images/блик 2.png"
             alt="Qanisan"
             className="blik"
-            initial={{ x:"-50%", rotate: 0 }}
-            animate={{ y:0, rotate: 360 }}
+            initial={{  rotate: 0 }}
+            animate={{  rotate: 360 }}
             transition={{ duration: 1 }}
+            style={{ transformOrigin: "center" }}
           />
           <img src={slide.plus} className="plus" alt="plus" />
         </div>
@@ -192,7 +193,7 @@ const SmartMoneySlider = () => {
             initial={{ x: enterX, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: exitX, opacity: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 1 }}
           >
             <Description />
           </motion.p>

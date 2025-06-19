@@ -99,14 +99,13 @@
   color:  #21CD5A;
 }
 .training-program__text {
-  transition: transform 0.4s ease, font-size 0.4s ease;
+transition: transform 0.25s ease-out;
   transform: translate(1.1);
   transform-origin: left;
 }
 
 .training-program-img {
-  transition: transform 0.4s ease;
-}
+transition: transform 0.25s ease-out;}
 
 .training-program__hero.scrolled .training-program__text {
   transform: scale(0.7);
