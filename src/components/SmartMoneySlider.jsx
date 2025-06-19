@@ -121,13 +121,14 @@ const SmartMoneySlider = () => {
       style={{ overflow: "hidden", touchAction: "pan-y" }}
     >
       <AnimatePresence mode="wait">
+        
         <motion.div
           key={slide.hero + index}
           className="hero"
-          initial={{  y: "-50%", opacity: 0 }}
-          animate={{ x:"-50%" ,opacity: 1 }}
-          exit={{ x: exitX, opacity: 0 }}
-          transition={{ duration: 1 }}
+          initial={{  y:"-50%", opacity: 1 }}
+          animate={{ x: "-50%", opacity: 1 }}
+            exit={{ x: "-150%", opacity: 1 }}
+            transition={{ duration: 1 }}
         >
           <img src={slide.hero} alt="Hero" />
         </motion.div>
