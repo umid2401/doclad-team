@@ -9,6 +9,7 @@ const TrainingProgram = () => {
     const navRef = useRef(null);
     const textRef = useRef(null);
     const [navHeight, setNavHeight] = useState(0);
+ const [isShrunk, setIsShrunk] = useState(false);
     useEffect(() => {
         if (navRef.current) {
             const height = navRef.current.getBoundingClientRect().height;
@@ -25,6 +26,23 @@ const TrainingProgram = () => {
             });
         }
     };
+   useEffect(() => {
+    const handleScroll = () => {
+      if (!programRef.current) return;
+
+      const top = programRef.current.getBoundingClientRect().top;
+      // Scroll pastga 100px dan kam bo‘lsa, animatsiya boshlangan bo‘ladi
+      if (top < 100) {
+        setIsShrunk(true);
+      } else {
+        setIsShrunk(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
 
     return (
         <div className="training-program">
@@ -35,7 +53,7 @@ const TrainingProgram = () => {
                     <li onClick={() => scrollTo(priceRef)} className="training-program__nav-item">стоимоть обучения</li>
                     <li onClick={() => scrollTo(startRef)} className="training-program__nav-item">начать обучениe</li>
                 </ul>
-                <div ref={programRef} className="training-program__hero">
+                <div ref={programRef}  className={`training-program__hero ${isShrunk ? "scrolled" : ""}`}>
                     <div ref={textRef} className="training-program__text">
                         <h1 className="training-program__title">ПРОГРАММА <span>ОБУЧЕНИЯ</span></h1>
                         <p className="training-program__description">
@@ -91,7 +109,7 @@ const TrainingProgram = () => {
                 </div>
                 <div className="market training-program__course-section ">
                     <div className="training-program__card-img">
-                       
+
                         <img src="/images/MARKET (2) 1.png" alt="Who is" />
                     </div>
                     <div className="bottom_img">

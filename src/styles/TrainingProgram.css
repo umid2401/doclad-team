@@ -67,6 +67,7 @@
 .training-program__hero {
   width: 90%;
   margin: 0 auto;
+  transition: all 0.4s ease;
 }
 
 
@@ -97,7 +98,22 @@
 .training-program__description span{
   color:  #21CD5A;
 }
+.training-program__text {
+  transition: transform 0.4s ease, font-size 0.4s ease;
+}
 
+.training-program-img {
+  transition: transform 0.4s ease;
+}
+
+.training-program__hero.scrolled .training-program__text {
+  transform: scale(0.8);
+  position: relative;
+}
+
+.training-program__hero.scrolled .training-program-img {
+  transform: translateY(-40px);
+}
 .training-program-img {
   position: absolute;
   bottom: 0;
