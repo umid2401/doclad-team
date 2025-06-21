@@ -176,7 +176,7 @@ const SmartMoneySlider = () => {
             <motion.img
               key={slide.plus + index}
               alt="Qanisan"
-              src="/public/images/блик 2.png"
+              src="/images/блик 2.png"
               className="blik"
               initial={{ rotate: 0 }}
               animate={{ rotate: 360 }}
