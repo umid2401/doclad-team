@@ -85,7 +85,7 @@ const SmartMoneySlider = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % slides.length);
-    }, 2500);
+    }, 2200);
     return () => clearInterval(interval);
   }, []);
 
