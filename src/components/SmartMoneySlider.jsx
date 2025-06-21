@@ -19,8 +19,7 @@ const SlideText2 = () => (
 
 const SlideText3 = () => (
   <>
-    <span>Научись</span> смотреть на график и видеть ситуации для <span>заработка,</span> а не шум и манипуляции!
-  </>
+Это не разовое обучение, а <span>пожизненное сопровождение</span> и <span>готовые сетапы</span> для торговли на каждый день!  </>
 );
 const slides = [
   {
@@ -177,7 +176,7 @@ const SmartMoneySlider = () => {
             <motion.img
               key={slide.plus + index}
               alt="Qanisan"
-              src="/images/+.png"
+              src="/public/images/блик 2.png"
               className="blik"
               initial={{ rotate: 0 }}
               animate={{ rotate: 360 }}
