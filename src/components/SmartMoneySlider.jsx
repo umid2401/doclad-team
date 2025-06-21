@@ -125,7 +125,7 @@ const SmartMoneySlider = () => {
           className="hero"
           initial={{ y: "-50%", opacity: 1 }}
           animate={{ x: "-50%", opacity: 1 }}
-          exit={{ x: "-100%", opacity: 1 }}
+          exit={{ x: "-140%", opacity: 1 }}
           transition={{ duration: 1, ease: "easeInOut" }}
         >
           <img src={slide.hero} alt="Hero" />
@@ -148,7 +148,6 @@ const SmartMoneySlider = () => {
           ))}
         </motion.div>
       </AnimatePresence>
-
       {/* Static Content */}
       <div className="smart">
       <div className="dots">
@@ -194,9 +193,9 @@ const SmartMoneySlider = () => {
       <AnimatePresence mode="wait">
         <motion.p
           key={`desc-${slide.id}`}
-          initial={{ x: 150, opacity: 0 }}
+          initial={{ x: "100%", opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
-          exit={{ x: -150, opacity: 0 }}
+          exit={{ x: "-100%", opacity: 0 }}
           transition={{ duration: 1 }}
         >
           <Description />
@@ -206,7 +205,7 @@ const SmartMoneySlider = () => {
       <Link
         to="/courses"
         className="link"
-        style={{ backgroundColor: slide.buttonColor, color: slide.font }}
+        // style={{ backgroundColor: slide.buttonColor, color: slide.font }}
       >
         {/* <img src="/public/images/bil.png" alt="Bil" /> */}
        <span> узнать больше</span>
