@@ -85,7 +85,7 @@ const SmartMoneySlider = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % slides.length);
-    }, 3000);
+    }, 2500);
     return () => clearInterval(interval);
   }, []);
 
@@ -126,7 +126,7 @@ const SmartMoneySlider = () => {
           initial={{ y: "-50%", opacity: 1 }}
           animate={{ x: "-50%", opacity: 1 }}
           exit={{ x: "-100%", opacity: 0 }}
-          transition={{ duration: 1.2, ease: "easeInOut" }}
+          transition={{ duration: 1, ease: "easeInOut" }}
         >
           <img src={slide.hero} alt="Hero" />
         </motion.div>
@@ -143,7 +143,7 @@ const SmartMoneySlider = () => {
               initial={{ x: 200, rotate: 60, opacity: 0 }}
               animate={{ x: 0, rotate: 0, opacity: 1 }}
               exit={{ x: -200, rotate: -60, opacity: 0 }}
-              transition={{ duration: 1.2 }}
+              transition={{ duration: 1 }}
             />
           ))}
         </motion.div>
@@ -169,7 +169,7 @@ const SmartMoneySlider = () => {
             key={slide.color}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, color: slide.color }}
-            transition={{ duration: 1.2 }}
+            transition={{ duration: 0.8 }}
           >
             Money
           </motion.span>
