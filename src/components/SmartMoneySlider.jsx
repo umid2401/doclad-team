@@ -121,11 +121,11 @@ const SmartMoneySlider = () => {
       {/* Hero Image */}
       <AnimatePresence mode="wait">
         <motion.div
-          key={slide.id}
+           key={`hero-${index}`}
           className="hero"
           initial={{ y: "-50%", opacity: 1 }}
           animate={{ x: "-50%", opacity: 1 }}
-          exit={{ x: "-100%", opacity: 0 }}
+          exit={{ x: "-100%", opacity: 1 }}
           transition={{ duration: 1, ease: "easeInOut" }}
         >
           <img src={slide.hero} alt="Hero" />
