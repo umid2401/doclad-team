@@ -85,7 +85,7 @@ const SmartMoneySlider = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % slides.length);
-    }, 2200);
+    }, 2500);
     return () => clearInterval(interval);
   }, []);
 
@@ -197,7 +197,7 @@ const SmartMoneySlider = () => {
           initial={{ x: 150, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           exit={{ x: -150, opacity: 0 }}
-          transition={{ duration: 1.2 }}
+          transition={{ duration: 1 }}
         >
           <Description />
         </motion.p>
