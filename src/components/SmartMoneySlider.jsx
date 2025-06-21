@@ -2,25 +2,27 @@ import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import "../styles/SmartSlider.css";
+
+// Slide matnlari
 const SlideText1 = () => (
   <>
-    {/* Это не разовое обучение, а <span>пожизненное  сопровождение </span>  и  <span>готовые сетапы</span>  для торговли на каждый день! */}
     <span>Научись </span>
     смотреть на график и видеть ситуации для
     <span> заработка,</span> а не шум и манипуляции!
   </>
 );
-
 const SlideText2 = () => (
   <>
     Это не очередной курс по трейдингу, а логичная <span className="s">пошаговая инструкция</span> — для торговли вместе с крупными игроками, а не <span className="s">против</span> них!
   </>
 );
-
 const SlideText3 = () => (
   <>
-Это не разовое обучение, а <span>пожизненное сопровождение</span> и <span>готовые сетапы</span> для торговли на каждый день!  </>
+    Это не разовое обучение, а <span>пожизненное сопровождение</span> и <span>готовые сетапы</span> для торговли на каждый день!
+  </>
 );
+
+// Slaydlar
 const slides = [
   {
     id: 1,
@@ -38,7 +40,6 @@ const slides = [
       { src: "/images/шв.png", className: "shv" },
     ],
     plus: "/images/+(1).png",
-
   },
   {
     id: 2,
@@ -56,7 +57,6 @@ const slides = [
       { src: "/images/шв ред 1.png", className: "shv" },
     ],
     plus: "/images/+.png",
-
   },
   {
     id: 3,
@@ -81,133 +81,137 @@ const SmartMoneySlider = () => {
   const [index, setIndex] = useState(0);
   const isAnimating = useRef(false);
 
+  // Avto slayd
   useEffect(() => {
     const interval = setInterval(() => {
-      updateIndex((index + 1) % slides.length);
-    }, 4000); // 3 sekundda bir o'zgaradi
+      setIndex((prev) => (prev + 1) % slides.length);
+    }, 3000);
     return () => clearInterval(interval);
-  }, [index]);
-
-  const handleDragEnd = (e, info) => {
-    if (isAnimating.current) return;
-    if (info.offset.x < -50) {
-      updateIndex((index + 1) % slides.length);
-    }
-  };
+  }, []);
 
   const updateIndex = (newIndex) => {
     if (isAnimating.current || newIndex === index) return;
     isAnimating.current = true;
     setIndex(newIndex);
-    setTimeout(() => (isAnimating.current = false), 700);
+    setTimeout(() => (isAnimating.current = false), 1200);
+  };
+
+  const handleDragEnd = (e, info) => {
+    if (isAnimating.current) return;
+    if (info.offset.x < -50) {
+      updateIndex((index + 1) % slides.length);
+    } else if (info.offset.x > 50) {
+      updateIndex((index - 1 + slides.length) % slides.length);
+    }
   };
 
   const slide = slides[index];
   const Description = slide.descriptionComponent;
 
-  const enterX = 300;
-  const exitX = -300;
-  const enterRotate = 90;
-  const exitRotate = -90;
-
   return (
     <motion.div
-      className={`smartslider ${slide.bgClass}`} drag="x"
+      className={`smartslider ${slide.bgClass}`}
+      drag="x"
       dragConstraints={{ left: 0, right: 0 }}
       dragElastic={0.1}
       dragMomentum={false}
       onDragEnd={handleDragEnd}
       style={{ overflow: "hidden", touchAction: "pan-y" }}
     >
+      {/* Hero Image */}
       <AnimatePresence mode="wait">
-        
         <motion.div
-          key={slide.hero + index}
+          key={slide.id}
           className="hero"
-          initial={{  y:"-50%", opacity: 1 }}
+          initial={{ y: "-50%", opacity: 1 }}
           animate={{ x: "-50%", opacity: 1 }}
-            exit={{ x: "-150%", opacity: 1 }}
-            transition={{ duration: 1 }}
+          exit={{ x: "-100%", opacity: 0 }}
+          transition={{ duration: 1.2, ease: "easeInOut" }}
         >
           <img src={slide.hero} alt="Hero" />
         </motion.div>
       </AnimatePresence>
 
+      {/* Currency Images */}
       <AnimatePresence mode="wait">
-        {slide.currencies.map((item) => (
-          <motion.img
-            key={`${item.src}-${index}`}
-            src={item.src}
-            className={item.className}
-            initial={{ x: enterX, rotate: enterRotate, opacity: 0 }}
-            animate={{ x: 0, rotate: 0, opacity: 1 }}
-            exit={{ x: exitX, rotate: exitRotate, opacity: 0 }}
-            transition={{ duration: 1 }}
-          />
-        ))}
+        <motion.div key={`currencies-${slide.id}`}>
+          {slide.currencies.map((item, i) => (
+            <motion.img
+              key={`${item.src}-${slide.id}-${i}`}
+              src={item.src}
+              className={item.className}
+              initial={{ x: 200, rotate: 60, opacity: 0 }}
+              animate={{ x: 0, rotate: 0, opacity: 1 }}
+              exit={{ x: -200, rotate: -60, opacity: 0 }}
+              transition={{ duration: 1.2 }}
+            />
+          ))}
+        </motion.div>
       </AnimatePresence>
 
+      {/* Static Content */}
       <div className="smart">
-        <div className="dots" >
-          {slides.map((_, i) => (
-            <div
-              key={i}
-              className={`dot ${i === index ? "active" : ""}`}
-              style={{ background: i === index ? slides[i].color : undefined }}
-              onClick={() => {
-                if (i > index) updateIndex(i);
-              }}
-            ></div>
-          ))}
-        </div>
-        <div className="item">
-          <h2>
-            Smart <br />
-            <motion.span
-              key={slide.color}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1, color: slide.color }}
-              transition={{ duration: 1 }}
-            >
-              Money
-            </motion.span>
-          </h2>
-          <div className="box">
-            <motion.img
-              key={slide.plus + index}
-              alt="Qanisan"
-              src="/images/блик 2.png"
-              className="blik"
-              initial={{ rotate: 0 }}
-              animate={{ rotate: 360 }}
-              transition={{ duration: 1, ease: "linear" }} style={{ transformOrigin: "center" }}
-            />
-            <img src={slide.plus} className="plus" alt="plus" />
-          </div>
-        </div>
-
-
-        <AnimatePresence mode="wait">
-          <motion.p
-            key={index}
-            initial={{ x: enterX, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            exit={{ x: exitX, opacity: 0 }}
-            transition={{ duration: 1 }}
-          >
-            <Description />
-          </motion.p>
-        </AnimatePresence>
-
-        <Link
-          to="/courses"
-          className="link"
-          style={{ backgroundColor: slide.buttonColor, color: slide.font }}
-        >
-          узнать больше
-        </Link>
+      <div className="dots">
+        {slides.map((_, i) => (
+          <div
+            key={i}
+            className={`dot ${i === index ? "active" : ""}`}
+            style={{ background: i === index ? slides[i].color : undefined }}
+            onClick={() => updateIndex(i)} // 🔁 endi har qanaqa yo‘nalishga o‘tadi
+          ></div>
+        ))}
       </div>
-    </motion.div>
+
+      <div className="item">
+        <h2>
+          Smart <br />
+          <motion.span
+            key={slide.color}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, color: slide.color }}
+            transition={{ duration: 1.2 }}
+          >
+            Money
+          </motion.span>
+        </h2>
+
+        <div className="box">
+          <img
+            key={`blik-${slide.id}`}
+            src="/images/блик 2.png"
+            className="blik"
+            alt="blik"
+            initial={{ rotate: 0 }}
+            animate={{ rotate: 360 }}
+            transition={{ duration: 2, ease: "linear" }}
+            style={{ transformOrigin: "center" }}
+          />
+          <img src={slide.plus} className="plus" alt="plus" />
+        </div>
+      </div>
+
+      {/* Description */}
+      <AnimatePresence mode="wait">
+        <motion.p
+          key={`desc-${slide.id}`}
+          initial={{ x: 150, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          exit={{ x: -150, opacity: 0 }}
+          transition={{ duration: 1.2 }}
+        >
+          <Description />
+        </motion.p>
+      </AnimatePresence>
+
+      <Link
+        to="/courses"
+        className="link"
+        style={{ backgroundColor: slide.buttonColor, color: slide.font }}
+      >
+       <span> узнать больше</span>
+      </Link>
+    </div>
+    </motion.div >
   );
 };
 
