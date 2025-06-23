@@ -250,3 +250,6 @@
     left: 50%;
     transform: translate( -50%,-50%);
 }
+.red{
+    color: #DE2C05 !important;
+}
