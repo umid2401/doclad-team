@@ -112,8 +112,10 @@ const SmartMoneySlider = () => {
     if (isAnimating.current || newIndex === index) return;
 
     let directionFix = dir;
-    if (dir === 1 && newIndex < index) directionFix = -1;
-    else if (dir === -1 && newIndex > index) directionFix = 1;
+    if ((index === 0 && newIndex === slides.length - 1)) directionFix = -1;
+    else if ((index === slides.length - 1 && newIndex === 0)) directionFix = 1;
+    else if (newIndex < index) directionFix = -1;
+    else directionFix = 1;
 
     setDirection(directionFix);
     setIndex(newIndex);
@@ -178,7 +180,7 @@ const SmartMoneySlider = () => {
               key={i}
               className={`dot ${i === index ? "active" : ""}`}
               style={{ background: i === index ? slides[i].color : undefined }}
-              onClick={() => updateIndex(i, i > index ? 1 : -1)}
+              onClick={() => updateIndex(i)}
             ></div>
           ))}
         </div>
