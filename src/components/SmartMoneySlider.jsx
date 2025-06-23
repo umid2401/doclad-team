@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import "../styles/SmartSlider.css";
 
-// Slide matnlari
 const SlideText1 = () => (
   <>
     <span>Научись </span>
@@ -22,7 +21,6 @@ const SlideText3 = () => (
   </>
 );
 
-// Slaydlar
 const slides = [
   {
     id: 1,
@@ -79,51 +77,49 @@ const slides = [
 
 const SmartMoneySlider = () => {
   const [index, setIndex] = useState(0);
+  const [direction, setDirection] = useState(1);
   const isAnimating = useRef(false);
-  const intervalId = useRef(null);
-  const pauseTimeoutId = useRef(null);
+  const intervalRef = useRef(null);
+  const timeoutRef = useRef(null);
 
   const startAutoplay = () => {
-    clearInterval(intervalId.current);
-    intervalId.current = setInterval(() => {
+    clearInterval(intervalRef.current);
+    intervalRef.current = setInterval(() => {
       if (!isAnimating.current) {
-        isAnimating.current = true;
+        setDirection(1);
         setIndex((prev) => (prev + 1) % slides.length);
-        setTimeout(() => (isAnimating.current = false), 1200);
+        isAnimating.current = true;
+        setTimeout(() => (isAnimating.current = false), 1000);
       }
     }, 2500);
   };
 
   const pauseAutoplay = () => {
-    clearInterval(intervalId.current);
-    clearTimeout(pauseTimeoutId.current);
-    pauseTimeoutId.current = setTimeout(() => {
-      startAutoplay();
-    }, 5000);
+    clearInterval(intervalRef.current);
+    clearTimeout(timeoutRef.current);
+    timeoutRef.current = setTimeout(startAutoplay, 5000);
   };
 
   useEffect(() => {
     startAutoplay();
     return () => {
-      clearInterval(intervalId.current);
-      clearTimeout(pauseTimeoutId.current);
+      clearInterval(intervalRef.current);
+      clearTimeout(timeoutRef.current);
     };
   }, []);
 
-  const updateIndex = (newIndex) => {
+  const updateIndex = (newIndex, dir = 1) => {
     if (isAnimating.current || newIndex === index) return;
-    isAnimating.current = true;
+    setDirection(dir);
     setIndex(newIndex);
-    setTimeout(() => (isAnimating.current = false), 1200);
+    isAnimating.current = true;
+    setTimeout(() => (isAnimating.current = false), 1000);
   };
 
   const handleDragEnd = (e, info) => {
     if (isAnimating.current) return;
-    if (info.offset.x < -50) {
-      updateIndex((index + 1) % slides.length);
-    } else if (info.offset.x > 50) {
-      updateIndex((index - 1 + slides.length) % slides.length);
-    }
+    if (info.offset.x < -50) updateIndex((index + 1) % slides.length, 1);
+    else if (info.offset.x > 50) updateIndex((index - 1 + slides.length) % slides.length, -1);
     pauseAutoplay();
   };
 
@@ -140,38 +136,35 @@ const SmartMoneySlider = () => {
       onDragEnd={handleDragEnd}
       style={{ overflow: "hidden", touchAction: "pan-y" }}
     >
-      {/* Hero Image */}
       <AnimatePresence mode="wait">
         <motion.div
-          key={`hero-${index}`}
+          key={`hero-${slide.id}`}
           className="hero"
-          initial={{ y: "-55%", opacity: 1 }}
+          initial={{ x: direction > 0 ? "100%" : "-100%", y:"-55%", opacity: 0 }}
           animate={{ x: "-50%", opacity: 1 }}
-          exit={{ x: "-140%", opacity: 1 }}
-          transition={{ duration: 1, ease: "easeInOut" }}
+          exit={{ x: direction > 0 ? "-150%" : "100%", opacity: 1 }}
+          transition={{ duration: 1 }}
         >
           <img src={slide.hero} alt="Hero" />
         </motion.div>
       </AnimatePresence>
 
-      {/* Currency Images */}
       <div className="currencies-container">
         <AnimatePresence mode="wait">
           {slide.currencies.map((item, i) => (
             <motion.img
-              key={`currency-${index}-${i}-${item.className}`}
+              key={`currency-${slide.id}-${item.className}-${i}`}
               src={item.src}
               className={item.className}
-              initial={{ x: 200, rotate: 60, opacity: 0 }}
+              initial={{ x: direction > 0 ? 200 : -200, rotate: 60, opacity: 0 }}
               animate={{ x: 0, rotate: 0, opacity: 1 }}
-              exit={{ x: -200, rotate: -60, opacity: 0 }}
-              transition={{ duration: 0.9, ease: "easeInOut" }}
+              exit={{ x: direction > 0 ? -200 : 200, rotate: -60, opacity: 0 }}
+              transition={{ duration: 1 }}
             />
           ))}
         </AnimatePresence>
       </div>
 
-      {/* Static Content */}
       <div className="smart">
         <div className="dots">
           {slides.map((_, i) => (
@@ -180,7 +173,7 @@ const SmartMoneySlider = () => {
               className={`dot ${i === index ? "active" : ""}`}
               style={{ background: i === index ? slides[i].color : undefined }}
               onClick={() => {
-                updateIndex(i);
+                updateIndex(i, i > index ? 1 : -1);
                 pauseAutoplay();
               }}
             ></div>
@@ -194,15 +187,16 @@ const SmartMoneySlider = () => {
               key={slide.color}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1, color: slide.color }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 1 }}
             >
               Money
             </motion.span>
           </h2>
 
           <div className="box">
-            <img
-               src="/images/new.png"
+            <motion.img
+              key={`blik-${slide.id}`}
+              src="/images/блик 2.png"
               className="blik"
               alt="blik"
               initial={{ rotate: 0 }}
@@ -214,13 +208,12 @@ const SmartMoneySlider = () => {
           </div>
         </div>
 
-        {/* Description */}
         <AnimatePresence mode="wait">
           <motion.p
-            key={`desc-${slide.id}`}
-            initial={{ x: "100%", opacity: 0 }}
+            key={`desc-${slide.id}-${slide.color}`}
+            initial={{ x: direction > 0 ? "100%" : "-100%", opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            exit={{ x: "-100%", opacity: 0 }}
+            exit={{ x: direction > 0 ? "-100%" : "100%", opacity: 0 }}
             transition={{ duration: 1 }}
           >
             <Description />
