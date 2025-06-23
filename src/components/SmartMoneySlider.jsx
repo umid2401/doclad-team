@@ -141,20 +141,20 @@ const SmartMoneySlider = () => {
       onDragEnd={handleDragEnd}
       style={{ overflow: "hidden", touchAction: "pan-y" }}
     >
-      <AnimatePresence mode="wait">
+      <AnimatePresence custom={direction} mode="wait">
         <motion.div
           key={`hero-${slide.id}`}
           className="hero"
-          initial={{ y: "-55%", opacity: 1 }}
+          initial={{ x: direction > 0 ? "100%" : "-100%", opacity: 0 }}
           animate={{ x: "-50%", opacity: 1 }}
-          exit={{ x: direction > 0 ? "-140%" : "140%", opacity: 0 }}
+          exit={{ x: direction > 0 ? "-100%" : "100%", opacity: 0 }}
           transition={{ duration: 1 }}
         >
           <img src={slide.hero} alt="Hero" />
         </motion.div>
       </AnimatePresence>
 
-      <AnimatePresence mode="wait">
+      <AnimatePresence custom={direction} mode="wait">
         <motion.div key={`currencies-${slide.id}`}>
           {slide.currencies.map((item, i) => (
             <motion.img
@@ -197,9 +197,10 @@ const SmartMoneySlider = () => {
           </h2>
 
           <div className="box">
-            <img
+            <motion.img
               key={`blik-${slide.id}`}
-              src="/images/new.png" className="blik"
+              src="/images/блик 2.png"
+              className="blik"
               alt="blik"
               initial={{ rotate: 0 }}
               animate={{ rotate: 360 }}
@@ -210,7 +211,7 @@ const SmartMoneySlider = () => {
           </div>
         </div>
 
-        <AnimatePresence mode="wait">
+        <AnimatePresence custom={direction} mode="wait">
           <motion.p
             key={`desc-${slide.id}`}
             initial={{ x: direction > 0 ? "100%" : "-100%", opacity: 0 }}
