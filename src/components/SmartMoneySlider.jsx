@@ -107,28 +107,55 @@ const SmartMoneySlider = () => {
       clearTimeout(timeoutRef.current);
     };
   }, []);
+const updateIndex = (newIndex, dir = 1) => {
+  if (isAnimating.current || newIndex === index) return;
 
-  const updateIndex = (newIndex, dir = 1) => {
-    if (isAnimating.current || newIndex === index) return;
+  let directionFix = dir;
+  if (dir === 1 && newIndex < index) directionFix = -1;
+  else if (dir === -1 && newIndex > index) directionFix = 1;
 
-    let directionFix = dir;
-    if ((index === 0 && newIndex === slides.length - 1)) directionFix = -1;
-    else if ((index === slides.length - 1 && newIndex === 0)) directionFix = 1;
-    else if (newIndex < index) directionFix = -1;
-    else directionFix = 1;
+  setDirection(directionFix);
+  setIndex(newIndex);
+  isAnimating.current = true;
 
-    setDirection(directionFix);
-    setIndex(newIndex);
-    isAnimating.current = true;
-    setTimeout(() => (isAnimating.current = false), 1000);
-  };
+  setTimeout(() => {
+    isAnimating.current = false;
+  }, 1000);
+};
 
+  // const updateIndex = (newIndex, dir = 1) => {
+  //   if (isAnimating.current || newIndex === index) return;
+
+  //   let directionFix = dir;
+  //   if ((index === 0 && newIndex === slides.length - 1)) directionFix = -1;
+  //   else if ((index === slides.length - 1 && newIndex === 0)) directionFix = 1;
+  //   else if (newIndex < index) directionFix = -1;
+  //   else directionFix = 1;
+
+  //   setDirection(directionFix);
+  //   setIndex(newIndex);
+  //   isAnimating.current = true;
+  //   setTimeout(() => (isAnimating.current = false), 1000);
+  // };
+
+  // const handleDragEnd = (e, info) => {
+  //   if (isAnimating.current) return;
+  //   if (info.offset.x < -50) updateIndex((index + 1) % slides.length, 1);
+  //   else if (info.offset.x > 50) updateIndex((index - 1 + slides.length) % slides.length, -1);
+  //   pauseAutoplay();
+  // };
   const handleDragEnd = (e, info) => {
-    if (isAnimating.current) return;
-    if (info.offset.x < -50) updateIndex((index + 1) % slides.length, 1);
-    else if (info.offset.x > 50) updateIndex((index - 1 + slides.length) % slides.length, -1);
-    pauseAutoplay();
-  };
+  if (isAnimating.current) return;
+
+  if (info.offset.x < -50) {
+    updateIndex((index + 1) % slides.length, 1);
+    pauseAutoplay(); // 👈 TO‘G‘RI joy shu
+  } else if (info.offset.x > 50) {
+    updateIndex((index - 1 + slides.length) % slides.length, -1);
+    pauseAutoplay(); // 👈 BU yerda ham
+  }
+};
+
 
   const slide = slides[index];
   const Description = slide.descriptionComponent;
