@@ -2,7 +2,6 @@ import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import "../styles/SmartSlider.css";
-import CurrencyGroup from "./CurrencyGroup";
 
 // Slide matnlari
 const SlideText1 = () => (
@@ -51,11 +50,11 @@ const slides = [
     bgClass: "bg_2",
     descriptionComponent: SlideText2,
     currencies: [
-      { src: "/images/доллар ред 1.png", className: "dol_1" },
-      { src: "/images/доллар ред 1.png", className: "dol" },
-      { src: "/images/евро ред 1.png", className: "euro" },
-      { src: "/images/фунт ред 1.png", className: "funt" },
-      { src: "/images/шв ред 1.png", className: "shv" },
+            { src: "/images/евро.png", className: "euro" },
+      { src: "/images/доллар 2.png", className: "dollar" },
+      { src: "/images/доллар 4.png", className: "dollar_1" },
+      { src: "/images/фунт.png", className: "funt" },
+      { src: "/images/шв.png", className: "shv" },
     ],
     plus: "/images/+.png",
   },
@@ -81,8 +80,6 @@ const slides = [
 const SmartMoneySlider = () => {
   const [index, setIndex] = useState(0);
   const isAnimating = useRef(false);
-  const [prevIndex, setPrevIndex] = useState(0);
-
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -96,12 +93,11 @@ const SmartMoneySlider = () => {
   }, []);
 
   const updateIndex = (newIndex) => {
-  if (isAnimating.current || newIndex === index) return;
-  isAnimating.current = true;
-  setPrevIndex(index); // <<<< saqlaymiz eski indexni
-  setIndex(newIndex);
-  setTimeout(() => (isAnimating.current = false), 1200);
-};
+    if (isAnimating.current || newIndex === index) return;
+    isAnimating.current = true;
+    setIndex(newIndex);
+    setTimeout(() => (isAnimating.current = false), 1200);
+  };
 
   const handleDragEnd = (e, info) => {
     if (isAnimating.current) return;
@@ -140,7 +136,7 @@ const SmartMoneySlider = () => {
       </AnimatePresence>
 
       {/* Currency Images */}
-      {/* <AnimatePresence mode="wait">
+      <AnimatePresence mode="wait">
         <motion.div
           key={`currencies-${slide.id}`}
 
@@ -158,9 +154,7 @@ const SmartMoneySlider = () => {
             />
           ))}
         </motion.div>
-      </AnimatePresence> */}
-<CurrencyGroup currencies={slide.currencies} slideId={slide.id} />
-
+      </AnimatePresence>
 
       {/* Static Content */}
       <div className="smart">
