@@ -110,7 +110,12 @@ const SmartMoneySlider = () => {
 
   const updateIndex = (newIndex, dir = 1) => {
     if (isAnimating.current || newIndex === index) return;
-    setDirection(dir);
+
+    let directionFix = dir;
+    if (dir === 1 && newIndex < index) directionFix = -1;
+    else if (dir === -1 && newIndex > index) directionFix = 1;
+
+    setDirection(directionFix);
     setIndex(newIndex);
     isAnimating.current = true;
     setTimeout(() => (isAnimating.current = false), 1000);
@@ -140,20 +145,21 @@ const SmartMoneySlider = () => {
         <motion.div
           key={`hero-${slide.id}`}
           className="hero"
-          initial={{ x: direction > 0 ? "100%" : "-100%", y:"-55%", opacity: 0 }}
+          initial={{ y: "-55%", opacity: 1 }}
           animate={{ x: "-50%", opacity: 1 }}
-          exit={{ x: direction > 0 ? "-150%" : "100%", opacity: 1 }}
+          exit={{ x: direction > 0 ? "-140%" : "140%", opacity: 0 }}
           transition={{ duration: 1 }}
         >
           <img src={slide.hero} alt="Hero" />
         </motion.div>
       </AnimatePresence>
 
-      <div className="currencies-container">
-        <AnimatePresence mode="wait">
+      <AnimatePresence mode="wait">
+        <motion.div key={`currencies-${slide.id}`}>
           {slide.currencies.map((item, i) => (
             <motion.img
-              key={`currency-${slide.id}-${item.className}-${i}`}
+              layout
+              key={`currency-${slide.id}-${i}-${item.className}`}
               src={item.src}
               className={item.className}
               initial={{ x: direction > 0 ? 200 : -200, rotate: 60, opacity: 0 }}
@@ -162,8 +168,8 @@ const SmartMoneySlider = () => {
               transition={{ duration: 1 }}
             />
           ))}
-        </AnimatePresence>
-      </div>
+        </motion.div>
+      </AnimatePresence>
 
       <div className="smart">
         <div className="dots">
@@ -172,10 +178,7 @@ const SmartMoneySlider = () => {
               key={i}
               className={`dot ${i === index ? "active" : ""}`}
               style={{ background: i === index ? slides[i].color : undefined }}
-              onClick={() => {
-                updateIndex(i, i > index ? 1 : -1);
-                pauseAutoplay();
-              }}
+              onClick={() => updateIndex(i, i > index ? 1 : -1)}
             ></div>
           ))}
         </div>
@@ -187,17 +190,16 @@ const SmartMoneySlider = () => {
               key={slide.color}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1, color: slide.color }}
-              transition={{ duration: 1 }}
+              transition={{ duration: 0.8 }}
             >
               Money
             </motion.span>
           </h2>
 
           <div className="box">
-            <motion.img
+            <img
               key={`blik-${slide.id}`}
-              src="/images/блик 2.png"
-              className="blik"
+              src="/images/new.png" className="blik"
               alt="blik"
               initial={{ rotate: 0 }}
               animate={{ rotate: 360 }}
@@ -210,7 +212,7 @@ const SmartMoneySlider = () => {
 
         <AnimatePresence mode="wait">
           <motion.p
-            key={`desc-${slide.id}-${slide.color}`}
+            key={`desc-${slide.id}`}
             initial={{ x: direction > 0 ? "100%" : "-100%", opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: direction > 0 ? "-100%" : "100%", opacity: 0 }}
