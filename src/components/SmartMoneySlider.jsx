@@ -50,7 +50,7 @@ const slides = [
     bgClass: "bg_2",
     descriptionComponent: SlideText2,
     currencies: [
-            { src: "/images/евро.png", className: "euro" },
+      { src: "/images/евро.png", className: "euro" },
       { src: "/images/доллар 2.png", className: "dollar" },
       { src: "/images/доллар 4.png", className: "dollar_1" },
       { src: "/images/фунт.png", className: "funt" },
@@ -138,13 +138,12 @@ const SmartMoneySlider = () => {
       {/* Currency Images */}
       <AnimatePresence mode="wait">
         <motion.div
-          key={`currencies-${slide.id}`}
+          key={`currencies-group-${index}`}
 
         >
           {slide.currencies.map((item, i) => (
             <motion.img
-              layout
-              key={`currency-${slide.id}-${i}-${item.className}`}
+              key={`currency-${index}-${i}-${item.className}`} 
               src={item.src}
               className={item.className}
               initial={{ x: 200, rotate: 60, opacity: 0 }}
