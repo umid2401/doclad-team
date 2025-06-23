@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import "../styles/SmartSlider.css";
+import CurrencyGroup from "./CurrencyGroup";
 
 // Slide matnlari
 const SlideText1 = () => (
@@ -136,13 +137,10 @@ const SmartMoneySlider = () => {
       </AnimatePresence>
 
       {/* Currency Images */}
-      <AnimatePresence mode="wait">
+      {/* <AnimatePresence mode="wait">
         <motion.div
           key={`currencies-${slide.id}`}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 1 }}
+
         >
           {slide.currencies.map((item, i) => (
             <motion.img
@@ -157,7 +155,8 @@ const SmartMoneySlider = () => {
             />
           ))}
         </motion.div>
-      </AnimatePresence>
+      </AnimatePresence> */}
+<CurrencyGroup currencies={slide.currencies} slideId={slide.id} />
 
       {/* Static Content */}
       <div className="smart">
