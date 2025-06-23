@@ -147,9 +147,9 @@ const SmartMoneySlider = () => {
         <motion.div
           key={`hero-${slide.id}`}
           className="hero"
-          initial={{ x: direction > 0 ? "100%" : "-100%", y:"-55%", opacity: 0 }}
+          initial={{ x: direction > 0 ? "100%" : "-100%", y: "-55%", opacity: 0 }}
           animate={{ x: "-50%", opacity: 1 }}
-          exit={{ x: direction > 0 ? "-100%" : "100%", opacity: 0 }}
+          exit={{ x: direction > 0 ? "-140%" : "100%", opacity: 1 }}
           transition={{ duration: 1 }}
         >
           <img src={slide.hero} alt="Hero" />
@@ -200,11 +200,11 @@ const SmartMoneySlider = () => {
 
           <div className="box">
             <img
-              
-              src="/images/new.png" 
+
+              src="/images/new.png"
               className="blik"
               alt="blik"
-              
+
             />
             <img src={slide.plus} className="plus" alt="plus" />
           </div>
