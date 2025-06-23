@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import "../styles/SmartSlider.css";
-import CurrencyGroup from "./CurrencyGroup";
+// import CurrencyGroup from "./CurrencyGroup";
 
 // Slide matnlari
 const SlideText1 = () => (
@@ -81,6 +81,8 @@ const slides = [
 const SmartMoneySlider = () => {
   const [index, setIndex] = useState(0);
   const isAnimating = useRef(false);
+  const [prevIndex, setPrevIndex] = useState(0);
+
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -94,11 +96,12 @@ const SmartMoneySlider = () => {
   }, []);
 
   const updateIndex = (newIndex) => {
-    if (isAnimating.current || newIndex === index) return;
-    isAnimating.current = true;
-    setIndex(newIndex);
-    setTimeout(() => (isAnimating.current = false), 1200);
-  };
+  if (isAnimating.current || newIndex === index) return;
+  isAnimating.current = true;
+  setPrevIndex(index); // <<<< saqlaymiz eski indexni
+  setIndex(newIndex);
+  setTimeout(() => (isAnimating.current = false), 1200);
+};
 
   const handleDragEnd = (e, info) => {
     if (isAnimating.current) return;
@@ -156,7 +159,29 @@ const SmartMoneySlider = () => {
           ))}
         </motion.div>
       </AnimatePresence> */}
-<CurrencyGroup currencies={slide.currencies} slideId={slide.id} />
+{/* <CurrencyGroup currencies={slide.currencies} slideId={slide.id} /> */}
+<AnimatePresence mode="wait">
+  <motion.div
+    key={`currencies-${prevIndex}-to-${index}`} // <<<< muhim!
+    // initial={{ opacity: 0 }}
+    // animate={{ opacity: 1 }}
+    // exit={{ opacity: 0 }}
+    // transition={{ duration: 1 }}
+  >
+    {slide.currencies.map((item, i) => (
+      <motion.img
+        layout
+        key={`currency-${slide.id}-${i}-${item.className}`}
+        src={item.src}
+        className={item.className}
+        initial={{ x: 200, rotate: 60, opacity: 0 }}
+        animate={{ x: 0, rotate: 0, opacity: 1 }}
+        exit={{ x: -200, rotate: -60, opacity: 0 }}
+        transition={{ duration: 1 }}
+      />
+    ))}
+  </motion.div>
+</AnimatePresence>
 
       {/* Static Content */}
       <div className="smart">
