@@ -141,13 +141,13 @@ const SmartMoneySlider = () => {
       dragElastic={0.1}
       dragMomentum={false}
       onDragEnd={handleDragEnd}
-      style={{ overflow: "hidden", touchAction: "pan-y" }}
+      style={{ overflow: "hidden", touchAction: "pan-y", position: "relative" }}
     >
       <AnimatePresence custom={direction} mode="wait">
         <motion.div
           key={`hero-${slide.id}`}
           className="hero"
-          initial={{ x: direction > 0 ? "100%" : "-100%", opacity: 0 }}
+          initial={{ x: direction > 0 ? "100%" : "-100%", y:"-55%", opacity: 0 }}
           animate={{ x: "-50%", opacity: 1 }}
           exit={{ x: direction > 0 ? "-100%" : "100%", opacity: 0 }}
           transition={{ duration: 1 }}
@@ -199,15 +199,12 @@ const SmartMoneySlider = () => {
           </h2>
 
           <div className="box">
-            <motion.img
-              key={`blik-${slide.id}`}
-              src="/images/блик 2.png"
+            <img
+              
+              src="/images/new.png" 
               className="blik"
               alt="blik"
-              initial={{ rotate: 0 }}
-              animate={{ rotate: 360 }}
-              transition={{ duration: 2, ease: "linear" }}
-              style={{ transformOrigin: "center" }}
+              
             />
             <img src={slide.plus} className="plus" alt="plus" />
           </div>

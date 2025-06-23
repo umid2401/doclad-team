@@ -10,7 +10,7 @@
 
 .smartslider {
     max-width: 480px;
-    overflow: hidden !important;
+    overflow-x: hidden !important;
     height: 100dvh;
     position: relative;
     margin: 0 auto;
