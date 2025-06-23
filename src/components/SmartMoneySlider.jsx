@@ -139,7 +139,10 @@ const SmartMoneySlider = () => {
       <AnimatePresence mode="wait">
         <motion.div
           key={`currencies-${slide.id}`}
-
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1 }}
         >
           {slide.currencies.map((item, i) => (
             <motion.img
