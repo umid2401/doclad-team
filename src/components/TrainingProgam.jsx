@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import '../styles/TrainingProgram.css';
 
 
- 
+
 
 const TrainingProgram = () => {
     const programRef = useRef(null);
@@ -29,16 +29,16 @@ const TrainingProgram = () => {
         }
     };
     const containerRef = useRef(null);
-useEffect(() => {
-    const handleScroll = () => {
-      if (!programRef.current) return;
-      const isScrolled = window.scrollY > 10;
-      containerRef.current.classList.toggle("scrolled", isScrolled);
-    };
+    useEffect(() => {
+        const handleScroll = () => {
+            if (!programRef.current) return;
+            const isScrolled = window.scrollY > 10;
+            containerRef.current.classList.toggle("scrolled", isScrolled);
+        };
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+        window.addEventListener("scroll", handleScroll, { passive: true });
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
 
 
@@ -51,7 +51,7 @@ useEffect(() => {
                     <li onClick={() => scrollTo(priceRef)} className="training-program__nav-item">стоимоть обучения</li>
                     <li onClick={() => scrollTo(startRef)} className="training-program__nav-item">начать обучениe</li>
                 </ul>
-                <div ref={programRef}  className="training-program__hero">
+                <div ref={programRef} className="training-program__hero">
                     <div ref={textRef} className="training-program__text">
                         <h1 className="training-program__title">ПРОГРАММА <span>ОБУЧЕНИЯ</span></h1>
                         <p className="training-program__description">
@@ -70,6 +70,7 @@ useEffect(() => {
                     <div className="course">
                         <span>курс</span>
                     </div>
+                    <img className='bil' src="/images/new.png" alt="Error" />
                     <div className="training-program__card-img">
                         <img loading='lazy' src="/images/WHO IS 2.png" alt="Who is" />
                     </div>
@@ -86,6 +87,7 @@ useEffect(() => {
                     </ul>
                 </div>
                 <div className="premium training-program__course-section ">
+                    <img className='bil' src="/images/new.png" alt="Error" />
                     <div className="training-program__card-img">
                         <img loading='lazy' src="/images/Premium 1.png" alt="Who is" />
                     </div>
@@ -106,6 +108,8 @@ useEffect(() => {
                     </ul>
                 </div>
                 <div className="market training-program__course-section ">
+                    <img className='bil' src="/images/new.png" alt="Error" />
+
                     <div className="training-program__card-img">
 
                         <img src="/images/MARKET (2) 1.png" alt="Who is" />
@@ -131,6 +135,8 @@ useEffect(() => {
                     </ul>
                 </div>
                 <div className="this training-program__course-section ">
+                    <img className='bil' src="/images/new.png" alt="Error" />
+
                     <div className="training-program__card-img">
                         <img src="/images/This is 1.png" alt="Who is" />
                     </div>
@@ -151,6 +157,7 @@ useEffect(() => {
                     </ul>
                 </div>
                 <div className="imbalance training-program__course-section ">
+                    <img className='bil' src="/images/new.png" alt="Error" />
                     <div className="training-program__card-img">
                         <img src="/images/This is (1) 1.png" alt="Who is" />
                     </div>
@@ -175,6 +182,7 @@ useEffect(() => {
                     </ul>
                 </div>
                 <div className="power training-program__course-section ">
+                    <img className='bil' src="/images/new.png" alt="Error" />
                     <div className="training-program__card-img">
                         <img src="/images/Power Blocks_ 1.png" alt="Who is" />
                     </div>
@@ -197,6 +205,8 @@ useEffect(() => {
                 </div>
 
                 <div className="delivry training-program__course-section ">
+                    <img className='bil' src="/images/new.png" alt="Error" />
+
                     <div className="training-program__card-img">
                         <img src="/images/delivery options prices 1.png" alt="Who is" />
                     </div>
@@ -217,6 +227,8 @@ useEffect(() => {
                     </ul>
                 </div>
                 <div className="smr training-program__course-section ">
+                    <img className='bil' src="/images/new.png" alt="Error" />
+
                     <div className="training-program__card-img">
                         <img src="/images/SMR & AMD 1.png" alt="Who is" />
                     </div>
@@ -236,6 +248,8 @@ useEffect(() => {
                     </ul>
                 </div>
                 <div className="correlation training-program__course-section ">
+                    <img className='bil' src="/images/new.png" alt="Error" />
+
                     <div className="training-program__card-img">
                         <img src="/images/Power Blocks_ (1) 1.png" alt="Who is" />
                     </div>
@@ -259,6 +273,8 @@ useEffect(() => {
                     </ul>
                 </div>
                 <div className="entry training-program__course-section ">
+                    <img className='bil' src="/images/new.png" alt="Error" />
+
                     <div className="training-program__card-img">
                         <img src="/images/entry models & targets 1.png" alt="Who is" />
                     </div>
@@ -280,6 +296,8 @@ useEffect(() => {
                     </ul>
                 </div>
                 <div className="indicators training-program__course-section ">
+                    <img className='bil' src="/images/new.png" alt="Error" />
+
                     <div className="training-program__card-img">
                         <img src="/images/indicators (1) 2.png" alt="Who is" />
                     </div>
@@ -301,6 +319,7 @@ useEffect(() => {
                     </ul>
                 </div>
                 <div className="risk training-program__course-section ">
+                    <img className='bil' src="/images/new.png" alt="Error" />
                     <div className="training-program__card-img">
                         <img src="/images/MARKET (3) 1.png" alt="Who is" />
                     </div>
@@ -320,6 +339,7 @@ useEffect(() => {
                     </ul>
                 </div>
                 <div className="last training-program__course-section  ">
+                    <img className='bil' src="/images/new.png" alt="Error" />
                     <div className="training-program__card-img">
                         <img src="/images/bonus (1) 1.png" alt="Who is" />
                     </div>

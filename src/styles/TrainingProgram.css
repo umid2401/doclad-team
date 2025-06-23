@@ -176,9 +176,11 @@ transition: transform 0.25s ease-out;}
   background-position: center, top;
   padding: 20px;
   border-radius: 20px;
-  overflow: hidden;
+  /* overflow: hidden; */
   margin-bottom: 20px;
+  position: relative;
 }
+
 
 .title {
   font-size: 28px;
@@ -252,6 +254,17 @@ transition: transform 0.25s ease-out;}
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+ .bil{
+    width: 320px;    
+    position: absolute; 
+    top: -70px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100 !important;
+}
+.card .bil{
+  top: 0;
 }
 .top_img{
   /* position: absolute; */

@@ -205,9 +205,9 @@ const SmartMoneySlider = () => {
       <Link
         to="/courses"
         className="link"
-        // style={{ backgroundColor: slide.buttonColor, color: slide.font }}
+         style={{ backgroundColor: slide.buttonColor, color: slide.font }}
       >
-        {/* <img src="/public/images/bil.png" alt="Bil" /> */}
+        <img  className="bil" src="/images/new.png" alt="Bil" />
        <span> узнать больше</span>
       </Link>
     </div>

@@ -236,21 +236,17 @@
     font-weight: 900;
     letter-spacing: 6px;
     font-style: italic;
-    height: 100px;
+    height: 60px;
     background: #21CD5A;
-    /* border-radius: 30px; */
-    /* background: rgba(33, 205, 90, 1); */
-    /* box-shadow: 0px 0px 8px 8px rgba(255, 255, 255, 0.46); */
-    background: url("/public/images/блик\(2\).png");
-    background-size: 50%;
-    background-repeat: no-repeat;
-    background-position: center;
+    border-radius: 30px;
+    background: rgba(33, 205, 90, 1);
+    box-shadow: 0px 0px 8px 8px rgba(255, 255, 255, 0.46);
     position: relative;
 }
 .smart .link .bil{
+    width: 320px;    
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    z-index: 5 !important;
+    transform: translateY( -50%);
 }
