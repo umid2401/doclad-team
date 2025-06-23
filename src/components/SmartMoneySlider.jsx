@@ -80,16 +80,34 @@ const slides = [
 const SmartMoneySlider = () => {
   const [index, setIndex] = useState(0);
   const isAnimating = useRef(false);
+  const intervalId = useRef(null);
+  const pauseTimeoutId = useRef(null);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
+  const startAutoplay = () => {
+    clearInterval(intervalId.current);
+    intervalId.current = setInterval(() => {
       if (!isAnimating.current) {
         isAnimating.current = true;
         setIndex((prev) => (prev + 1) % slides.length);
         setTimeout(() => (isAnimating.current = false), 1200);
       }
     }, 2500);
-    return () => clearInterval(interval);
+  };
+
+  const pauseAutoplay = () => {
+    clearInterval(intervalId.current);
+    clearTimeout(pauseTimeoutId.current);
+    pauseTimeoutId.current = setTimeout(() => {
+      startAutoplay();
+    }, 5000);
+  };
+
+  useEffect(() => {
+    startAutoplay();
+    return () => {
+      clearInterval(intervalId.current);
+      clearTimeout(pauseTimeoutId.current);
+    };
   }, []);
 
   const updateIndex = (newIndex) => {
@@ -106,6 +124,7 @@ const SmartMoneySlider = () => {
     } else if (info.offset.x > 50) {
       updateIndex((index - 1 + slides.length) % slides.length);
     }
+    pauseAutoplay();
   };
 
   const slide = slides[index];
@@ -136,7 +155,7 @@ const SmartMoneySlider = () => {
       </AnimatePresence>
 
       {/* Currency Images */}
-      <AnimatePresence mode="wait">
+      <div className="currencies-container">
         <AnimatePresence mode="wait">
           {slide.currencies.map((item, i) => (
             <motion.img
@@ -146,11 +165,11 @@ const SmartMoneySlider = () => {
               initial={{ x: 200, rotate: 60, opacity: 0 }}
               animate={{ x: 0, rotate: 0, opacity: 1 }}
               exit={{ x: -200, rotate: -60, opacity: 0 }}
-              transition={{ duration: 1 }}
+              transition={{ duration: 0.9, ease: "easeInOut" }}
             />
           ))}
         </AnimatePresence>
-      </AnimatePresence>
+      </div>
 
       {/* Static Content */}
       <div className="smart">
@@ -160,7 +179,10 @@ const SmartMoneySlider = () => {
               key={i}
               className={`dot ${i === index ? "active" : ""}`}
               style={{ background: i === index ? slides[i].color : undefined }}
-              onClick={() => updateIndex(i)}
+              onClick={() => {
+                updateIndex(i);
+                pauseAutoplay();
+              }}
             ></div>
           ))}
         </div>
@@ -179,9 +201,8 @@ const SmartMoneySlider = () => {
           </h2>
 
           <div className="box">
-            <motion.img
-              key={`blik-${slide.id}`}
-              src="/images/блик 2.png"
+            <img
+               src="/images/new.png"
               className="blik"
               alt="blik"
               initial={{ rotate: 0 }}
