@@ -81,10 +81,13 @@ const SmartMoneySlider = () => {
   const [index, setIndex] = useState(0);
   const isAnimating = useRef(false);
 
-  // Avto slayd
   useEffect(() => {
     const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % slides.length);
+      if (!isAnimating.current) {
+        isAnimating.current = true;
+        setIndex((prev) => (prev + 1) % slides.length);
+        setTimeout(() => (isAnimating.current = false), 1200);
+      }
     }, 2500);
     return () => clearInterval(interval);
   }, []);
@@ -121,9 +124,9 @@ const SmartMoneySlider = () => {
       {/* Hero Image */}
       <AnimatePresence mode="wait">
         <motion.div
-           key={`hero-${index}`}
+          key={`hero-${index}`}
           className="hero"
-          initial={{ y: "-50%", opacity: 1 }}
+          initial={{ y: "-55%", opacity: 1 }}
           animate={{ x: "-50%", opacity: 1 }}
           exit={{ x: "-140%", opacity: 1 }}
           transition={{ duration: 1, ease: "easeInOut" }}
@@ -134,10 +137,17 @@ const SmartMoneySlider = () => {
 
       {/* Currency Images */}
       <AnimatePresence mode="wait">
-        <motion.div key={`currencies-${slide.id}`}>
+        <motion.div
+          key={`currencies-${slide.id}`}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1 }}
+        >
           {slide.currencies.map((item, i) => (
             <motion.img
-              key={`${item.src}-${slide.id}-${i}`}
+              layout
+              key={`currency-${slide.id}-${i}-${item.className}`}
               src={item.src}
               className={item.className}
               initial={{ x: 200, rotate: 60, opacity: 0 }}
@@ -148,70 +158,71 @@ const SmartMoneySlider = () => {
           ))}
         </motion.div>
       </AnimatePresence>
+
       {/* Static Content */}
       <div className="smart">
-      <div className="dots">
-        {slides.map((_, i) => (
-          <div
-            key={i}
-            className={`dot ${i === index ? "active" : ""}`}
-            style={{ background: i === index ? slides[i].color : undefined }}
-            onClick={() => updateIndex(i)} // 🔁 endi har qanaqa yo‘nalishga o‘tadi
-          ></div>
-        ))}
-      </div>
-
-      <div className="item">
-        <h2>
-          Smart <br />
-          <motion.span
-            key={slide.color}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1, color: slide.color }}
-            transition={{ duration: 0.8 }}
-          >
-            Money
-          </motion.span>
-        </h2>
-
-        <div className="box">
-          <img
-            key={`blik-${slide.id}`}
-            src="/images/блик 2.png"
-            className="blik"
-            alt="blik"
-            initial={{ rotate: 0 }}
-            animate={{ rotate: 360 }}
-            transition={{ duration: 2, ease: "linear" }}
-            style={{ transformOrigin: "center" }}
-          />
-          <img src={slide.plus} className="plus" alt="plus" />
+        <div className="dots">
+          {slides.map((_, i) => (
+            <div
+              key={i}
+              className={`dot ${i === index ? "active" : ""}`}
+              style={{ background: i === index ? slides[i].color : undefined }}
+              onClick={() => updateIndex(i)}
+            ></div>
+          ))}
         </div>
-      </div>
 
-      {/* Description */}
-      <AnimatePresence mode="wait">
-        <motion.p
-          key={`desc-${slide.id}`}
-          initial={{ x: "100%", opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          exit={{ x: "-100%", opacity: 0 }}
-          transition={{ duration: 1 }}
+        <div className="item">
+          <h2>
+            Smart <br />
+            <motion.span
+              key={slide.color}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1, color: slide.color }}
+              transition={{ duration: 0.8 }}
+            >
+              Money
+            </motion.span>
+          </h2>
+
+          <div className="box">
+            <motion.img
+              key={`blik-${slide.id}`}
+              src="/images/блик 2.png"
+              className="blik"
+              alt="blik"
+              initial={{ rotate: 0 }}
+              animate={{ rotate: 360 }}
+              transition={{ duration: 2, ease: "linear" }}
+              style={{ transformOrigin: "center" }}
+            />
+            <img src={slide.plus} className="plus" alt="plus" />
+          </div>
+        </div>
+
+        {/* Description */}
+        <AnimatePresence mode="wait">
+          <motion.p
+            key={`desc-${slide.id}`}
+            initial={{ x: "100%", opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: "-100%", opacity: 0 }}
+            transition={{ duration: 1 }}
+          >
+            <Description />
+          </motion.p>
+        </AnimatePresence>
+
+        <Link
+          to="/courses"
+          className="link"
+          style={{ backgroundColor: slide.buttonColor, color: slide.font }}
         >
-          <Description />
-        </motion.p>
-      </AnimatePresence>
-
-      <Link
-        to="/courses"
-        className="link"
-         style={{ backgroundColor: slide.buttonColor, color: slide.font }}
-      >
-        <img  className="bil" src="/images/new.png" alt="Bil" />
-       <span> узнать больше</span>
-      </Link>
-    </div>
-    </motion.div >
+          <img className="bil" src="/images/new.png" alt="Bil" />
+          <span> узнать больше</span>
+        </Link>
+      </div>
+    </motion.div>
   );
 };
 

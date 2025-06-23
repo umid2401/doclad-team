@@ -103,9 +103,8 @@
     z-index: 1;
 }
 
-.s {
-    color: #D2C205 !important;
-}
+
+ 
 
 .hero {
     width: 420px;
@@ -154,7 +153,7 @@
 }
 
 .smart h2 {
-    font-size: 50px;
+    font-size: 55px;
     text-transform: uppercase;
     font-weight: 900;
     color: #FFFFFF;
@@ -234,7 +233,7 @@
     color: #000000;
     text-transform: uppercase;
     font-weight: 900;
-    letter-spacing: 6px;
+    letter-spacing: 3px;
     font-style: italic;
     height: 60px;
     background: #21CD5A;
@@ -242,6 +241,7 @@
     background: rgba(33, 205, 90, 1);
     box-shadow: 0px 0px 8px 8px rgba(255, 255, 255, 0.46);
     position: relative;
+    margin-bottom: 10px;
 }
 .smart .link .bil{
     width: 320px;    
