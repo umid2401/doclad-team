@@ -78,6 +78,7 @@ const slides = [
 const SmartMoneySlider = () => {
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState(1);
+  const [isDragging, setIsDragging] = useState(false);  
   const isAnimating = useRef(false);
   const intervalRef = useRef(null);
   const timeoutRef = useRef(null);
@@ -140,7 +141,7 @@ const SmartMoneySlider = () => {
       className={`smartslider ${slide.bgClass}`}
       drag="x"
       dragConstraints={{ left: 0, right: 0 }}
-      dragElastic={0.1}
+      dragElastic={0}
       dragMomentum={false}
       onDragEnd={handleDragEnd}
       style={{ overflow: "hidden", touchAction: "pan-y", position: "relative" }}
@@ -149,10 +150,10 @@ const SmartMoneySlider = () => {
         <motion.div
           key={`hero-${slide.id}`}
           className="hero"
-          style={{ position: "absolute", top: 0, left: "50%", width: "100%", height: "100%",  zIndex: 1 }}
+          style={{ position: "absolute", top: 0, left: "0%", width: "100%", height: "100%", zIndex: 1 }}
           initial={{ x: direction > 0 ? "100%" : "-100%", opacity: 0 }}
-          animate={{ x: "-50%", opacity: 1 }}
-          exit={{ x: direction > 0 ? "-150%" : "100%", opacity: 1 }}
+          animate={{ x: 0, opacity: 1 }}
+          exit={{ x: direction > 0 ? "-100%" : "100%", opacity: 1 }}
           transition={{ duration: 1 }}
         >
           <img src={slide.hero} alt="Hero" />
