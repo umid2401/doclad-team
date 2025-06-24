@@ -76,25 +76,32 @@ const slides = [
 ];
 
 const SmartMoneySlider = () => {
-  const [index, setIndex] = useState(0);
-  const [direction, setDirection] = useState(1);
-  const [isDragging, setIsDragging] = useState(false);  
-  const isAnimating = useRef(false);
-  const intervalRef = useRef(null);
-  const timeoutRef = useRef(null);
+  const [index, setIndex] = useState(0);               // Joriy slide
+  const [direction, setDirection] = useState(0);       // -1: chapga, 1: o'ngga
+  const isAnimating = useRef(false);                   // Animatsiya holati
+  const intervalRef = useRef(null);                    // Autoplay interval
+  const timeoutRef = useRef(null);                     // Autoplay delay
 
+  // 🔁 Autoplayni boshlash
   const startAutoplay = () => {
-    clearInterval(intervalRef.current);
-    intervalRef.current = setInterval(() => {
-      if (!isAnimating.current) {
+  clearInterval(intervalRef.current);
+  intervalRef.current = setInterval(() => {
+    if (!isAnimating.current) {
+      setIndex(prevIndex => {
+        const newIndex = (prevIndex + 1) % slides.length;
         setDirection(1);
-        setIndex((prev) => (prev + 1) % slides.length);
         isAnimating.current = true;
-        setTimeout(() => (isAnimating.current = false), 1000);
-      }
-    }, 2500);
-  };
+        setTimeout(() => {
+          isAnimating.current = false;
+        }, 1000);
+        return newIndex;
+      });
+    }
+  }, 2500);
+};
 
+
+  // ⏸ Autoplayni vaqtincha to‘xtatish
   const pauseAutoplay = () => {
     clearInterval(intervalRef.current);
     clearTimeout(timeoutRef.current);
@@ -109,30 +116,44 @@ const SmartMoneySlider = () => {
     };
   }, []);
 
-  const updateIndex = (newIndex, dir = 1) => {
+  // ✅ Slide almashtiruvchi asosiy funksiya
+  const triggerSlide = (newIndex, dir) => {
     if (isAnimating.current || newIndex === index) return;
 
-    let directionFix = dir;
-    if (dir === 1 && newIndex < index) directionFix = -1;
-    else if (dir === -1 && newIndex > index) directionFix = 1;
+    const total = slides.length;
+    const wrappedIndex = (newIndex + total) % total;
 
-    setDirection(directionFix);
-    setIndex(newIndex);
+    setDirection(dir);
+    setIndex(wrappedIndex);
     isAnimating.current = true;
-    setTimeout(() => (isAnimating.current = false), 1000);
+
+    setTimeout(() => {
+      isAnimating.current = false;
+    }, 1000);
   };
 
+  // 🖐️ Drag tugaganda bajariladigan ish
   const handleDragEnd = (e, info) => {
     if (isAnimating.current) return;
     if (info.offset.x < -50) {
-      updateIndex((index + 1) % slides.length, 1);
+      triggerSlide(index + 1, 1);    // O‘ngga
       pauseAutoplay();
     } else if (info.offset.x > 50) {
-      updateIndex((index - 1 + slides.length) % slides.length, -1);
+      triggerSlide(index - 1, -1);   // Chapga
       pauseAutoplay();
     }
   };
 
+  // 🔘 Dot bosilganda
+  const handleDotClick = (targetIndex) => {
+    if (targetIndex === index || isAnimating.current) return;
+
+    const dir = targetIndex > index ? 1 : -1;
+    triggerSlide(targetIndex, dir);
+    pauseAutoplay();
+  };
+
+  // 🔄 Hozirgi slayd
   const slide = slides[index];
   const Description = slide.descriptionComponent;
 
@@ -184,10 +205,7 @@ const SmartMoneySlider = () => {
               key={i}
               className={`dot ${i === index ? "active" : ""}`}
               style={{ background: i === index ? slides[i].color : undefined }}
-              onClick={() => {
-                updateIndex(i, i > index ? 1 : -1);
-                pauseAutoplay();
-              }}
+             onClick={() => handleDotClick(i)}
             ></div>
           ))}
         </div>
