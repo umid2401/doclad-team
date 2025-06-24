@@ -176,7 +176,7 @@ const handleDragEnd = (e, info) => {
         <motion.div
           key={`hero-${slide.id}`}
           className="hero"
-          style={{ position: "absolute", top: 0, left: "0%", width: "100%", height: "100%", zIndex: 1 }}
+          style={{ position: "absolute", top: "-30px", left: "0%", width: "100%", height: "100%", zIndex: 1 }}
           initial={{ x: direction > 0 ? "100%" : "-100%", opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           exit={{ x: direction > 0 ? "-100%" : "100%", opacity: 1 }}
