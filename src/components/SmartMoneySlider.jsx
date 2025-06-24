@@ -115,43 +115,48 @@ const SmartMoneySlider = () => {
       clearTimeout(timeoutRef.current);
     };
   }, []);
+const getDirection = (current, target, total) => {
+  const diff = target - current;
+  if (Math.abs(diff) === total - 1) {
+    return diff > 0 ? -1 : 1; // aylanish bo‘yicha qarshi yo‘nalishda eng qisqa yo‘l
+  }
+  return diff > 0 ? 1 : -1;
+};
 
   // ✅ Slide almashtiruvchi asosiy funksiya
-  const triggerSlide = (newIndex, dir) => {
-    if (isAnimating.current || newIndex === index) return;
+ const triggerSlide = (newIndexRaw) => {
+  const total = slides.length;
+  const newIndex = (newIndexRaw + total) % total;
+  const dir = getDirection(index, newIndex, total);
 
-    const total = slides.length;
-    const wrappedIndex = (newIndex + total) % total;
+  if (isAnimating.current || newIndex === index) return;
 
-    setDirection(dir);
-    setIndex(wrappedIndex);
-    isAnimating.current = true;
+  setDirection(dir);
+  setIndex(newIndex);
+  isAnimating.current = true;
+  setTimeout(() => {
+    isAnimating.current = false;
+  }, 1000);
+};
 
-    setTimeout(() => {
-      isAnimating.current = false;
-    }, 1000);
-  };
 
-  // 🖐️ Drag tugaganda bajariladigan ish
-  const handleDragEnd = (e, info) => {
-    if (isAnimating.current) return;
-    if (info.offset.x < -50) {
-      triggerSlide(index + 1, 1);    // O‘ngga
-      pauseAutoplay();
-    } else if (info.offset.x > 50) {
-      triggerSlide(index - 1, -1);   // Chapga
-      pauseAutoplay();
-    }
-  };
-
-  // 🔘 Dot bosilganda
   const handleDotClick = (targetIndex) => {
-    if (targetIndex === index || isAnimating.current) return;
+  if (targetIndex === index || isAnimating.current) return;
+  triggerSlide(targetIndex);
+  pauseAutoplay();
+};
 
-    const dir = targetIndex > index ? 1 : -1;
-    triggerSlide(targetIndex, dir);
+const handleDragEnd = (e, info) => {
+  if (isAnimating.current) return;
+  if (info.offset.x < -50) {
+    triggerSlide(index + 1);
     pauseAutoplay();
-  };
+  } else if (info.offset.x > 50) {
+    triggerSlide(index - 1);
+    pauseAutoplay();
+  }
+};
+
 
   // 🔄 Hozirgi slayd
   const slide = slides[index];
