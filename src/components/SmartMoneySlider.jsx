@@ -93,7 +93,7 @@ const SmartMoneySlider = () => {
         isAnimating.current = true;
         setTimeout(() => {
           isAnimating.current = false;
-        }, 4000);
+        }, 6000);
         return newIndex;
       });
     }
