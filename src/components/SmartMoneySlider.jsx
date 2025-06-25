@@ -76,32 +76,32 @@ const slides = [
 ];
 
 const SmartMoneySlider = () => {
-  const [index, setIndex] = useState(0);               // Joriy slide
-  const [direction, setDirection] = useState(0);       // -1: chapga, 1: o'ngga
-  const isAnimating = useRef(false);                   // Animatsiya holati
-  const intervalRef = useRef(null);                    // Autoplay interval
-  const timeoutRef = useRef(null);                     // Autoplay delay
+  const [index, setIndex] = useState(0);
+  const [direction, setDirection] = useState(null); // null => no initial animation
+  const isAnimating = useRef(false);
+  const intervalRef = useRef(null);
+  const timeoutRef = useRef(null);
+  const [hasMounted, setHasMounted] = useState(false);
 
-  // 🔁 Autoplayni boshlash
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
   const startAutoplay = () => {
-  clearInterval(intervalRef.current);
-  intervalRef.current = setInterval(() => {
-    if (!isAnimating.current) {
-      setIndex(prevIndex => {
-        const newIndex = (prevIndex + 1) % slides.length;
-        setDirection(1);
-        isAnimating.current = true;
-        setTimeout(() => {
-          isAnimating.current = false;
-        }, 6000);
-        return newIndex;
-      });
-    }
-  }, 2500);
-};
+    clearInterval(intervalRef.current);
+    intervalRef.current = setInterval(() => {
+      if (!isAnimating.current) {
+        setIndex(prev => {
+          const next = (prev + 1) % slides.length;
+          setDirection(1);
+          isAnimating.current = true;
+          setTimeout(() => (isAnimating.current = false), 1000);
+          return next;
+        });
+      }
+    }, 6000);
+  };
 
-
-  // ⏸ Autoplayni vaqtincha to‘xtatish
   const pauseAutoplay = () => {
     clearInterval(intervalRef.current);
     clearTimeout(timeoutRef.current);
@@ -115,52 +115,45 @@ const SmartMoneySlider = () => {
       clearTimeout(timeoutRef.current);
     };
   }, []);
-const getDirection = (current, target, total) => {
-  const diff = target - current;
-  if (Math.abs(diff) === total - 1) {
-    return diff > 0 ? -1 : 1; // aylanish bo‘yicha qarshi yo‘nalishda eng qisqa yo‘l
-  }
-  return diff > 0 ? 1 : -1;
-};
 
-  // ✅ Slide almashtiruvchi asosiy funksiya
- const triggerSlide = (newIndexRaw) => {
-  const total = slides.length;
-  const newIndex = (newIndexRaw + total) % total;
-  const dir = getDirection(index, newIndex, total);
+  const getDirection = (current, target, total) => {
+    const diff = target - current;
+    if (Math.abs(diff) === total - 1) return diff > 0 ? -1 : 1;
+    return diff > 0 ? 1 : -1;
+  };
 
-  if (isAnimating.current || newIndex === index) return;
+  const triggerSlide = (newIndexRaw) => {
+    const total = slides.length;
+    const newIndex = (newIndexRaw + total) % total;
+    if (isAnimating.current || newIndex === index) return;
 
-  setDirection(dir);
-  setIndex(newIndex);
-  isAnimating.current = true;
-  setTimeout(() => {
-    isAnimating.current = false;
-  }, 1000);
-};
-
+    const dir = getDirection(index, newIndex, total);
+    setDirection(dir);
+    setIndex(newIndex);
+    isAnimating.current = true;
+    setTimeout(() => (isAnimating.current = false), 1000);
+  };
 
   const handleDotClick = (targetIndex) => {
-  if (targetIndex === index || isAnimating.current) return;
-  triggerSlide(targetIndex);
-  pauseAutoplay();
-};
-
-const handleDragEnd = (e, info) => {
-  if (isAnimating.current) return;
-  if (info.offset.x < -50) {
-    triggerSlide(index + 1);
+    if (targetIndex === index || isAnimating.current) return;
+    triggerSlide(targetIndex);
     pauseAutoplay();
-  } else if (info.offset.x > 50) {
-    triggerSlide(index - 1);
+  };
+
+  const handleDragEnd = (e, info) => {
+    if (isAnimating.current) return;
+    if (info.offset.x < -50) {
+      triggerSlide(index + 1);
+    } else if (info.offset.x > 50) {
+      triggerSlide(index - 1);
+    }
     pauseAutoplay();
-  }
-};
+  };
 
-
-  // 🔄 Hozirgi slayd
   const slide = slides[index];
   const Description = slide.descriptionComponent;
+
+  if (!hasMounted) return null;
 
   return (
     <motion.div
@@ -174,12 +167,12 @@ const handleDragEnd = (e, info) => {
     >
       <AnimatePresence custom={direction} mode="wait">
         <motion.div
-          key={`hero-${slide.id}`}
+          key={`hero-${index}`}
           className="hero"
           style={{ position: "absolute", top: "-30px", left: "0%", width: "100%", height: "100%", zIndex: 1 }}
-          initial={{ x: direction > 0 ? "100%" : "-100%", opacity: 0 }}
+          initial={direction !== null ? { x: direction > 0 ? "100%" : "-100%", opacity: 0 } : false}
           animate={{ x: 0, opacity: 1 }}
-          exit={{ x: direction > 0 ? "-100%" : "100%", opacity: 1 }}
+          exit={direction !== null ? { x: direction > 0 ? "-100%" : "100%", opacity: 1 } : false}
           transition={{ duration: 1 }}
         >
           <img src={slide.hero} alt="Hero" />
@@ -187,16 +180,16 @@ const handleDragEnd = (e, info) => {
       </AnimatePresence>
 
       <AnimatePresence custom={direction} mode="wait">
-        <motion.div key={`currencies-${slide.id}`} style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}>
+        <motion.div key={`currencies-${index}`} style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}>
           {slide.currencies.map((item, i) => (
             <motion.img
               layout
-              key={`currency-${slide.id}-${i}-${item.className}`}
+              key={`currency-${index}-${i}`}
               src={item.src}
               className={item.className}
-              initial={{ x: direction > 0 ? 200 : -200, rotate: 60, opacity: 0 }}
+              initial={direction !== null ? { x: direction > 0 ? 200 : -200, rotate: 60, opacity: 0 } : false}
               animate={{ x: 0, rotate: 0, opacity: 1 }}
-              exit={{ x: direction > 0 ? -200 : 200, rotate: -60, opacity: 0 }}
+              exit={direction !== null ? { x: direction > 0 ? -200 : 200, rotate: -60, opacity: 0 } : false}
               transition={{ duration: 1 }}
             />
           ))}
@@ -210,7 +203,7 @@ const handleDragEnd = (e, info) => {
               key={i}
               className={`dot ${i === index ? "active" : ""}`}
               style={{ background: i === index ? slides[i].color : undefined }}
-             onClick={() => handleDotClick(i)}
+              onClick={() => handleDotClick(i)}
             ></div>
           ))}
         </div>
@@ -222,15 +215,15 @@ const handleDragEnd = (e, info) => {
               key={slide.color}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1, color: slide.color }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 1 }}
             >
               Money
             </motion.span>
           </h2>
 
           <div className="box">
-            <img
-              key={`blik-${slide.id}`}
+            <motion.img
+              key={`blik-${index}`}
               src="/images/new.png"
               className="blik"
               alt="blik"
@@ -245,10 +238,10 @@ const handleDragEnd = (e, info) => {
 
         <AnimatePresence custom={direction} mode="wait">
           <motion.p
-            key={`desc-${slide.id}`}
-            initial={{ x: direction > 0 ? "100%" : "-100%", opacity: 0 }}
+            key={`desc-${index}`}
+            initial={direction !== null ? { x: direction > 0 ? "100%" : "-100%", opacity: 0 } : false}
             animate={{ x: 0, opacity: 1 }}
-            exit={{ x: direction > 0 ? "-100%" : "100%", opacity: 0 }}
+            exit={direction !== null ? { x: direction > 0 ? "-100%" : "100%", opacity: 0 } : false}
             transition={{ duration: 1 }}
           >
             <Description />
