@@ -80,10 +80,10 @@ const TrainingProgram = () => {
                     </div>
 
                     <ul className="training-program__list">
-                        <li>что из себя представляет <span className="highlight">концепция</span>.</li>
-                        <li>основной принцип <span className="highlight">Smart Money</span>.</li>
-                        <li>этапы работы <span className="highlight">Smart Money</span>.</li>
-                        <li>зачем трейдеру знать про <span className="highlight">Smart Money</span>.</li>
+                        <li>что из себя представляет <span className="highlight">концепция.</span></li>
+                        <li>основной принцип <span className="highlight">Smart Money.</span></li>
+                        <li>этапы работы <span className="highlight">Smart Money.</span></li>
+                        <li>зачем трейдеру знать про <span className="highlight">Smart Money.</span></li>
                     </ul>
                 </div>
                 <div className="premium training-program__course-section ">
@@ -96,18 +96,18 @@ const TrainingProgram = () => {
 
                     </div>
                     <ul className="training-program__list">
-                        <li>ЧТО ТАКОЕ <span class="highlight">ФРАКТАЛ</span>.</li>
-                        <li>ЧТО ТАКОЕ <span class="highlight">SWING-ДВИЖЕНИЕ</span>.</li>
-                        <li>ЧТО ТАКОЕ <span class="highlight">PREMIUM И DISCOUNT</span>.</li>
-                        <li>ИЗ ЧЕГО СОСТОИТ <span class="highlight">PREMIUM И DISCOUNT</span>.</li>
-                        <li>ЛОГИКА РАБОТЫ <span class="highlight">PREMIUM И DISCOUNT</span>.</li>
-                        <li>ПРИМЕРЫ РАБОТЫ С <span class="highlight">PREMIUM И DISCOUNT</span>.</li>
+                        <li>ЧТО ТАКОЕ <span class="highlight">ФРАКТАЛ.</span></li>
+                        <li>ЧТО ТАКОЕ <span class="highlight">SWING-ДВИЖЕНИЕ.</span></li>
+                        <li>ЧТО ТАКОЕ <span class="highlight">PREMIUM И DISCOUNT.</span></li>
+                        <li>ИЗ ЧЕГО СОСТОИТ <span class="highlight">PREMIUM И DISCOUNT.</span></li>
+                        <li>ЛОГИКА РАБОТЫ <span class="highlight">PREMIUM И DISCOUNT.</span></li>
+                        <li>ПРИМЕРЫ РАБОТЫ С <span class="highlight">PREMIUM И DISCOUNT.</span></li>
                         <li>ДОПОЛНИТЕЛЬНЫЙ МАТЕРИАЛ ПО ТЕМЕ.</li>
                         <li>РАЗБОРЫ НА ГРАФИКЕ.</li>
-                        <li>ДОМАШНЕЕ <span class="highlight">ЗАДАНИЕ</span>.</li>
+                        <li>ДОМАШНЕЕ <span class="highlight">ЗАДАНИЕ.</span></li>
                     </ul>
                 </div>
-                <div className="market training-program__course-section ">
+                <div className="market training-program__course-section card_4 ">
                     <img className='bil' src="/images/new.png" alt="Error" />
 
                     <div className="training-program__card-img">
@@ -120,21 +120,21 @@ const TrainingProgram = () => {
                     </div>
                     <ul className="training-program__list">
 
-                        <li>ЧТО ТАКОЕ <span class="highlight">СТРУКТУРА РЫНКА</span>.</li>
-                        <li>КАКАЯ БЫВАЕТ <span class="highlight">СТРУКТУРА РЫНКА</span>.</li>
+                        <li>ЧТО ТАКОЕ <span class="highlight">СТРУКТУРА РЫНКА.</span></li>
+                        <li>КАКАЯ БЫВАЕТ <span class="highlight">СТРУКТУРА РЫНКА.</span></li>
                         <li>ЧЕМ ХАРАКТЕРИЗУЕТСЯ КАЖДОЕ СОСТОЯНИЕ.</li>
-                        <li><span class="highlight">CHOCE И ЕГО ХАРАКТЕРИСТИКА</span>.</li>
-                        <li><span class="highlight">BOS И ЕГО ХАРАКТЕРИСТИКА</span>.</li>
-                        <li><span class="highlight">BOS CONFIRMED И ЕГО ХАРАКТЕРИСТИКА</span>.</li>
+                        <li><span class="highlight">CHOCE </span> И ЕГО ХАРАКТЕРИСТИКА.</li>
+                        <li><span class="highlight">BOS </span> И ЕГО ХАРАКТЕРИСТИКА.</li>
+                        <li><span class="highlight">BOS </span> CONFIRMED И ЕГО ХАРАКТЕРИСТИКА.</li>
                         <li>ВАРИАНТЫ СЛОМА СТРУКТУРЫ.</li>
-                        <li>ЧТО ТАКОЕ <span class="highlight">СУБСТРУКТУРА</span>.</li>
-                        <li><span class="highlight">СИНХРОНИЗАЦИЯ ТАЙМФРЕЙМОВ</span>.</li>
+                        <li>ЧТО ТАКОЕ <span class="highlight">СУБСТРУКТУРА.</span></li>
+                        <li><span class="highlight">СИНХРОНИЗАЦИЯ </span>ТАЙМФРЕЙМОВ.</li>
                         <li>ПРИМЕРЫ РАБОТЫ СО СТРУКТУРОЙ.</li>
                         <li>РАЗБОРЫ НА ГРАФИКЕ.</li>
-                        <li>ДОМАШНЕЕ <span class="highlight">ЗАДАНИЕ</span>.</li>
+                        <li>ДОМАШНЕЕ <span class="highlight">ЗАДАНИЕ.</span></li>
                     </ul>
                 </div>
-                <div className="this training-program__course-section ">
+                <div className="this training-program__course-section card_4 ">
                     <img className='bil' src="/images/new.png" alt="Error" />
 
                     <div className="training-program__card-img">
@@ -144,19 +144,19 @@ const TrainingProgram = () => {
                         <img loading='lazy' src="/images/Rectangle 105.png" alt="Rectangle" />
                     </div>
                     <ul className="training-program__list">
-                        <li>ЧТО ТАКОЕ <span class="highlight">ЛИКВИДНОСТЬ</span>.</li>
-                        <li>ВИДЫ <span class="highlight">ЛИКВИДНОСТИ</span>.</li>
+                        <li>ЧТО ТАКОЕ <span class="highlight">ЛИКВИДНОСТЬ.</span></li>
+                        <li>ВИДЫ <span class="highlight">ЛИКВИДНОСТИ.</span></li>
                         <li>ХАРАКТЕРИСТИКА КАЖДОГО ВИДА.</li>
-                        <li>ЧТО ТАКОЕ <span class="highlight">INDUCEMENT</span>.</li>
-                        <li><span class="highlight">ЛИКВИДНОСТЬ + СТРУКТУРА</span>.</li>
+                        <li>ЧТО ТАКОЕ <span class="highlight">INDUCEMENT.</span></li>
+                        <li><span class="highlight">ЛИКВИДНОСТЬ</span> + СТРУКТУРА.</li>
                         <li>ВНЕШНЯЯ ЛИКВИДНОСТЬ - ЛОГИКА.</li>
-                        <li><span class="highlight">ВНУТРЕННЯЯ ЛИКВИДНОСТЬ - ЛОГИКА</span>.</li>
-                        <li>ПРИМЕРЫ РАБОТЫ С <span class="highlight">ЛИКВИДНОСТЬЮ</span>.</li>
+                        <li><span class="highlight">ВНУТРЕННЯЯ ЛИКВИДНОСТЬ - </span>ЛОГИКА.</li>
+                        <li>ПРИМЕРЫ РАБОТЫ С <span class="highlight">ЛИКВИДНОСТЬЮ.</span></li>
                         <li>РАЗБОРЫ НА ГРАФИКЕ.</li>
-                        <li>ДОМАШНЕЕ <span class="highlight">ЗАДАНИЕ</span>.</li>
+                        <li>ДОМАШНЕЕ <span class="highlight">ЗАДАНИЕ.</span></li>
                     </ul>
                 </div>
-                <div className="imbalance training-program__course-section ">
+                <div className="imbalance training-program__course-section  ">
                     <img className='bil' src="/images/new.png" alt="Error" />
                     <div className="training-program__card-img">
                         <img src="/images/This is (1) 1.png" alt="Who is" />
@@ -166,19 +166,19 @@ const TrainingProgram = () => {
 
                     </div>
                     <ul className="training-program__list">
-                        <li>ЧТО ТАКОЕ <span class="highlight">IMBALANCE</span>.</li>
-                        <li>ИЗ ЧЕГО СОСТОИТ <span class="highlight">IMBALANCE</span>.</li>
-                        <li>ЛОГИКА РАБОТЫ <span class="highlight">IMBALANCE</span>.</li>
-                        <li><span class="highlight">FVG - РАЗБОР</span>.</li>
-                        <li><span class="highlight">IFVG - РАЗБОР</span>.</li>
-                        <li><span class="highlight">GAP - РАЗБОР</span>.</li>
-                        <li><span class="highlight">BWG+ПРОТОРГОВКА</span>.</li>
-                        <li>УВАЖЕНИЕ И НЕУВАЖЕНИЕ <span class="highlight">IMBALANCE</span>.</li>
-                        <li>ЧТО ТАКОЕ <span class="highlight">SHIFT</span>.</li>
+                        <li>ЧТО ТАКОЕ <span class="highlight">IMBALANCE.</span></li>
+                        <li>ИЗ ЧЕГО СОСТОИТ <span class="highlight">IMBALANCE.</span></li>
+                        <li>ЛОГИКА РАБОТЫ <span class="highlight">IMBALANCE.</span></li>
+                        <li><span class="highlight">FVG - РАЗБОР.</span></li>
+                        <li><span class="highlight">IFVG - РАЗБОР.</span></li>
+                        <li><span class="highlight">GAP - РАЗБОР.</span></li>
+                        <li><span class="highlight">BWG+ПРОТОРГОВКА.</span></li>
+                        <li>УВАЖЕНИЕ И НЕУВАЖЕНИЕ <span class="highlight">IMBALANCE.</span></li>
+                        <li>ЧТО ТАКОЕ <span class="highlight">SHIFT.</span></li>
                         <li>ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ.</li>
-                        <li>ПРИМЕРЫ РАБОТЫ С <span class="highlight">IMBALANCE</span>.</li>
+                        <li>ПРИМЕРЫ РАБОТЫ С <span class="highlight">IMBALANCE.</span></li>
                         <li>РАЗБОРЫ НА ГРАФИКЕ.</li>
-                        <li>ДОМАШНЕЕ <span class="highlight">ЗАДАНИЕ</span>.</li>
+                        <li>ДОМАШНЕЕ <span class="highlight">ЗАДАНИЕ.</span></li>
                     </ul>
                 </div>
                 <div className="power training-program__course-section ">
@@ -191,20 +191,20 @@ const TrainingProgram = () => {
 
                     </div>
                     <ul className="training-program__list">
-                        <li>ЧТО ТАКОЕ <span class="highlight">POI</span>.</li>
-                        <li><span class="highlight">REJECTION BLOCK - РАЗБОР</span>.</li>
-                        <li><span class="highlight">ORDER BLOCK - РАЗБОР</span>.</li>
-                        <li><span class="highlight">BREAKER BLOCK - РАЗБОР</span>.</li>
-                        <li><span class="highlight">MITIGATION BLOCK - РАЗБОР</span>.</li>
-                        <li>УВАЖЕНИЕ И НЕУВАЖЕНИЕ <span class="highlight">БЛОКОВ</span>.</li>
+                        <li>ЧТО ТАКОЕ <span class="highlight">POI.</span></li>
+                        <li><span class="highlight">REJECTION BLOCK - РАЗБОР.</span></li>
+                        <li><span class="highlight">ORDER BLOCK - РАЗБОР.</span></li>
+                        <li><span class="highlight">BREAKER BLOCK - РАЗБОР.</span></li>
+                        <li><span class="highlight">MITIGATION BLOCK - РАЗБОР.</span></li>
+                        <li>УВАЖЕНИЕ И НЕУВАЖЕНИЕ <span class="highlight">БЛОКОВ.</span></li>
                         <li>ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ.</li>
-                        <li>ПРИМЕРЫ РАБОТЫ С <span class="highlight">БЛОКАМИ</span>.</li>
+                        <li>ПРИМЕРЫ РАБОТЫ С <span class="highlight">БЛОКАМИ.</span></li>
                         <li>РАЗБОРЫ НА ГРАФИКЕ.</li>
-                        <li>ДОМАШНЕЕ <span class="highlight">ЗАДАНИЕ</span>.</li>
+                        <li>ДОМАШНЕЕ <span class="highlight">ЗАДАНИЕ.</span></li>
                     </ul>
                 </div>
 
-                <div className="delivry training-program__course-section ">
+                <div className="delivry training-program__course-section card_4 ">
                     <img className='bil' src="/images/new.png" alt="Error" />
 
                     <div className="training-program__card-img">
@@ -215,18 +215,18 @@ const TrainingProgram = () => {
 
                     </div>
                     <ul className="training-program__list">
-                        <li>ЧТО ТАКОЕ <span class="highlight">ДОСТАВКА ЦЕНЫ</span>.</li>
-                        <li><span class="highlight">НЕПРАВИЛЬНЫЙ ПОТОК ПРИКАЗОВ</span>.</li>
-                        <li><span class="highlight">АГРЕССИВНАЯ ДОСТАВКА</span>.</li>
-                        <li><span class="highlight">ПРАВИЛЬНЫЙ ПОТОК ПРИКАЗОВ</span>.</li>
-                        <li><span class="highlight">ДОСТАВКА + POI + СТРУКТУРА + LIQ</span>.</li>
+                        <li>ЧТО ТАКОЕ <span class="highlight">ДОСТАВКА ЦЕНЫ.</span></li>
+                        <li>НЕПРАВИЛЬНЫЙ <span class="highlight">ПОТОК ПРИКАЗОВ.</span></li>
+                        <li><span class="highlight">АГРЕССИВНАЯ</span>  ДОСТАВКА.</li>
+                        <li>ПРАВИЛЬНЫЙ<span class="highlight"> ПОТОК ПРИКАЗОВ.</span></li>
+                        <li>ДОСТАВКА <span class="highlight">+ POI + СТРУКТУРА + LIQ.</span></li>
                         <li>ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ.</li>
-                        <li>ПРИМЕРЫ РАБОТЫ С <span class="highlight">ДОСТАВКОЙ ЦЕНЫ</span>.</li>
+                        <li>ПРИМЕРЫ РАБОТЫ С <span class="highlight">ДОСТАВКОЙ ЦЕНЫ.</span></li>
                         <li>РАЗБОРЫ НА ГРАФИКЕ.</li>
-                        <li>ДОМАШНЕЕ <span class="highlight">ЗАДАНИЕ</span>.</li>
+                        <li>ДОМАШНЕЕ <span class="highlight">ЗАДАНИЕ.</span></li>
                     </ul>
                 </div>
-                <div className="smr training-program__course-section ">
+                <div className="smr training-program__course-section card_4 ">
                     <img className='bil' src="/images/new.png" alt="Error" />
 
                     <div className="training-program__card-img">
@@ -237,14 +237,14 @@ const TrainingProgram = () => {
 
                     </div>
                     <ul className="training-program__list">
-                        <li>ЧТО ТАКОЕ <span class="highlight">SMR</span>.</li>
-                        <li>КАК ОПРЕДЕЛИТЬ <span class="highlight">SMR</span>.</li>
-                        <li>ЧТО ТАКОЕ <span class="highlight">AMD</span>.</li>
-                        <li>ИДЕНТИФИКАЦИЯ <span class="highlight">AMD</span>.</li>
-                        <li>ПРИМЕРЫ РАБОТЫ С <span class="highlight">SMR И AMD</span>.</li>
+                        <li>ЧТО ТАКОЕ <span class="highlight">SMR.</span></li>
+                        <li>КАК ОПРЕДЕЛИТЬ <span class="highlight">SMR.</span></li>
+                        <li>ЧТО ТАКОЕ <span class="highlight">AMD.</span></li>
+                        <li>ИДЕНТИФИКАЦИЯ <span class="highlight">AMD.</span></li>
+                        <li>ПРИМЕРЫ РАБОТЫ С <span class="highlight">SMR И AMD.</span></li>
                         <li>ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ.</li>
                         <li>РАЗБОРЫ НА ГРАФИКЕ.</li>
-                        <li>ДОМАШНЕЕ <span class="highlight">ЗАДАНИЕ</span>.</li>
+                        <li>ДОМАШНЕЕ <span class="highlight">ЗАДАНИЕ.</span></li>
                     </ul>
                 </div>
                 <div className="correlation training-program__course-section ">
@@ -259,17 +259,17 @@ const TrainingProgram = () => {
                     </div>
                     <ul className="training-program__list">
                         <li>РАЗБОРЫ ИНДЕКСОВ.</li>
-                        <li><span class="highlight">POSITIVE CORRELATION</span>.</li>
-                        <li><span class="highlight">NEGATIVE CORRELATION</span>.</li>
-                        <li>КАК ПРИМЕНЯТЬ <span class="highlight">CORRELATION</span>.</li>
-                        <li>ВАЖНОЕ УТОЧНЕНИЕ ПО <span class="highlight">CORRELATION</span>.</li>
-                        <li><span class="highlight">РЕЙТИНГ ИНСТРУМЕНТОВ ДЛЯ ТОРГОВЛИ</span>.</li>
-                        <li><span class="highlight">ТОРГОВЫЕ СЕССИИ</span>.</li>
-                        <li><span class="highlight">KILL ZONE</span>.</li>
-                        <li>ЦЕНА + ВРЕМЯ ДЛЯ ТОРГОВЛИ.</li>
-                        <li>ПРИМЕРЫ РАБОТЫ <span class="highlight">CORRELATION</span>.</li>
+                        <li><span class="highlight">POSITIVE </span>CORRELATION.</li>
+                        <li>NEGATIVE<span class="highlight"> CORRELATION.</span></li>
+                        <li>КАК ПРИМЕНЯТЬ <span class="highlight">CORRELATION.</span></li>
+                        <li>ВАЖНОЕ УТОЧНЕНИЕ ПО <span class="highlight">CORRELATION.</span></li>
+                        <li>РЕЙТИНГ <span class="highlight">ИНСТРУМЕНТОВ </span>ДЛЯ ТОРГОВЛИ.</li>
+                        <li><span class="highlight">ТОРГОВЫЕ СЕССИИ.</span></li>
+                        <li><span class="highlight">KILL ZONE.</span></li>
+                        <li>ЦЕНА + ВРЕМЯ ДЛЯ <span className="highlight">ТОРГОВЛИ.</span></li>
+                        <li>ПРИМЕРЫ РАБОТЫ <span class="highlight">CORRELATION.</span></li>
                         <li>ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ.</li>
-                        <li>РАЗБОРЫ НА ГРАФИКЕ.</li>
+                        <li> <span className="highlight">РАЗБОРЫ</span> НА ГРАФИКЕ.</li>
                     </ul>
                 </div>
                 <div className="entry training-program__course-section ">
@@ -283,19 +283,19 @@ const TrainingProgram = () => {
 
                     </div>
                     <ul className="training-program__list">
-                        <li>ЧТО ТАКОЕ <span class="highlight">МОДЕЛЬ ВХОДА</span>.</li>
-                        <li><span class="highlight">ТАЙМФРЕЙМЫ ДЛЯ МОДЕЛЕЙ ВХОДА</span>.</li>
-                        <li><span class="highlight">ПРАВИЛА МОДЕЛИ ВХОДА</span>.</li>
-                        <li><span class="highlight">МОДЕЛИ ВХОДА</span>.</li>
-                        <li><span class="highlight">СВИП МОДЕЛИ + ПЕРЕЗАХОД</span>.</li>
-                        <li>ЧТО МОЖНО БРАТЬ ЗА <span class="highlight">ЦЕЛИ</span>.</li>
-                        <li>ПРИМЕРЫ РАБОТЫ С <span class="highlight">МОДЕЛЯМИ И ЦЕЛЯМИ</span>.</li>
+                        <li>ЧТО ТАКОЕ <span class="highlight">МОДЕЛЬ ВХОДА.</span></li>
+                        <li>ТАЙМФРЕЙМЫ ДЛЯ<span class="highlight"> МОДЕЛЕЙ ВХОДА.</span></li>
+                        <li><span class="highlight">ПРАВИЛА </span>МОДЕЛИ ВХОДА.</li>
+                        <li>МОДЕЛИ ВХОДА.</li>
+                        <li><span class="highlight">СВИП МОДЕЛИ + </span>ПЕРЕЗАХОД.</li>
+                        <li>ЧТО МОЖНО БРАТЬ ЗА <span class="highlight">ЦЕЛИ.</span></li>
+                        <li>ПРИМЕРЫ РАБОТЫ С <span class="highlight">МОДЕЛЯМИ </span>И <span class="highlight">ЦЕЛЯМИ.</span> </li>
                         <li>ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ.</li>
                         <li>РАЗБОРЫ НА ГРАФИКЕ.</li>
-                        <li>ДОМАШНЕЕ <span class="highlight">ЗАДАНИЕ</span>.</li>
+                        <li>ДОМАШНЕЕ <span class="highlight">ЗАДАНИЕ.</span></li>
                     </ul>
                 </div>
-                <div className="indicators training-program__course-section ">
+                <div className="indicators training-program__course-section card_4 ">
                     <img className='bil' src="/images/new.png" alt="Error" />
 
                     <div className="training-program__card-img">
@@ -306,7 +306,7 @@ const TrainingProgram = () => {
 
                     </div>
                     <ul className="training-program__list">
-                        <li>ЧТО ТАКОЕ <span className="highlight">ТОРГОВЫЕ ИНДИКАТОРЫ</span>.</li>
+                        <li>ЧТО ТАКОЕ <span className="highlight">ТОРГОВЫЕ ИНДИКАТОРЫ.</span></li>
                         <li><span className="highlight">RSI</span> - РАЗБОР И НАСТРОЙКА.</li>
                         <li><span className="highlight">EMA</span> - РАЗБОР И НАСТРОЙКА.</li>
                         <li><span className="highlight">SESSIONS</span> - РАЗБОР И НАСТРОЙКА.</li>
@@ -315,7 +315,7 @@ const TrainingProgram = () => {
                         <li>НОВОСТИ - <span className="highlight">РАЗБОР</span> И НАСТРОЙКА.</li>
                         <li>ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ.</li>
                         <li>РАЗБОРЫ НА ГРАФИКЕ.</li>
-                        <li>ДОМАШНЕЕ <span className="highlight">ЗАДАНИЕ</span>.</li>
+                        <li>ДОМАШНЕЕ <span className="highlight">ЗАДАНИЕ.</span></li>
                     </ul>
                 </div>
                 <div className="risk training-program__course-section ">
@@ -348,12 +348,12 @@ const TrainingProgram = () => {
 
                     </div>
                     <ul className="training-program__list">
-                        <li>ЧТО ТАКОЕ <span className="highlight">ТОРГОВЫЙ СЕТАП</span>.</li>
+                        <li>ЧТО ТАКОЕ <span className="highlight">ТОРГОВЫЙ СЕТАП.</span></li>
                         <li><span className="highlight">НАСТРОЙКИ</span> СЕТАПОВ.</li>
-                        <li><span className="highlight">ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ</span>.</li>
+                        <li>ДОПОЛНИТЕЛЬНАЯ <span className="highlight">ИНФОРМАЦИЯ.</span></li>
                         <li><span className="highlight">ПРИМЕРЫ РАБОТЫ</span> ПО СЕТАПАМ.</li>
-                        <li><span className="highlight">РАЗБОРЫ</span> НА ГРАФИКЕ.</li>
-                        <li><span className="highlight">ДОМАШНЕЕ ЗАДАНИЕ</span>.</li>
+                        <li>РАЗБОРЫ НА ГРАФИКЕ.</li>
+                        <li><span className="highlight">ДОМАШНЕЕ </span>ЗАДАНИЕ.</li>
                     </ul>
 
                 </div>

@@ -223,7 +223,7 @@ transition: transform 0.25s ease-out;}
   height: 200px;
   width: 100%;
   box-shadow: 0px 11px 10px rgba(21, 21, 21, 0.5);
-  border: 1px solid #FFFFFF;
+  /* border: 1px solid #FFFFFF; */
   border-radius: 10px;
   overflow: hidden;
   position: relative;
@@ -286,8 +286,14 @@ transition: transform 0.25s ease-out;}
 
 .training-program__list  li .highlight {
   color: #21CD5A;
-
-
+}
+.card_4 .highlight{
+  color: #FF0000 !important;
+}
+.card_5 .highlight{
+  color: #FF0000 !important;
+}
+.gradient_span{
   
 }
 .footer {
