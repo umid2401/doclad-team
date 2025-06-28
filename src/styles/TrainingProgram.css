@@ -95,17 +95,20 @@
   text-transform: uppercase;
 
 }
-.training-program__description span{
-  color:  #21CD5A;
+
+.training-program__description span {
+  color: #21CD5A;
 }
+
 .training-program__text {
-transition: transform 0.25s ease-out;
+  transition: transform 0.25s ease-out;
   transform: translate(1.1);
   transform-origin: left;
 }
 
 .training-program-img {
-transition: transform 0.25s ease-out;}
+  transition: transform 0.25s ease-out;
+}
 
 .training-program__hero .scrolled .training-program__text {
   transform: scale(0.7);
@@ -115,6 +118,7 @@ transition: transform 0.25s ease-out;}
 .training-program__hero .scrolled .training-program-img {
   transform: translateY(-40px);
 }
+
 .training-program-img {
   position: absolute;
   bottom: 0;
@@ -136,31 +140,43 @@ transition: transform 0.25s ease-out;}
   margin-top: -80px;
 
 }
-.this{
-   background-image: url('/images/this.png') !important;
+
+.this {
+  background-image: url('/images/this.png') !important;
 }
-.power, .premium{
+
+.power,
+.premium {
   background-image: url('/images/power.png') !important;
 }
-.delivry, .market{
+
+.delivry,
+.market {
   background-image: url('/images/delivry.png') !important;
 }
-.smr{
+
+.smr {
   background-image: url('/images/smr.png') !important;
 }
-.correlation, .imbalance{
+
+.correlation,
+.imbalance {
   background-image: url('/images/correlation.png') !important;
 }
-.entry{
+
+.entry {
   background-image: url("/images/entry.png") !important;
 }
-.indicators{
+
+.indicators {
   background-image: url('/images/indicators.png') !important;
 }
-.risk{
+
+.risk {
   background-image: url('/images/risk.png') !important;
 }
-.last{
+
+.last {
   background-image: url("/images/last_plashka.png") !important;
   background-position: bottom !important;
   background-size: cover;
@@ -229,17 +245,20 @@ transition: transform 0.25s ease-out;}
   position: relative;
   z-index: 2;
 }
-.training-program__card-img img{
+
+.training-program__card-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: top;
 }
+
 .card .training-program__card-img {
   margin-top: 35px;
 }
- .bottom_img {
- width: 95%;
+
+.bottom_img {
+  width: 95%;
   height: 10px !important;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
@@ -250,7 +269,8 @@ transition: transform 0.25s ease-out;}
   z-index: 0;
 
 }
- .bottom_img img{
+
+.bottom_img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -262,22 +282,26 @@ transition: transform 0.25s ease-out;}
   object-fit: cover;
   object-position: top;
 }
- .bil{
-    width: 320px;    
-    position: absolute; 
-    top: -70px;
-    left: 50%;
-    transform: translateX(-50%);
 
-    z-index: 100 !important;
+.bil {
+  width: 320px;
+  position: absolute;
+  top: -70px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  z-index: 100 !important;
 }
-.card .bil{
+
+.card .bil {
   top: 0;
 }
-.top_img{
+
+.top_img {
   /* position: absolute; */
   z-index: 0;
 }
+
 .training-program__list {
   margin-top: 20px;
   padding-left: 20px;
@@ -291,24 +315,141 @@ transition: transform 0.25s ease-out;}
   line-height: 1.1;
 }
 
-.training-program__list  li .highlight {
+.training-program__list li .highlight {
   color: #21CD5A;
 }
-.card_4 .highlight{
-  color: #FF0000 !important;
-}
-.card_5 .highlight{
-  color: #FF0000 !important;
-}
-.gradient_span{
+
+.training-program__list li .blok1 {
+  background: linear-gradient(107deg, #21CD5A 70.01%, #F00 86.12%) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
   
 }
+.training-program__list li .blok2 {
+  background: linear-gradient(109deg, #21CD5A 68.27%, #F00 79.56%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+.training-program__list li .blok3 {
+  background: linear-gradient(109deg, #21CD5A 68.27%, #F00 79.56%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+/*  */
+.training-program__list li .premium1{
+  background: linear-gradient(0deg, #F00 0%, #F00 100%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
+}
+.training-program__list li .premium2{
+ background: linear-gradient(0deg, #21CD5A 0%, #21CD5A 100%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
+}
+.training-program__list li .premium3{
+  background: linear-gradient(112deg, #21CD5A 71.83%, #DE2C05 87.65%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
+
+}
+.training-program__list li .premium4{
+  background: linear-gradient(108deg, #21CD5A 52.26%, #F00 69.07%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
+}
+/*  */
+.training-program__list li .this1{
+  background: linear-gradient(0deg, #F00 0%, #F00 100%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
+}
+.training-program__list li .this2{
+  background: linear-gradient(111deg, #900 71.71%, #21CD5A 84.47%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
+}
+.training-program__list li .this3{
+background: linear-gradient(111deg, #900 71.71%, #21CD5A 84.47%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
+
+}
+.training-program__list li .this4{
+  background: linear-gradient(282deg, #21CD5A 38.11%, #900 45.94%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
+}
+
+/* smr */
+.training-program__list li .smr2{
+  background: linear-gradient(281deg, #21CD5A 36.13%, #F00 47.97%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
+}
+.training-program__list li .smr1{
+ background: linear-gradient(97deg, #F00 58.31%, #21CD5A 80.73%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
+
+}
+/* model */
+
+.training-program__list li .model2{
+  background: linear-gradient(149deg, #21CD5A 63.21%, #F00 73.98%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
+
+}
+.training-program__list li .model3{
+ background: linear-gradient(105deg, #21CD5A 61.12%, #F00 69.35%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
+
+}
+
+.card_4 .highlight {
+  color: #FF0000 !important;
+}
+
+.card_5 .highlight {
+  color: #FF0000 !important;
+}
+
+.gradient_span {}
+
 .footer {
   width: 100%;
   height: auto;
   /* background-color: #0A0A0A; */
   background: url("/images/фоновые\ крастинки.png"),
-  url("/images/footbot.png"), url("/images/верх\ свет\(2\).png");
+    url("/images/footbot.png"), url("/images/верх\ свет\(2\).png");
   background-repeat: no-repeat;
   background-size: cover, cover, cover;
   background-position: left bottom, right bottom, left 100px;
@@ -352,7 +493,8 @@ transition: transform 0.25s ease-out;}
 .content_three p {
   color: #FFFFFF;
 }
-.content_three  img{
+
+.content_three img {
   position: absolute;
   right: -10px;
   bottom: -10px;

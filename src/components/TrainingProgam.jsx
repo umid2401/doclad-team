@@ -93,12 +93,12 @@ const TrainingProgram = () => {
                         <li>ЧТО ТАКОЕ <span class="highlight">ФРАКТАЛ.</span></li>
                         <li>ЧТО ТАКОЕ <span class="highlight">SWING-ДВИЖЕНИЕ.</span></li>
                         <li>ЧТО ТАКОЕ <span class="highlight">PREMIUM И DISCOUNT.</span></li>
-                        <li>ИЗ ЧЕГО СОСТОИТ <span class="highlight">PREMIUM И DISCOUNT.</span></li>
-                        <li>ЛОГИКА РАБОТЫ <span class="highlight">PREMIUM И DISCOUNT.</span></li>
-                        <li>ПРИМЕРЫ РАБОТЫ С <span class="highlight">PREMIUM И DISCOUNT.</span></li>
+                        <li>ИЗ ЧЕГО СОСТОИТ <span class="highlight premium2">PREMIUM </span> И<span class="highlight premium3">DISCOUNT .</span></li>
+                        <li>ЛОГИКА РАБОТЫ <span class="highlight premium2">PREMIUM </span> И<span class="highlight premium3">DISCOUNT .</span></li>
+                        <li>ПРИМЕРЫ РАБОТЫ С <span class="highlight premium2">PREMIUM </span> И<span class="highlight premium3">DISCOUNT .</span></li>
                         <li>ДОПОЛНИТЕЛЬНЫЙ МАТЕРИАЛ ПО ТЕМЕ.</li>
                         <li>РАЗБОРЫ НА ГРАФИКЕ.</li>
-                        <li>ДОМАШНЕЕ <span class="highlight">ЗАДАНИЕ.</span></li>
+                        <li>ДОМАШНЕЕ <span class="highlight premium4">ЗАДАНИЕ.</span></li>
                     </ul>
                 </div>
                 <div className="market training-program__course-section card_4 ">
@@ -134,15 +134,15 @@ const TrainingProgram = () => {
                    
                     <ul className="training-program__list">
                         <li>ЧТО ТАКОЕ <span class="highlight">ЛИКВИДНОСТЬ.</span></li>
-                        <li>ВИДЫ <span class="highlight">ЛИКВИДНОСТИ.</span></li>
+                        <li>ВИДЫ <span class="highlight ">ЛИКВИДНОСТИ.</span></li>
                         <li>ХАРАКТЕРИСТИКА КАЖДОГО ВИДА.</li>
                         <li>ЧТО ТАКОЕ <span class="highlight">INDUCEMENT.</span></li>
-                        <li><span class="highlight">ЛИКВИДНОСТЬ</span> + СТРУКТУРА.</li>
+                        <li><span class="highlight this1 ">ЛИКВИДНОСТЬ</span> + СТРУКТУРА.</li>
                         <li>ВНЕШНЯЯ ЛИКВИДНОСТЬ - ЛОГИКА.</li>
-                        <li><span class="highlight">ВНУТРЕННЯЯ ЛИКВИДНОСТЬ - </span>ЛОГИКА.</li>
-                        <li>ПРИМЕРЫ РАБОТЫ С <span class="highlight">ЛИКВИДНОСТЬЮ.</span></li>
+                        <li><span class="highlight this2">ВНУТРЕННЯЯ ЛИКВИДНОСТЬ - </span>ЛОГИКА.</li>
+                        <li>ПРИМЕРЫ РАБОТЫ С <span class="highlight this3">ЛИКВИДНОСТЬЮ.</span></li>
                         <li>РАЗБОРЫ НА ГРАФИКЕ.</li>
-                        <li>ДОМАШНЕЕ <span class="highlight">ЗАДАНИЕ.</span></li>
+                        <li>ДОМАШНЕЕ <span class="highlight this4">ЗАДАНИЕ.</span></li>
                     </ul>
                 </div>
                 <div className="imbalance training-program__course-section  ">
@@ -179,11 +179,11 @@ const TrainingProgram = () => {
                         <li><span class="highlight">ORDER BLOCK - РАЗБОР.</span></li>
                         <li><span class="highlight">BREAKER BLOCK - РАЗБОР.</span></li>
                         <li><span class="highlight">MITIGATION BLOCK - РАЗБОР.</span></li>
-                        <li>УВАЖЕНИЕ И НЕУВАЖЕНИЕ <span class="highlight">БЛОКОВ.</span></li>
+                        <li>УВАЖЕНИЕ И НЕУВАЖЕНИЕ <span class="highlight blok1">БЛОКОВ.</span></li>
                         <li>ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ.</li>
-                        <li>ПРИМЕРЫ РАБОТЫ С <span class="highlight">БЛОКАМИ.</span></li>
+                        <li>ПРИМЕРЫ РАБОТЫ С <span class="highlight blok2">БЛОКАМИ.</span></li>
                         <li>РАЗБОРЫ НА ГРАФИКЕ.</li>
-                        <li>ДОМАШНЕЕ <span class="highlight">ЗАДАНИЕ.</span></li>
+                        <li>ДОМАШНЕЕ <span class="highlight blok3">ЗАДАНИЕ.</span></li>
                     </ul>
                 </div>
 
@@ -191,7 +191,7 @@ const TrainingProgram = () => {
                     <img className='bil' src="/images/new.png" alt="Error" />
 
                     <div className="training-program__card-img">
-                        <img src="/images/фото-6.png" alt="Who is" />
+                        <img src="/images/фото-9.png" alt="Who is" />
                     </div>
                     
                     <ul className="training-program__list">
@@ -210,7 +210,7 @@ const TrainingProgram = () => {
                     <img className='bil' src="/images/new.png" alt="Error" />
 
                     <div className="training-program__card-img">
-                        <img src="/images/фото-7.png" alt="Who is" />
+                        <img src="/images/фото-6.png" alt="Who is" />
                     </div>
                    
                     <ul className="training-program__list">
@@ -218,17 +218,17 @@ const TrainingProgram = () => {
                         <li>КАК ОПРЕДЕЛИТЬ <span class="highlight">SMR.</span></li>
                         <li>ЧТО ТАКОЕ <span class="highlight">AMD.</span></li>
                         <li>ИДЕНТИФИКАЦИЯ <span class="highlight">AMD.</span></li>
-                        <li>ПРИМЕРЫ РАБОТЫ С <span class="highlight">SMR И AMD.</span></li>
+                        <li>ПРИМЕРЫ РАБОТЫ С <span class="highlight smr1">SMR И AMD.</span></li>
                         <li>ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ.</li>
                         <li>РАЗБОРЫ НА ГРАФИКЕ.</li>
-                        <li>ДОМАШНЕЕ <span class="highlight">ЗАДАНИЕ.</span></li>
+                        <li>ДОМАШНЕЕ <span class="highlight smr2">ЗАДАНИЕ.</span></li>
                     </ul>
                 </div>
                 <div className="correlation training-program__course-section ">
                     <img className='bil' src="/images/new.png" alt="Error" />
 
                     <div className="training-program__card-img">
-                        <img src="/images/фото-8.png" alt="Who is" />
+                        <img src="/images/фото-7.png" alt="Who is" />
                     </div>
                     <ul className="training-program__list">
                         <li>РАЗБОРЫ ИНДЕКСОВ.</li>
@@ -249,19 +249,19 @@ const TrainingProgram = () => {
                     <img className='bil' src="/images/new.png" alt="Error" />
 
                     <div className="training-program__card-img">
-                        <img src="/images/фото-9.png" alt="Who is" />
+                        <img src="/images/фото-8.png" alt="Who is" />
                     </div>
                     <ul className="training-program__list">
-                        <li>ЧТО ТАКОЕ <span class="highlight">МОДЕЛЬ ВХОДА.</span></li>
-                        <li>ТАЙМФРЕЙМЫ ДЛЯ<span class="highlight"> МОДЕЛЕЙ ВХОДА.</span></li>
+                        <li>ЧТО ТАКОЕ <span class="highlight model1">МОДЕЛЬ ВХОДА.</span></li>
+                        <li>ТАЙМФРЕЙМЫ ДЛЯ<span class="highlight model1"> МОДЕЛЕЙ ВХОДА.</span></li>
                         <li><span class="highlight">ПРАВИЛА </span>МОДЕЛИ ВХОДА.</li>
                         <li>МОДЕЛИ ВХОДА.</li>
                         <li><span class="highlight">СВИП МОДЕЛИ + </span>ПЕРЕЗАХОД.</li>
                         <li>ЧТО МОЖНО БРАТЬ ЗА <span class="highlight">ЦЕЛИ.</span></li>
-                        <li>ПРИМЕРЫ РАБОТЫ С <span class="highlight">МОДЕЛЯМИ </span>И <span class="highlight">ЦЕЛЯМИ.</span> </li>
+                        <li>ПРИМЕРЫ РАБОТЫ С <span class="highlight model2">МОДЕЛЯМИ </span>И <span class="highlight">ЦЕЛЯМИ.</span> </li>
                         <li>ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ.</li>
                         <li>РАЗБОРЫ НА ГРАФИКЕ.</li>
-                        <li>ДОМАШНЕЕ <span class="highlight">ЗАДАНИЕ.</span></li>
+                        <li>ДОМАШНЕЕ <span class="highlight model3">ЗАДАНИЕ.</span></li>
                     </ul>
                 </div>
                 <div className="indicators training-program__course-section card_4 ">
