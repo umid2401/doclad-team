@@ -72,12 +72,9 @@ const TrainingProgram = () => {
                     </div>
                     <img className='bil' src="/images/new.png" alt="Error" />
                     <div className="training-program__card-img">
-                        <img loading='lazy' src="/images/WHO IS 2.png" alt="Who is" />
+                        <img loading='lazy' src="/images/фото.png" alt="Who is" />
                     </div>
-                    <div className="bottom_img">
-                        <img loading='lazy' src="/images/Rectangle 105.png" alt="Rectangle" />
-
-                    </div>
+                   
 
                     <ul className="training-program__list">
                         <li>что из себя представляет <span className="highlight">концепция.</span></li>
@@ -89,12 +86,9 @@ const TrainingProgram = () => {
                 <div className="premium training-program__course-section ">
                     <img className='bil' src="/images/new.png" alt="Error" />
                     <div className="training-program__card-img">
-                        <img loading='lazy' src="/images/Premium 1.png" alt="Who is" />
+                        <img loading='lazy' src="/images/фото-1.png" alt="Who is" />
                     </div>
-                    <div className="bottom_img">
-                        <img loading='lazy' src="/images/Rectangle 105.png" alt="Rectangle" />
-
-                    </div>
+                   
                     <ul className="training-program__list">
                         <li>ЧТО ТАКОЕ <span class="highlight">ФРАКТАЛ.</span></li>
                         <li>ЧТО ТАКОЕ <span class="highlight">SWING-ДВИЖЕНИЕ.</span></li>
@@ -112,12 +106,9 @@ const TrainingProgram = () => {
 
                     <div className="training-program__card-img">
 
-                        <img src="/images/MARKET (2) 1.png" alt="Who is" />
+                        <img src="/images/фото-2.png" alt="Who is" />
                     </div>
-                    <div className="bottom_img">
-                        <img loading='lazy' src="/images/Rectangle 105.png" alt="Rectangle" />
-
-                    </div>
+                    
                     <ul className="training-program__list">
 
                         <li>ЧТО ТАКОЕ <span class="highlight">СТРУКТУРА РЫНКА.</span></li>
@@ -138,11 +129,9 @@ const TrainingProgram = () => {
                     <img className='bil' src="/images/new.png" alt="Error" />
 
                     <div className="training-program__card-img">
-                        <img src="/images/This is 1.png" alt="Who is" />
+                        <img src="/images/фото-3.png" alt="Who is" />
                     </div>
-                    <div className="bottom_img">
-                        <img loading='lazy' src="/images/Rectangle 105.png" alt="Rectangle" />
-                    </div>
+                   
                     <ul className="training-program__list">
                         <li>ЧТО ТАКОЕ <span class="highlight">ЛИКВИДНОСТЬ.</span></li>
                         <li>ВИДЫ <span class="highlight">ЛИКВИДНОСТИ.</span></li>
@@ -159,12 +148,9 @@ const TrainingProgram = () => {
                 <div className="imbalance training-program__course-section  ">
                     <img className='bil' src="/images/new.png" alt="Error" />
                     <div className="training-program__card-img">
-                        <img src="/images/This is (1) 1.png" alt="Who is" />
+                        <img src="/images/фото-4.png" alt="Who is" />
                     </div>
-                    <div className="bottom_img">
-                        <img loading='lazy' src="/images/Rectangle 105.png" alt="Rectangle" />
-
-                    </div>
+                    
                     <ul className="training-program__list">
                         <li>ЧТО ТАКОЕ <span class="highlight">IMBALANCE.</span></li>
                         <li>ИЗ ЧЕГО СОСТОИТ <span class="highlight">IMBALANCE.</span></li>
@@ -184,12 +170,9 @@ const TrainingProgram = () => {
                 <div className="power training-program__course-section ">
                     <img className='bil' src="/images/new.png" alt="Error" />
                     <div className="training-program__card-img">
-                        <img src="/images/Power Blocks_ 1.png" alt="Who is" />
+                        <img src="/images/фото-5.png" alt="Who is" />
                     </div>
-                    <div className="bottom_img">
-                        <img loading='lazy' src="/images/Rectangle 105.png" alt="Rectangle" />
-
-                    </div>
+                  
                     <ul className="training-program__list">
                         <li>ЧТО ТАКОЕ <span class="highlight">POI.</span></li>
                         <li><span class="highlight">REJECTION BLOCK - РАЗБОР.</span></li>
@@ -208,12 +191,9 @@ const TrainingProgram = () => {
                     <img className='bil' src="/images/new.png" alt="Error" />
 
                     <div className="training-program__card-img">
-                        <img src="/images/delivery options prices 1.png" alt="Who is" />
+                        <img src="/images/фото-6.png" alt="Who is" />
                     </div>
-                    <div className="bottom_img">
-                        <img loading='lazy' src="/images/Rectangle 105.png" alt="Rectangle" />
-
-                    </div>
+                    
                     <ul className="training-program__list">
                         <li>ЧТО ТАКОЕ <span class="highlight">ДОСТАВКА ЦЕНЫ.</span></li>
                         <li>НЕПРАВИЛЬНЫЙ <span class="highlight">ПОТОК ПРИКАЗОВ.</span></li>
@@ -230,12 +210,9 @@ const TrainingProgram = () => {
                     <img className='bil' src="/images/new.png" alt="Error" />
 
                     <div className="training-program__card-img">
-                        <img src="/images/SMR & AMD 1.png" alt="Who is" />
+                        <img src="/images/фото-7.png" alt="Who is" />
                     </div>
-                    <div className="bottom_img">
-                        <img loading='lazy' src="/images/Rectangle 105.png" alt="Rectangle" />
-
-                    </div>
+                   
                     <ul className="training-program__list">
                         <li>ЧТО ТАКОЕ <span class="highlight">SMR.</span></li>
                         <li>КАК ОПРЕДЕЛИТЬ <span class="highlight">SMR.</span></li>
@@ -251,11 +228,7 @@ const TrainingProgram = () => {
                     <img className='bil' src="/images/new.png" alt="Error" />
 
                     <div className="training-program__card-img">
-                        <img src="/images/Power Blocks_ (1) 1.png" alt="Who is" />
-                    </div>
-                    <div className="bottom_img">
-                        <img loading='lazy' src="/images/Rectangle 105.png" alt="Rectangle" />
-
+                        <img src="/images/фото-8.png" alt="Who is" />
                     </div>
                     <ul className="training-program__list">
                         <li>РАЗБОРЫ ИНДЕКСОВ.</li>
@@ -276,11 +249,7 @@ const TrainingProgram = () => {
                     <img className='bil' src="/images/new.png" alt="Error" />
 
                     <div className="training-program__card-img">
-                        <img src="/images/entry models & targets 1.png" alt="Who is" />
-                    </div>
-                    <div className="bottom_img">
-                        <img loading='lazy' src="/images/Rectangle 105.png" alt="Rectangle" />
-
+                        <img src="/images/фото-9.png" alt="Who is" />
                     </div>
                     <ul className="training-program__list">
                         <li>ЧТО ТАКОЕ <span class="highlight">МОДЕЛЬ ВХОДА.</span></li>
@@ -299,11 +268,7 @@ const TrainingProgram = () => {
                     <img className='bil' src="/images/new.png" alt="Error" />
 
                     <div className="training-program__card-img">
-                        <img src="/images/indicators (1) 2.png" alt="Who is" />
-                    </div>
-                    <div className="bottom_img">
-                        <img loading='lazy' src="/images/Rectangle 105.png" alt="Rectangle" />
-
+                        <img src="/images/фото-10.png" alt="Who is" />
                     </div>
                     <ul className="training-program__list">
                         <li>ЧТО ТАКОЕ <span className="highlight">ТОРГОВЫЕ ИНДИКАТОРЫ.</span></li>
@@ -321,11 +286,7 @@ const TrainingProgram = () => {
                 <div className="risk training-program__course-section ">
                     <img className='bil' src="/images/new.png" alt="Error" />
                     <div className="training-program__card-img">
-                        <img src="/images/MARKET (3) 1.png" alt="Who is" />
-                    </div>
-                    <div className="bottom_img">
-                        <img loading='lazy' src="/images/Rectangle 105.png" alt="Rectangle" />
-
+                        <img src="/images/фото-11.png" alt="Who is" />
                     </div>
                     <ul className="training-program__list">
                         <li>Что такое  <span className="highlight">риск-менеджмент.</span> </li>
@@ -341,7 +302,7 @@ const TrainingProgram = () => {
                 <div className="last training-program__course-section  ">
                     <img className='bil' src="/images/new.png" alt="Error" />
                     <div className="training-program__card-img">
-                        <img src="/images/bonus (1) 1.png" alt="Who is" />
+                        <img src="/images/фото-12.png" alt="Who is" />
                     </div>
                     <div className="bottom_img">
                         <img loading='lazy' src="/images/Rectangle 105.png" alt="Rectangle" />
