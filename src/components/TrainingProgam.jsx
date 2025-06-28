@@ -413,14 +413,14 @@ const TrainingProgram = () => {
                         <p>Чтобы приобрести доступ к <span> обучающим материалам,</span>
                             свяжитесь с нами:</p>
                     </div>
-                    <div className="card2">
+                    <a href='https://t.me/big_trade777' target='blank' className="card2">
                         <img src="/images/Mask group 1.png" alt="" />
                         <p>ПаРВИЗ</p>
-                    </div>
-                    <div className="card3">
+                    </a>
+                    <a href='https://t.me/yar_pro_trading' target='blank' className="card3">
                         <img src="/images/Mask group 2.png" alt="" />
                         <p>ярослав</p>
-                    </div>
+                    </a>
 
                 </div>
 

@@ -512,6 +512,7 @@ transition: transform 0.25s ease-out;}
 
 .card2 {
   cursor: pointer;
+  text-decoration: none;
   display: flex;
   width: 160px;
   padding: 10px;
@@ -540,6 +541,7 @@ transition: transform 0.25s ease-out;}
 }
 
 .card3 {
+  text-decoration: none;
   cursor: pointer;
   display: flex;
   width: 160px;
