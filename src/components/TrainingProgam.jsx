@@ -70,8 +70,8 @@ const TrainingProgram = () => {
                     <div className="course">
                         <span>курс</span>
                     </div>
-                    <img className='bil' src="/images/new.png" alt="Error" />
                     <div className="training-program__card-img">
+                    <img className='bil' src="/images/new.png" alt="Error" />
                         <img loading='lazy' src="/images/фото.png" alt="Who is" />
                     </div>
                    
@@ -84,8 +84,8 @@ const TrainingProgram = () => {
                     </ul>
                 </div>
                 <div className="premium training-program__course-section ">
-                    <img className='bil' src="/images/new.png" alt="Error" />
                     <div className="training-program__card-img">
+                    <img className='bil' src="/images/new.png" alt="Error" />
                         <img loading='lazy' src="/images/фото-1.png" alt="Who is" />
                     </div>
                    
@@ -93,18 +93,18 @@ const TrainingProgram = () => {
                         <li>ЧТО ТАКОЕ <span class="highlight">ФРАКТАЛ.</span></li>
                         <li>ЧТО ТАКОЕ <span class="highlight">SWING-ДВИЖЕНИЕ.</span></li>
                         <li>ЧТО ТАКОЕ <span class="highlight">PREMIUM И DISCOUNT.</span></li>
-                        <li>ИЗ ЧЕГО СОСТОИТ <span class="highlight premium2">PREMIUM </span> И<span class="highlight premium3">DISCOUNT .</span></li>
-                        <li>ЛОГИКА РАБОТЫ <span class="highlight premium2">PREMIUM </span> И<span class="highlight premium3">DISCOUNT .</span></li>
-                        <li>ПРИМЕРЫ РАБОТЫ С <span class="highlight premium2">PREMIUM </span> И<span class="highlight premium3">DISCOUNT .</span></li>
+                        <li>ИЗ ЧЕГО СОСТОИТ <span class="highlight premium2">PREMIUM </span> И <span class="highlight premium3">DISCOUNT.</span></li>
+                        <li>ЛОГИКА РАБОТЫ <span class="highlight premium2">PREMIUM </span> И <span class="highlight premium3">DISCOUNT.</span></li>
+                        <li>ПРИМЕРЫ РАБОТЫ С <span class="highlight premium2">PREMIUM </span> И <span class="highlight premium3">DISCOUNT.</span></li>
                         <li>ДОПОЛНИТЕЛЬНЫЙ МАТЕРИАЛ ПО ТЕМЕ.</li>
                         <li>РАЗБОРЫ НА ГРАФИКЕ.</li>
                         <li>ДОМАШНЕЕ <span class="highlight premium4">ЗАДАНИЕ.</span></li>
                     </ul>
                 </div>
                 <div className="market training-program__course-section card_4 ">
-                    <img className='bil' src="/images/new.png" alt="Error" />
 
                     <div className="training-program__card-img">
+                    <img className='bil' src="/images/new.png" alt="Error" />
 
                         <img src="/images/фото-2.png" alt="Who is" />
                     </div>
@@ -114,7 +114,7 @@ const TrainingProgram = () => {
                         <li>ЧТО ТАКОЕ <span class="highlight">СТРУКТУРА РЫНКА.</span></li>
                         <li>КАКАЯ БЫВАЕТ <span class="highlight">СТРУКТУРА РЫНКА.</span></li>
                         <li>ЧЕМ ХАРАКТЕРИЗУЕТСЯ КАЖДОЕ СОСТОЯНИЕ.</li>
-                        <li><span class="highlight">CHOCE </span> И ЕГО ХАРАКТЕРИСТИКА.</li>
+                        <li><span class="highlight">CHOCH</span> И ЕГО ХАРАКТЕРИСТИКА.</li>
                         <li><span class="highlight">BOS </span> И ЕГО ХАРАКТЕРИСТИКА.</li>
                         <li><span class="highlight">BOS </span> CONFIRMED И ЕГО ХАРАКТЕРИСТИКА.</li>
                         <li>ВАРИАНТЫ СЛОМА СТРУКТУРЫ.</li>
@@ -126,9 +126,9 @@ const TrainingProgram = () => {
                     </ul>
                 </div>
                 <div className="this training-program__course-section card_4 ">
-                    <img className='bil' src="/images/new.png" alt="Error" />
 
                     <div className="training-program__card-img">
+                    <img className='bil' src="/images/new.png" alt="Error" />
                         <img src="/images/фото-3.png" alt="Who is" />
                     </div>
                    
@@ -146,8 +146,8 @@ const TrainingProgram = () => {
                     </ul>
                 </div>
                 <div className="imbalance training-program__course-section  ">
-                    <img className='bil' src="/images/new.png" alt="Error" />
                     <div className="training-program__card-img">
+                    <img className='bil' src="/images/new.png" alt="Error" />
                         <img src="/images/фото-4.png" alt="Who is" />
                     </div>
                     
@@ -168,8 +168,8 @@ const TrainingProgram = () => {
                     </ul>
                 </div>
                 <div className="power training-program__course-section ">
-                    <img className='bil' src="/images/new.png" alt="Error" />
                     <div className="training-program__card-img">
+                    <img className='bil' src="/images/new.png" alt="Error" />
                         <img src="/images/фото-5.png" alt="Who is" />
                     </div>
                   
@@ -188,9 +188,9 @@ const TrainingProgram = () => {
                 </div>
 
                 <div className="delivry training-program__course-section card_4 ">
-                    <img className='bil' src="/images/new.png" alt="Error" />
 
                     <div className="training-program__card-img">
+                    <img className='bil' src="/images/new.png" alt="Error" />
                         <img src="/images/фото-9.png" alt="Who is" />
                     </div>
                     
@@ -207,9 +207,9 @@ const TrainingProgram = () => {
                     </ul>
                 </div>
                 <div className="smr training-program__course-section card_4 ">
-                    <img className='bil' src="/images/new.png" alt="Error" />
 
                     <div className="training-program__card-img">
+                    <img className='bil' src="/images/new.png" alt="Error" />
                         <img src="/images/фото-6.png" alt="Who is" />
                     </div>
                    
@@ -225,9 +225,9 @@ const TrainingProgram = () => {
                     </ul>
                 </div>
                 <div className="correlation training-program__course-section ">
-                    <img className='bil' src="/images/new.png" alt="Error" />
 
                     <div className="training-program__card-img">
+                    <img className='bil' src="/images/new.png" alt="Error" />
                         <img src="/images/фото-7.png" alt="Who is" />
                     </div>
                     <ul className="training-program__list">
@@ -246,9 +246,9 @@ const TrainingProgram = () => {
                     </ul>
                 </div>
                 <div className="entry training-program__course-section ">
-                    <img className='bil' src="/images/new.png" alt="Error" />
 
                     <div className="training-program__card-img">
+                    <img className='bil' src="/images/new.png" alt="Error" />
                         <img src="/images/фото-8.png" alt="Who is" />
                     </div>
                     <ul className="training-program__list">
@@ -265,9 +265,9 @@ const TrainingProgram = () => {
                     </ul>
                 </div>
                 <div className="indicators training-program__course-section card_4 ">
-                    <img className='bil' src="/images/new.png" alt="Error" />
 
                     <div className="training-program__card-img">
+                    <img className='bil' src="/images/new.png" alt="Error" />
                         <img src="/images/фото-10.png" alt="Who is" />
                     </div>
                     <ul className="training-program__list">
@@ -284,8 +284,8 @@ const TrainingProgram = () => {
                     </ul>
                 </div>
                 <div className="risk training-program__course-section ">
-                    <img className='bil' src="/images/new.png" alt="Error" />
                     <div className="training-program__card-img">
+                    <img className='bil' src="/images/new.png" alt="Error" />
                         <img src="/images/фото-11.png" alt="Who is" />
                     </div>
                     <ul className="training-program__list">
@@ -300,14 +300,11 @@ const TrainingProgram = () => {
                     </ul>
                 </div>
                 <div className="last training-program__course-section  ">
-                    <img className='bil' src="/images/new.png" alt="Error" />
                     <div className="training-program__card-img">
+                    <img className='bil' src="/images/new.png" alt="Error" />
                         <img src="/images/фото-12.png" alt="Who is" />
                     </div>
-                    <div className="bottom_img">
-                        <img loading='lazy' src="/images/Rectangle 105.png" alt="Rectangle" />
-
-                    </div>
+        
                     <ul className="training-program__list">
                         <li>ЧТО ТАКОЕ <span className="highlight">ТОРГОВЫЙ СЕТАП.</span></li>
                         <li><span className="highlight">НАСТРОЙКИ</span> СЕТАПОВ.</li>
