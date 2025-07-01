@@ -185,7 +185,7 @@
 }
 
 .risk {
-  background-image: url('../../public/images/risk.png') !important;
+  background-image: url('/images/risk.png') !important;
 }
 
 .last {
@@ -612,7 +612,7 @@ background-clip: text;
   align-items: center;
 }
 .card1 {
-  background: url("../../public/images/рубли\(1\).png");
+  background: url("/images/рубли\(1\).png");
   background-repeat: no-repeat;
   background-size: cover; 
   background-position: center;
