@@ -364,11 +364,11 @@ const TrainingProgram = () => {
                     </div>
                 </div>
                 <div ref={startRef} className="nout_card">
-                    <img src="/images/ноут 1.png" alt="Rasm kelmadi" />
+                    <img src="/images/nout x.png" alt="Rasm kelmadi" />
                 </div>
                 <div className="card_group">
                     <div className="card1">
-                        <p>Чтобы приобрести доступ к <span> обучающим материалам,</span>
+                        <p>Чтобы приобрести доступ к <span> обучающим материалам,</span> <br/>
                             свяжитесь с нами:</p>
                     </div>
                     <a href='https://t.me/big_trade777' target='blank' className="card2">
