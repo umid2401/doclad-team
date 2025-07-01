@@ -46,6 +46,7 @@
 
 .training-program__nav-item {
   font-style: normal;
+  position: relative;
   font-weight: 900;
   font-size: 9px;
   line-height: normal;
@@ -54,13 +55,24 @@
   color: #FFFFFF;
   transition: color 0.3s linear;
   cursor: pointer;
+  z-index: 100;
   padding: 7px;
   border-radius: 69px;
-
+   transition: color 0.3s ease;
 
 }
+.nav-background {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border-radius: 69px;
+  background: #151515;
+  z-index: 1;
+  transition: all 0.3s linear;
+  pointer-events: none;
+}
 
-.training-program__nav-item:hover {
+.training-program__nav-item.active {
   background-color: #151515;
 }
 
@@ -593,39 +605,27 @@ background-clip: text;
 .nout_card {
   width: 100%;
   margin-top: 30px;
+  position: relative !important;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-.nout_card img {
-  width: 150%;
-  background: transparent;
-  object-position: right !important;
-}
-
-.card_group {
-  position: relative;
-  background: transparent !important;
-  height: 300px;
-  margin-top: -200px;
-}
-
 .card1 {
-  transform: rotate(1.22deg);
   background: url("../../public/images/рубли\(1\).png");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; 
   background-position: center;
   border-radius: 20px;
   padding: 10px 10px;
   text-align: center;
   width: 280px;
-  right: 10px;
   position: absolute;
+  top: 60%;
+  right: 0;
+  transform: translate(-50%, 100%);
+  transform: rotate(1.22deg);
   color: white;
-  top: 20px;
   border: 2px solid #FFFFFF;
 }
 
@@ -641,11 +641,25 @@ background-clip: text;
   color: #21CD5A;
 }
 
+.nout_card img {
+  width: 140%;
+  background: transparent;
+  object-position: right !important;
+}
+
+.card_group {
+  position: relative;
+  background: transparent !important;
+  height: 150px;
+}
+
+
+
 .card2 {
   cursor: pointer;
   text-decoration: none;
   display: flex;
-  width: 160px;
+  /* width: 150px; */
   padding: 10px;
   background-color: #00ff57;
   align-items: center;
@@ -653,7 +667,7 @@ background-clip: text;
   border-radius: 20px;
   background-color: #0A0A0A;
   position: absolute;
-  top: 150px;
+  top: -50px;
   transform: rotate(6.52deg);
   left: 10px;
 
@@ -679,7 +693,7 @@ background-clip: text;
 
 .card2 p {
   color: #FFFFFF;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 900;
   text-transform: uppercase;
 }
@@ -688,7 +702,7 @@ background-clip: text;
   text-decoration: none;
   cursor: pointer;
   display: flex;
-  width: 180px;
+  width: 160px;
   padding: 10px;
   background-color: #00ff57;
   align-items: center;
@@ -696,7 +710,7 @@ background-clip: text;
   border-radius: 20px;
   background-color: #21CD5A;
   position: absolute;
-  top: 120px;
+  top: -40px;
   transform: rotate(-6.52deg);
   right: 10px;
 }
@@ -709,7 +723,7 @@ background-clip: text;
   color: #0A0A0A;
   text-transform: uppercase;
   font-weight: 900;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 

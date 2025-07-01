@@ -5,40 +5,89 @@ import '../styles/TrainingProgram.css';
 
 
 const TrainingProgram = () => {
-    const programRef = useRef(null);
-    const formatRef = useRef(null);
-    const priceRef = useRef(null);
-    const startRef = useRef(null);
-    const navRef = useRef(null);
     const textRef = useRef(null);
-    const [navHeight, setNavHeight] = useState(0);
-    useEffect(() => {
-        if (navRef.current) {
-            const height = navRef.current.getBoundingClientRect().height;
-            setNavHeight(height);
-        }
-    }, []);
+    const programRef = useRef(null);
+const formatRef = useRef(null);
+const priceRef = useRef(null);
+const startRef = useRef(null);
+const navRef = useRef(null);
+const itemRefs = useRef({});
+const containerRef = useRef(null);
 
-    const scrollTo = (ref) => {
-        if (ref.current) {
-            const offsetTop = ref.current.offsetTop;
-            window.scrollTo({
-                top: offsetTop - navHeight - 30,
-                behavior: 'smooth',
-            });
-        }
-    };
-    const containerRef = useRef(null);
-    useEffect(() => {
-        const handleScroll = () => {
-            if (!programRef.current) return;
-            const isScrolled = window.scrollY > 10;
-            containerRef.current.classList.toggle("scrolled", isScrolled);
-        };
+const [navHeight, setNavHeight] = useState(0);
+const [bgLeft, setBgLeft] = useState(0);
+const [bgWidth, setBgWidth] = useState(0);
+const [activeSection, setActiveSection] = useState("program");
 
-        window.addEventListener("scroll", handleScroll, { passive: true });
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+// Navbar balandligi
+useEffect(() => {
+  if (navRef.current) {
+    setNavHeight(navRef.current.getBoundingClientRect().height);
+  }
+}, []);
+
+// Scroll to va indikatorni siljitish
+const scrollTo = (ref, sectionName) => {
+  if (ref.current) {
+    window.scrollTo({
+      top: ref.current.offsetTop - navHeight - 30,
+      behavior: "smooth",
+    });
+    setActiveSection(sectionName);
+    moveBackground(sectionName);
+  }
+};
+
+// Backgroundni harakatlantirish
+const moveBackground = (sectionName) => {
+  const el = itemRefs.current[sectionName];
+  if (el) {
+    const { offsetLeft, offsetWidth } = el;
+    setBgLeft(offsetLeft);
+    setBgWidth(offsetWidth);
+  }
+};
+
+// Boshlang'ich joy
+useEffect(() => {
+  moveBackground(activeSection);
+}, [navHeight]);
+
+// Scroll bilan aktiv bo‘limni aniqlash
+useEffect(() => {
+  const handleScroll = () => {
+    const scrollY = window.scrollY + navHeight + 100;
+    const sections = [
+      { ref: programRef, name: "program" },
+      { ref: formatRef, name: "format" },
+      { ref: priceRef, name: "price" },
+      { ref: startRef, name: "start" },
+    ];
+
+    for (let i = 0; i < sections.length; i++) {
+      const { ref, name } = sections[i];
+      const el = ref.current;
+      if (el) {
+        const top = el.offsetTop;
+        const height = el.offsetHeight;
+        if (scrollY >= top && scrollY < top + height) {
+          setActiveSection(name);
+          moveBackground(name);
+          break;
+        }
+      }
+    }
+
+    // scroll klass
+    if (containerRef.current) {
+      containerRef.current.classList.toggle("scrolled", window.scrollY > 10);
+    }
+  };
+
+  window.addEventListener("scroll", handleScroll, { passive: true });
+  return () => window.removeEventListener("scroll", handleScroll);
+}, [navHeight]);
+
 
 
 
@@ -46,11 +95,26 @@ const TrainingProgram = () => {
         <div className="training-program">
             <header className="header">
                 <ul ref={navRef} className="training-program__nav">
-                    <li onClick={() => scrollTo(programRef)} className="training-program__nav-item">Программа обучения</li>
-                    <li onClick={() => scrollTo(formatRef)} className="training-program__nav-item">формат обучения</li>
-                    <li onClick={() => scrollTo(priceRef)} className="training-program__nav-item">стоимоть обучения</li>
-                    <li onClick={() => scrollTo(startRef)} className="training-program__nav-item">начать обучениe</li>
+                    {/* Harakatlanuvchi fon */}
+                    <div className="nav-background" style={{ left: bgLeft, width: bgWidth }} />
+
+                    {[
+                        { label: "Программа обучения", ref: programRef, name: "program" },
+                        { label: "формат обучения", ref: formatRef, name: "format" },
+                        { label: "стоимость обучения", ref: priceRef, name: "price" },
+                        { label: "начать обучение", ref: startRef, name: "start" },
+                    ].map((item) => (
+                        <li
+                            key={item.name}
+                            ref={(el) => (itemRefs.current[item.name] = el)}
+                            onClick={() => scrollTo(item.ref, item.name)}
+                            className="training-program__nav-item"
+                        >
+                            {item.label}
+                        </li>
+                    ))}
                 </ul>
+
                 <div ref={programRef} className="training-program__hero">
                     <div ref={textRef} className="training-program__text">
                         <h1 className="training-program__title">ПРОГРАММА <span>ОБУЧЕНИЯ</span></h1>
@@ -71,10 +135,10 @@ const TrainingProgram = () => {
                         <span>курс</span>
                     </div>
                     <div className="training-program__card-img">
-                    <img className='bil' src="/images/new.png" alt="Error" />
+                        <img className='bil' src="/images/new.png" alt="Error" />
                         <img loading='lazy' src="/images/фото.png" alt="Who is" />
                     </div>
-                   
+
 
                     <ul className="training-program__list">
                         <li>что из себя представляет <span className="highlight">концепция.</span></li>
@@ -85,10 +149,10 @@ const TrainingProgram = () => {
                 </div>
                 <div className="premium training-program__course-section ">
                     <div className="training-program__card-img">
-                    <img className='bil' src="/images/new.png" alt="Error" />
+                        <img className='bil' src="/images/new.png" alt="Error" />
                         <img loading='lazy' src="/images/фото-1.png" alt="Who is" />
                     </div>
-                   
+
                     <ul className="training-program__list">
                         <li>ЧТО ТАКОЕ <span class="highlight">ФРАКТАЛ.</span></li>
                         <li>ЧТО ТАКОЕ <span class="highlight">SWING-ДВИЖЕНИЕ.</span></li>
@@ -104,11 +168,11 @@ const TrainingProgram = () => {
                 <div className="market training-program__course-section card_4 ">
 
                     <div className="training-program__card-img">
-                    <img className='bil' src="/images/new.png" alt="Error" />
+                        <img className='bil' src="/images/new.png" alt="Error" />
 
                         <img src="/images/фото-2.png" alt="Who is" />
                     </div>
-                    
+
                     <ul className="training-program__list">
 
                         <li>ЧТО ТАКОЕ <span class="highlight">СТРУКТУРА РЫНКА.</span></li>
@@ -128,10 +192,10 @@ const TrainingProgram = () => {
                 <div className="this training-program__course-section card_4 ">
 
                     <div className="training-program__card-img">
-                    <img className='bil' src="/images/new.png" alt="Error" />
+                        <img className='bil' src="/images/new.png" alt="Error" />
                         <img src="/images/фото-3.png" alt="Who is" />
                     </div>
-                   
+
                     <ul className="training-program__list">
                         <li>ЧТО ТАКОЕ <span class="highlight">ЛИКВИДНОСТЬ.</span></li>
                         <li>ВИДЫ <span class="highlight ">ЛИКВИДНОСТИ.</span></li>
@@ -147,10 +211,10 @@ const TrainingProgram = () => {
                 </div>
                 <div className="imbalance training-program__course-section  ">
                     <div className="training-program__card-img">
-                    <img className='bil' src="/images/new.png" alt="Error" />
+                        <img className='bil' src="/images/new.png" alt="Error" />
                         <img src="/images/фото-4.png" alt="Who is" />
                     </div>
-                    
+
                     <ul className="training-program__list">
                         <li>ЧТО ТАКОЕ <span class="highlight">IMBALANCE.</span></li>
                         <li>ИЗ ЧЕГО СОСТОИТ <span class="highlight">IMBALANCE.</span></li>
@@ -169,10 +233,10 @@ const TrainingProgram = () => {
                 </div>
                 <div className="power training-program__course-section ">
                     <div className="training-program__card-img">
-                    <img className='bil' src="/images/new.png" alt="Error" />
+                        <img className='bil' src="/images/new.png" alt="Error" />
                         <img src="/images/фото-5.png" alt="Who is" />
                     </div>
-                  
+
                     <ul className="training-program__list">
                         <li>ЧТО ТАКОЕ <span class="highlight">POI.</span></li>
                         <li><span class="highlight">REJECTION BLOCK - РАЗБОР.</span></li>
@@ -190,10 +254,10 @@ const TrainingProgram = () => {
                 <div className="delivry training-program__course-section card_4 ">
 
                     <div className="training-program__card-img">
-                    <img className='bil' src="/images/new.png" alt="Error" />
+                        <img className='bil' src="/images/new.png" alt="Error" />
                         <img src="/images/фото-9.png" alt="Who is" />
                     </div>
-                    
+
                     <ul className="training-program__list">
                         <li>ЧТО ТАКОЕ <span class="highlight">ДОСТАВКА ЦЕНЫ.</span></li>
                         <li>НЕПРАВИЛЬНЫЙ <span class="highlight">ПОТОК ПРИКАЗОВ.</span></li>
@@ -209,10 +273,10 @@ const TrainingProgram = () => {
                 <div className="smr training-program__course-section card_4 ">
 
                     <div className="training-program__card-img">
-                    <img className='bil' src="/images/new.png" alt="Error" />
+                        <img className='bil' src="/images/new.png" alt="Error" />
                         <img src="/images/фото-6.png" alt="Who is" />
                     </div>
-                   
+
                     <ul className="training-program__list">
                         <li>ЧТО ТАКОЕ <span class="highlight">SMR.</span></li>
                         <li>КАК ОПРЕДЕЛИТЬ <span class="highlight">SMR.</span></li>
@@ -227,7 +291,7 @@ const TrainingProgram = () => {
                 <div className="correlation training-program__course-section ">
 
                     <div className="training-program__card-img">
-                    <img className='bil' src="/images/new.png" alt="Error" />
+                        <img className='bil' src="/images/new.png" alt="Error" />
                         <img src="/images/фото-7.png" alt="Who is" />
                     </div>
                     <ul className="training-program__list">
@@ -248,7 +312,7 @@ const TrainingProgram = () => {
                 <div className="entry training-program__course-section ">
 
                     <div className="training-program__card-img">
-                    <img className='bil' src="/images/new.png" alt="Error" />
+                        <img className='bil' src="/images/new.png" alt="Error" />
                         <img src="/images/фото-8.png" alt="Who is" />
                     </div>
                     <ul className="training-program__list">
@@ -267,7 +331,7 @@ const TrainingProgram = () => {
                 <div className="indicators training-program__course-section card_4 ">
 
                     <div className="training-program__card-img">
-                    <img className='bil' src="/images/new.png" alt="Error" />
+                        <img className='bil' src="/images/new.png" alt="Error" />
                         <img src="/images/фото-10.png" alt="Who is" />
                     </div>
                     <ul className="training-program__list">
@@ -285,7 +349,7 @@ const TrainingProgram = () => {
                 </div>
                 <div className="risk training-program__course-section ">
                     <div className="training-program__card-img">
-                    <img className='bil' src="/images/new.png" alt="Error" />
+                        <img className='bil' src="/images/new.png" alt="Error" />
                         <img src="/images/фото-11.png" alt="Who is" />
                     </div>
                     <ul className="training-program__list">
@@ -301,10 +365,10 @@ const TrainingProgram = () => {
                 </div>
                 <div className="last training-program__course-section  ">
                     <div className="training-program__card-img">
-                    <img className='bil' src="/images/new.png" alt="Error" />
+                        <img className='bil' src="/images/new.png" alt="Error" />
                         <img src="/images/фото-12.png" alt="Who is" />
                     </div>
-        
+
                     <ul className="training-program__list">
                         <li>ЧТО ТАКОЕ <span className="highlight">ТОРГОВЫЙ СЕТАП.</span></li>
                         <li><span className="highlight">НАСТРОЙКИ</span> СЕТАПОВ.</li>
@@ -365,12 +429,13 @@ const TrainingProgram = () => {
                 </div>
                 <div ref={startRef} className="nout_card">
                     <img src="/images/nout x.png" alt="Rasm kelmadi" />
+                    <div className="card1">
+                        <p>Чтобы приобрести доступ к <span> обучающим материалам,</span> <br />
+                            свяжитесь с нами:</p>
+
+                    </div>
                 </div>
                 <div className="card_group">
-                    <div className="card1">
-                        <p>Чтобы приобрести доступ к <span> обучающим материалам,</span> <br/>
-                            свяжитесь с нами:</p>
-                    </div>
                     <a href='https://t.me/big_trade777' target='blank' className="card2">
                         <img src="/images/Mask group 1.png" alt="" />
                         <p>ПаРВИЗ</p>
