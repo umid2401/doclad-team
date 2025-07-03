@@ -420,7 +420,7 @@ useEffect(() => {
                     </p>
                     <div className="card_detail first_detail">
                         <span>в рублях</span>
-                        <h3>50.000 ₽.</h3>
+                        <h3>50.000 <span className="rubl">₽</span>.</h3>
                     </div>
                     <div className="card_detail last_detail">
                         <span>в долларах</span>

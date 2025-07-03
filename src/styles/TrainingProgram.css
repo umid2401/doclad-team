@@ -195,6 +195,10 @@
   background-position: bottom !important;
   background-size: cover;
   padding-bottom: 50px !important;
+  position: relative;
+  top: 40px;
+  margin-top: -40px !important;
+  z-index: 100 !important;
 }
 
 .training-program__course-section {
@@ -441,13 +445,13 @@ background-clip: text;
   width: 100%;
   height: auto;
   position: relative;
-  top: -150px;
+  padding-top: 40px;
   /* background-color: #0A0A0A; */
   background: url("/images/fon 2.png"),
-    url("/images/footbot.png"), url("/images/fon 3.png");
+    url("/images/footbot.png"), url("/images/top_1.png"), url("/images/right.png");
   background-repeat: no-repeat;
-  background-size: cover, cover, cover;
-  background-position: left bottom, right bottom, center;
+  background-size: cover, cover, 250px, contain;
+  background-position: left bottom, right bottom, left -100px, right -400px;
   padding-bottom: 0px;
 }
 
@@ -458,7 +462,6 @@ background-clip: text;
 
 .container h2 {
   margin-bottom: 20px;
-  margin-top: 150px;
 }
 
 .contents {
@@ -572,15 +575,21 @@ background-clip: text;
   transform: rotate(-3.93deg);
   text-align: left;
     border-radius: 24px;
-    bottom: 30px;
+    bottom: 10px;
 
 box-shadow: 0px 4px 68.5px 0px rgba(33, 205, 90, 0.50);
 }
 
 .first_detail span {
-  font-size: 10px;
+  font-size: 15px;
   font-weight: 900;
   color: #FFFFFF;
+}
+.rubl{
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 900 !important;
+  font-size: 25px !important;
+  color: #0A0A0A !important;
 }
 
 @font-face {
@@ -588,7 +597,9 @@ box-shadow: 0px 4px 68.5px 0px rgba(33, 205, 90, 0.50);
     src: url("../../public/rimma-sans-bold.ttf");
 }
 .first_detail h3 {
-  font-size: 22px;
+  display: flex;
+  gap: 4px;
+  font-size: 25px;
   font-weight: 700;
   color: #0A0A0A;
   font-family: "Rimma" !important;
@@ -604,16 +615,16 @@ box-shadow: 0px 4px 68.5px 0px rgba(33, 205, 90, 0.50);
 background: #FFF;
 box-shadow: 0px 4px 68.5px 0px rgba(33, 205, 90, 0.50);
   right: 0;
-  bottom: 25px;
+  bottom: 15px;
 }
 
 .last_detail span {
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 900;
 }
 
 .last_detail h3 {
-  font-size: 23px;
+  font-size: 25px;
   font-weight: 700;
   text-align: center;
   color: #039333;
@@ -636,9 +647,9 @@ box-shadow: 0px 4px 68.5px 0px rgba(33, 205, 90, 0.50);
   background-size: cover; 
   background-position: center;
   border-radius: 24px;
-  padding: 10px 10px;
+  padding: 20px 10px;
   text-align: center;
-  width: 280px;
+  width: 300px;
   position: absolute;
   top: 60%;
   right: 0;
@@ -763,7 +774,7 @@ box-shadow: 0px 4px 68.5px 0px rgba(33, 205, 90, 0.50);
 
 @media screen and (max-width: 420px) {
   .title {
-    font-size: 24px;
+    font-size: 28px;
   }
 
   .course {
