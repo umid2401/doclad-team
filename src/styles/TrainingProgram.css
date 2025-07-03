@@ -450,8 +450,8 @@ background-clip: text;
   background: url("/images/fon 2.png"),
     url("/images/footbot.png"), url("/images/top_1.png"), url("/images/right.png");
   background-repeat: no-repeat;
-  background-size: cover, cover, 250px, contain;
-  background-position: left bottom, right bottom, left -100px, right -400px;
+  background-size: cover, cover, 250px, 350px;
+  background-position: left bottom, right bottom, left -100px, right 200px;
   padding-bottom: 0px;
 }
 
