@@ -56,14 +56,16 @@
   transition: color 0.3s linear;
   cursor: pointer;
   z-index: 100;
-  padding: 7px;
+  padding: 7px ;
   border-radius: 69px;
    transition: color 0.3s ease;
 
 }
 .nav-background {
   position: absolute;
-  top: 0;
+  height: calc(100% - 14px);
+  top: 50%;
+  transform: translateY(-50%);
   bottom: 0;
   border-radius: 69px;
   background: #151515;
@@ -139,7 +141,7 @@
   background-image: url("/images/bizon.png");
   background-repeat: no-repeat;
   background-size: 100%;
-  background-position: 85px -10px;
+  background-position: 100px -10px;
   overflow: hidden !important;
   right: 0;
   z-index: 1;
@@ -438,6 +440,8 @@ background-clip: text;
 .footer {
   width: 100%;
   height: auto;
+  position: relative;
+  top: -150px;
   /* background-color: #0A0A0A; */
   background: url("/images/fon 2.png"),
     url("/images/footbot.png"), url("/images/fon 3.png");
@@ -454,6 +458,7 @@ background-clip: text;
 
 .container h2 {
   margin-bottom: 20px;
+  margin-top: 150px;
 }
 
 .contents {
@@ -532,7 +537,7 @@ background-clip: text;
   width: 100%;
   height: auto;
   height: 200px;
-  background-size: cover;
+  background-size: contain;
   background-position: top left;
   padding: 20px 20px 0 20px;
   position: relative;
@@ -543,7 +548,7 @@ background-clip: text;
   color: #FFFFFF;
   font-weight: 900;
   text-transform: uppercase;
-  margin-top: 20px;
+  margin-top: 10px;
   font-size: 12px;
 }
 
@@ -552,7 +557,7 @@ background-clip: text;
 }
 
 .card_detail {
-  width: 150px;
+  width: calc(50% - 10px);
   border-radius: 16px;
   position: absolute;
   padding: 5px 10px;
@@ -563,9 +568,13 @@ background-clip: text;
 
 .first_detail {
   background-color: #00ff57;
-  left: 15px;
+  left: 10px;
   transform: rotate(-3.93deg);
   text-align: left;
+    border-radius: 24px;
+    bottom: 30px;
+
+box-shadow: 0px 4px 68.5px 0px rgba(33, 205, 90, 0.50);
 }
 
 .first_detail span {
@@ -574,19 +583,28 @@ background-clip: text;
   color: #FFFFFF;
 }
 
-.first_detail h3 {
-  font-size: 23px;
-  font-weight: 900;
-  color: #0A0A0A;
+@font-face {
+    font-family: "Rimma";
+    src: url("../../public/rimma-sans-bold.ttf");
 }
+.first_detail h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #0A0A0A;
+  font-family: "Rimma" !important;
+}
+
 
 .last_detail {
   background-color: #FFFFFF;
   transform: rotate(3.93deg);
   /* bottom: 0; */
   /* left: 0; */
-  right: 35px;
-  bottom: -20px;
+  border-radius: 24px;
+background: #FFF;
+box-shadow: 0px 4px 68.5px 0px rgba(33, 205, 90, 0.50);
+  right: 0;
+  bottom: 25px;
 }
 
 .last_detail span {
@@ -599,24 +617,25 @@ background-clip: text;
   font-weight: 700;
   text-align: center;
   color: #039333;
+  font-family: "Rimma";
 
 }
 
 .nout_card {
   width: 100%;
-  margin-top: 30px;
   position: relative !important;
   overflow: hidden;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: start;
+  bottom: 50px;
 }
 .card1 {
   background: url("/images/рубли\(1\).png");
   background-repeat: no-repeat;
   background-size: cover; 
   background-position: center;
-  border-radius: 20px;
+  border-radius: 24px;
   padding: 10px 10px;
   text-align: center;
   width: 280px;
@@ -642,16 +661,17 @@ background-clip: text;
 }
 
 .nout_card img {
-  width: 140%;
+  width: 160%;
   background: transparent;
-  object-position: right !important;
+  object-position: bottom !important;
 }
 
 .card_group {
   position: relative;
   background: transparent !important;
   width: 100%;
-  height: 100px;
+  
+  bottom: 100px;
 }
 
 
@@ -666,7 +686,7 @@ background-clip: text;
   background-color: #00ff57;
   align-items: center;
   gap: 10px;
-  border-radius: 20px;
+  border-radius: 24px;
   background-color: #0A0A0A;
   position: absolute;
   top: -50px;
@@ -710,7 +730,7 @@ background-clip: text;
   background-color: #00ff57;
   align-items: center;
   gap: 8px;
-  border-radius: 20px;
+  border-radius: 24px;
   background-color: #21CD5A;
   position: absolute;
   top: -40px;
@@ -743,15 +763,15 @@ background-clip: text;
 
 @media screen and (max-width: 420px) {
   .title {
-    font-size: 20px;
+    font-size: 24px;
   }
 
   .course {
-    width: 170px;
+    width: 140px;
     padding: 10px 0;
   }
 
   .course span {
-    font-size: 20px;
+    font-size: 24px;
   }
 }
