@@ -196,8 +196,8 @@
   background-size: cover;
   padding-bottom: 50px !important;
   position: relative;
-  top: 40px;
-  margin-top: -40px !important;
+  top: 60px;
+  margin-top: -60px !important;
   z-index: 100 !important;
 }
 
@@ -445,7 +445,7 @@ background-clip: text;
   width: 100%;
   height: auto;
   position: relative;
-  padding-top: 40px;
+  padding-top: 60px;
   /* background-color: #0A0A0A; */
   background: url("/images/fon 2.png"),
     url("/images/footbot.png"), url("/images/top_1.png"), url("/images/right.png");
