@@ -426,15 +426,15 @@ useEffect(() => {
                         СТОИМОСТЬ <br />
                         <span>ОБУЧЕНИЯ</span>
                     </h2>
-                    <p> Стоимость в<span> $</span> в зависит от курса.
+                    <p> Стоимость в<span> $</span> в зависит от курса. <br />
                         <span> Актуальная стоимость:</span>
                     </p>
-                    <div className="card_detail first_detail">
+                    <div className=" first_detail">
                         <img src="/images/рубли(2)(1).png" alt="" />
                         {/* <span>в рублях</span>
                         <h3>50.000 <span className="rubl">₽.</span></h3> */}
                     </div>
-                    <div className="card_detail last_detail">
+                    <div className=" last_detail">
                          <img src="/images/доллары(1).png" alt="" />
                         {/* <span>в долларах</span>
                         <h3>633 <span>$.</span></h3> */}

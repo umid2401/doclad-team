@@ -553,13 +553,15 @@
   background-image: url("/images/mini\ 1.png");
   width: 100%;
   height: auto;
-  height: 200px;
+  height: 230px;
   background-size: contain;
   background-position: top left;
   padding: 20px 20px 0 20px;
   position: relative;
   background-repeat: no-repeat;
-  overflow: hidden;
+  /* overflow-x: hidden !important; */
+  overflow-x: hidden !important;
+  overflow-y: visible !important;
 }
 
 .mini_card p {
@@ -594,18 +596,22 @@
 }
 .first_detail{
   position: absolute;
-  left: 0px;
-  bottom: -15px;
+  left: -10px;
+  bottom: 10px;
+  width: 48%;
+  z-index: 99 !important;
   
 }
 
 .first_detail img {
-  width: 220px;
+  width: 135%;
 }
 .last_detail{
   position: absolute;
-  right: 25px;
-  bottom: -20px;
+  right: 30px;
+  bottom: 0;
+  width: 44%;
+  z-index: 99 !important;
 }
 .last_detail img {
   /* width: 45%;
@@ -614,7 +620,7 @@
   right: 10px;
   bottom: 10px;
   height: 65px; */
-  width: 200px;
+  width: 120%;
 }
 
 .last_detail span {
