@@ -464,8 +464,8 @@
   /* background-color: #0A0A0A; */
   background: url("/images/Group 3.png"),url("/images/Group 4.png");
   background-repeat: no-repeat;
-  background-size: contain, contain;
-  background-position: left bottom, left -150px;
+  background-size: 100% 750px, 100% 900px;
+  background-position: left bottom, left -220px;
   padding-bottom: 0px;
 }
 
@@ -552,12 +552,12 @@
 .mini_card {
   background-image: url("/images/mini\ 1.png");
   width: 100%;
-  height: auto;
   height: 230px;
   background-size: contain;
   background-position: top left;
   padding: 20px 20px 0 20px;
   position: relative;
+  
   background-repeat: no-repeat;
   /* overflow-x: hidden !important; */
   overflow-x: hidden !important;
