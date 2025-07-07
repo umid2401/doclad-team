@@ -29,14 +29,20 @@ useEffect(() => {
 // Scroll to va indikatorni siljitish
 const scrollTo = (ref, sectionName) => {
   if (ref.current) {
-    window.scrollTo({
-      top: ref.current.offsetTop - navHeight - 30,
-      behavior: "smooth",
-    });
-    setActiveSection(sectionName);
-    moveBackground(sectionName);
+    const top = ref.current.getBoundingClientRect().top + window.scrollY - navHeight - 30;
+    window.scrollTo({ top, behavior: "smooth" });
+
+    // scroll tugaganidan keyin activeSection va moveBackground
+    setTimeout(() => {
+      setActiveSection(sectionName);
+      moveBackground(sectionName);
+    }, 500); // scroll tugashi uchun vaqt (100% aniqlik uchun 400-600ms optimal)
+  } else {
+    console.warn("Ref ishlamayapti:", sectionName);
   }
 };
+
+
 
 // Backgroundni harakatlantirish
 const moveBackground = (sectionName) => {
@@ -56,7 +62,6 @@ useEffect(() => {
 // Scroll bilan aktiv bo‘limni aniqlash
 useEffect(() => {
   const handleScroll = () => {
-    const scrollY = window.scrollY + navHeight + 100;
     const sections = [
       { ref: programRef, name: "program" },
       { ref: formatRef, name: "format" },
@@ -64,21 +69,26 @@ useEffect(() => {
       { ref: startRef, name: "start" },
     ];
 
+    let current = activeSection;
+
     for (let i = 0; i < sections.length; i++) {
       const { ref, name } = sections[i];
       const el = ref.current;
       if (el) {
-        const top = el.offsetTop;
-        const height = el.offsetHeight;
-        if (scrollY >= top && scrollY < top + height) {
-          setActiveSection(name);
-          moveBackground(name);
+        const rect = el.getBoundingClientRect();
+        if (rect.top <= navHeight + 80 && rect.bottom > navHeight + 80) {
+          current = name;
           break;
         }
       }
     }
 
-    // scroll klass
+    if (current !== activeSection) {
+      setActiveSection(current);
+      moveBackground(current);
+    }
+
+    // scroll bo'lganini ko'rsatish uchun klass
     if (containerRef.current) {
       containerRef.current.classList.toggle("scrolled", window.scrollY > 10);
     }
@@ -86,7 +96,8 @@ useEffect(() => {
 
   window.addEventListener("scroll", handleScroll, { passive: true });
   return () => window.removeEventListener("scroll", handleScroll);
-}, [navHeight]);
+}, [navHeight, activeSection]);
+
 
 
 
@@ -119,7 +130,7 @@ useEffect(() => {
                     <div ref={textRef} className="training-program__text">
                         <h1 className="training-program__title">ПРОГРАММА <span>ОБУЧЕНИЯ</span></h1>
                         <p className="training-program__description">
-                            Полная информация об основных инструментах <span>Smart Money-концепции:</span> их механика, логика работы и правильное применение в анализе
+                            Полная информация об <br /> основных инструментах <br /> <span>Smart Money-концепции:</span> <br /> их механика, логика работы и<br /> правильное применение в <br /> анализе
                         </p>
                     </div>
                     <div className="training-program-img">
@@ -419,12 +430,14 @@ useEffect(() => {
                         <span> Актуальная стоимость:</span>
                     </p>
                     <div className="card_detail first_detail">
-                        <span>в рублях</span>
-                        <h3>50.000 <span className="rubl">₽</span>.</h3>
+                        <img src="/images/рубли(2)(1).png" alt="" />
+                        {/* <span>в рублях</span>
+                        <h3>50.000 <span className="rubl">₽.</span></h3> */}
                     </div>
                     <div className="card_detail last_detail">
-                        <span>в долларах</span>
-                        <h3>633 $.</h3>
+                         <img src="/images/доллары(1).png" alt="" />
+                        {/* <span>в долларах</span>
+                        <h3>633 <span>$.</span></h3> */}
                     </div>
                 </div>
                 <div ref={startRef} className="nout_card">

@@ -26,6 +26,7 @@
   align-items: center;
   justify-content: flex-start;
   position: relative;
+
 }
 
 .training-program__nav {
@@ -37,7 +38,7 @@
   backdrop-filter: blur(5.7px);
   border-radius: 69px;
   position: fixed;
-  z-index: 3 !important;
+  z-index: 1000 !important;
   top: 12px;
   left: 50%;
   transform: translateX(-50%);
@@ -56,11 +57,12 @@
   transition: color 0.3s linear;
   cursor: pointer;
   z-index: 100;
-  padding: 7px ;
+  padding: 7px;
   border-radius: 69px;
-   transition: color 0.3s ease;
+  transition: color 0.3s ease;
 
 }
+
 .nav-background {
   position: absolute;
   height: calc(100% - 14px);
@@ -86,7 +88,7 @@
 
 
 .training-program__title {
-  font-size: 28px;
+  font-size: 30px;
   width: 70%;
   line-height: 0.85;
   font-weight: 900;
@@ -99,8 +101,7 @@
 }
 
 .training-program__description {
-  font-size: 11px;
-  width: 45%;
+  font-size: 10px;
   text-align: left;
   line-height: 110%;
   font-weight: 900;
@@ -116,7 +117,7 @@
 
 .training-program__text {
   transition: transform 0.25s ease-out;
-  transform: translate(1.1);
+  transform: translate(1);
   transform-origin: left;
 }
 
@@ -125,7 +126,7 @@
 }
 
 .training-program__hero .scrolled .training-program__text {
-  transform: scale(0.7);
+  transform: scale(1);
   position: relative;
 }
 
@@ -141,7 +142,8 @@
   background-image: url("/images/bizon.png");
   background-repeat: no-repeat;
   background-size: 100%;
-  background-position: 100px -10px;
+  background-position: 120px 10px;
+  /* border: 1px solid yellow; */
   overflow: hidden !important;
   right: 0;
   z-index: 1;
@@ -322,112 +324,125 @@
   background-clip: text !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
-  
+
 }
+
 .training-program__list li .blok2 {
   background: linear-gradient(109deg, #21CD5A 68.27%, #F00 79.56%);
-background-clip: text;
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
+
 .training-program__list li .blok3 {
   background: linear-gradient(109deg, #21CD5A 68.27%, #F00 79.56%);
-background-clip: text;
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
+
 /*  */
-.training-program__list li .premium1{
+.training-program__list li .premium1 {
   background: linear-gradient(0deg, #F00 0%, #F00 100%);
-background-clip: text;
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 
 }
-.training-program__list li .premium2{
- background: linear-gradient(0deg, #21CD5A 0%, #21CD5A 100%);
-background-clip: text;
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
+
+.training-program__list li .premium2 {
+  background: linear-gradient(0deg, #21CD5A 0%, #21CD5A 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 
 }
-.training-program__list li .premium3{
+
+.training-program__list li .premium3 {
   background: linear-gradient(112deg, #21CD5A 71.83%, #DE2C05 87.65%);
-background-clip: text;
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 
 
 }
-.training-program__list li .premium4{
+
+.training-program__list li .premium4 {
   background: linear-gradient(108deg, #21CD5A 52.26%, #F00 69.07%);
-background-clip: text;
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 
 }
+
 /*  */
-.training-program__list li .this1{
+.training-program__list li .this1 {
   background: linear-gradient(0deg, #F00 0%, #F00 100%);
-background-clip: text;
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 
 }
-.training-program__list li .this2{
+
+.training-program__list li .this2 {
   background: linear-gradient(111deg, #900 71.71%, #21CD5A 84.47%);
-background-clip: text;
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 
 }
-.training-program__list li .this3{
-background: linear-gradient(111deg, #900 71.71%, #21CD5A 84.47%);
-background-clip: text;
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
+
+.training-program__list li .this3 {
+  background: linear-gradient(111deg, #900 71.71%, #21CD5A 84.47%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 
 
 }
-.training-program__list li .this4{
+
+.training-program__list li .this4 {
   background: linear-gradient(282deg, #21CD5A 38.11%, #900 45.94%);
-background-clip: text;
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 
 }
 
 /* smr */
-.training-program__list li .smr2{
+.training-program__list li .smr2 {
   background: linear-gradient(281deg, #21CD5A 36.13%, #F00 47.97%);
-background-clip: text;
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 
 }
-.training-program__list li .smr1{
- background: linear-gradient(97deg, #F00 58.31%, #21CD5A 80.73%);
-background-clip: text;
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
+
+.training-program__list li .smr1 {
+  background: linear-gradient(97deg, #F00 58.31%, #21CD5A 80.73%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 
 
 }
+
 /* model */
 
-.training-program__list li .model2{
+.training-program__list li .model2 {
   background: linear-gradient(149deg, #21CD5A 63.21%, #F00 73.98%);
-background-clip: text;
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 
 
 }
-.training-program__list li .model3{
- background: linear-gradient(105deg, #21CD5A 61.12%, #F00 69.35%);
-background-clip: text;
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
+
+.training-program__list li .model3 {
+  background: linear-gradient(105deg, #21CD5A 61.12%, #F00 69.35%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 
 
 }
@@ -447,11 +462,10 @@ background-clip: text;
   position: relative;
   padding-top: 60px;
   /* background-color: #0A0A0A; */
-  background: url("/images/fon 2.png"),
-    url("/images/footbot.png"), url("/images/top_1.png"), url("/images/right.png");
+  background: url("/images/Group 3.png"),url("/images/Group 4.png");
   background-repeat: no-repeat;
-  background-size: cover, cover, 250px, 350px;
-  background-position: left bottom, right bottom, left -100px, right 200px;
+  background-size: contain, contain;
+  background-position: left bottom, left -150px;
   padding-bottom: 0px;
 }
 
@@ -545,6 +559,7 @@ background-clip: text;
   padding: 20px 20px 0 20px;
   position: relative;
   background-repeat: no-repeat;
+  overflow: hidden;
 }
 
 .mini_card p {
@@ -569,68 +584,64 @@ background-clip: text;
 }
 
 
-.first_detail {
-  background-color: #00ff57;
-  left: 10px;
-  transform: rotate(-3.93deg);
-  text-align: left;
-    border-radius: 24px;
-    bottom: 10px;
 
-box-shadow: 0px 4px 68.5px 0px rgba(33, 205, 90, 0.50);
-}
 
-.first_detail span {
-  font-size: 15px;
-  font-weight: 900;
-  color: #FFFFFF;
-}
-.rubl{
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 900 !important;
-  font-size: 25px !important;
-  color: #0A0A0A !important;
-}
+
 
 @font-face {
-    font-family: "Rimma";
-    src: url("../../public/rimma-sans-bold.ttf");
+  font-family: "Rimma";
+  src: url("/images/rimma-sans-bold.ttf");
 }
-.first_detail h3 {
-  display: flex;
-  gap: 4px;
-  font-size: 25px;
-  font-weight: 700;
-  color: #0A0A0A;
-  font-family: "Rimma" !important;
+.first_detail{
+  position: absolute;
+  left: 0px;
+  bottom: -15px;
+  
 }
 
-
-.last_detail {
-  background-color: #FFFFFF;
+.first_detail img {
+  width: 220px;
+}
+.last_detail{
+  position: absolute;
+  right: 25px;
+  bottom: -20px;
+}
+.last_detail img {
+  /* width: 45%;
   transform: rotate(3.93deg);
-  /* bottom: 0; */
-  /* left: 0; */
-  border-radius: 24px;
-background: #FFF;
-box-shadow: 0px 4px 68.5px 0px rgba(33, 205, 90, 0.50);
-  right: 0;
-  bottom: 15px;
+  box-shadow: 0px 4px 68.5px 0px rgba(33, 205, 90, 0.50);
+  right: 10px;
+  bottom: 10px;
+  height: 65px; */
+  width: 200px;
 }
 
 .last_detail span {
   font-size: 15px;
+  display: block;
   font-weight: 900;
 }
 
 .last_detail h3 {
   font-size: 25px;
   font-weight: 700;
-  text-align: center;
+  text-align: left;
   color: #039333;
   font-family: "Rimma";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  gap: 10px;
 
 }
+/* .last_detail h3 span{
+  font-size: 25px;
+    font-family: "Rimma";
+
+
+} */
 
 .nout_card {
   width: 100%;
@@ -641,28 +652,44 @@ box-shadow: 0px 4px 68.5px 0px rgba(33, 205, 90, 0.50);
   align-items: start;
   bottom: 50px;
 }
+
 .card1 {
   background: url("/images/рубли\(1\).png");
   background-repeat: no-repeat;
-  background-size: cover; 
+  background-size: 120%;
   background-position: center;
   border-radius: 24px;
-  padding: 20px 10px;
+  padding: 15px 12px;
   text-align: center;
-  width: 300px;
+  width: 280px;
   position: absolute;
-  top: 60%;
-  right: 0;
+  top: 62%;
+  right: 10px;
   transform: translate(-50%, 100%);
   transform: rotate(1.22deg);
   color: white;
-  border: 2px solid #FFFFFF;
+}
+
+.card1::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 2px;
+  /* border qalinligi */
+  background: linear-gradient(to right, #FFFFFF, #21CD5A);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: -1;
 }
 
 .card1 p {
   font-weight: 900;
   text-transform: uppercase;
-  font-size: 10px;
+  font-size: 12px;
   margin: 0 auto;
   width: 85%;
 }
@@ -681,7 +708,7 @@ box-shadow: 0px 4px 68.5px 0px rgba(33, 205, 90, 0.50);
   position: relative;
   background: transparent !important;
   width: 100%;
-  
+
   bottom: 100px;
 }
 
@@ -692,7 +719,7 @@ box-shadow: 0px 4px 68.5px 0px rgba(33, 205, 90, 0.50);
   text-decoration: none;
   display: flex;
   justify-content: center;
-  width: 50%;
+  width: 48%;
   padding: 10px;
   background-color: #00ff57;
   align-items: center;
@@ -702,18 +729,20 @@ box-shadow: 0px 4px 68.5px 0px rgba(33, 205, 90, 0.50);
   position: absolute;
   top: -50px;
   transform: rotate(6.52deg);
-  left: 0;
+  left: 2%;
 
 }
-.card2::before{
+
+.card2::before {
   content: "";
   position: absolute;
   inset: 0;
   border-radius: 20px;
-  padding: 2px; /* border qalinligi */
+  padding: 2px;
+  /* border qalinligi */
   background: linear-gradient(to right, #21CD5A, #000000);
   -webkit-mask:
-    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -736,7 +765,7 @@ box-shadow: 0px 4px 68.5px 0px rgba(33, 205, 90, 0.50);
   cursor: pointer;
   display: flex;
   justify-content: center;
-  width: 50%;
+  width: 45%;
   padding: 10px;
   background-color: #00ff57;
   align-items: center;
@@ -746,7 +775,7 @@ box-shadow: 0px 4px 68.5px 0px rgba(33, 205, 90, 0.50);
   position: absolute;
   top: -40px;
   transform: rotate(-6.52deg);
-  right: 0;
+  right: 2%;
 }
 
 .card3 img {
