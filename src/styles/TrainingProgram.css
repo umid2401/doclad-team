@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -462,7 +464,7 @@
   position: relative;
   padding-top: 60px;
   /* background-color: #0A0A0A; */
-  background: url("/images/Group 3.png"),url("/images/Group 4.png");
+  background: url("/images/Group 3.png"), url("/images/Group 4.png");
   background-repeat: no-repeat;
   background-size: 100% 700px, 100% 900px;
   background-position: left bottom, left -220px;
@@ -557,7 +559,7 @@
   background-position: top left;
   padding: 20px 20px 0 20px;
   position: relative;
-  
+
   background-repeat: no-repeat;
   /* overflow-x: hidden !important; */
   overflow-x: hidden !important;
@@ -577,56 +579,94 @@
 }
 
 .card_detail {
-  width: calc(50% - 10px);
+  width: calc(50% - 20px);
   border-radius: 16px;
   position: absolute;
-  padding: 5px 10px;
+  padding: 12px 12px;
   text-align: center;
-  bottom: -5px;
 }
 
 
 
 
 
+.first_detail {
+  background-color: #21CD5A;
+  left: 10px;
+  transform: rotate(-3.93deg);
+  text-align: left;
+  border-radius: 24px;
+  bottom: 30px;
+  box-shadow: 0px 0px 10px 0px rgba(33, 205, 90, 0.50);
+}
+
+.first_detail span {
+  font-size: 15px;
+  font-weight: 900;
+  color: #FFFFFF;
+}
+
+.rubl {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900 !important;
+  font-size: 25px !important;
+  color: #0A0A0A !important;
+  vertical-align: bottom !important;
+  position: relative;
+  top: 2px;
+}
 
 @font-face {
   font-family: "Rimma";
   src: url("/images/rimma-sans-bold.ttf");
 }
-.first_detail{
-  position: absolute;
-  left: -10px;
-  bottom: 10px;
-  width: 48%;
-  z-index: 99 !important;
-  
+
+.first_detail h3 {
+  display: flex;
+  gap: 6px;
+  align-items: end !important;
+  font-size: 25px;
+  font-weight: 700;
+  color: #0A0A0A;
+  font-family: "Rimma";
 }
 
-.first_detail img {
-  width: 135%;
-}
-.last_detail{
-  position: absolute;
-  right: 30px;
-  bottom: 0;
-  width: 44%;
-  z-index: 99 !important;
-}
-.last_detail img {
-  /* width: 45%;
+
+.last_detail {
+  background-color: #FFFFFF;
   transform: rotate(3.93deg);
-  box-shadow: 0px 4px 68.5px 0px rgba(33, 205, 90, 0.50);
-  right: 10px;
-  bottom: 10px;
-  height: 65px; */
-  width: 120%;
+  border-radius: 24px;
+  background: #FFF;
+  box-shadow: 0px 0px 10px 0px rgba(33, 205, 90, 0.50);
+  right: 10px !important;
+  bottom: 15px;
 }
+
+.last_detail span {
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.last_detail h3 {
+  font-size: 25px;
+  font-weight: 700;
+  text-align: center;
+  color: #039333;
+  font-family: "Rimma";
+
+}
+
 
 .last_detail span {
   font-size: 15px;
   display: block;
   font-weight: 900;
+
+}
+
+.my_span {
+  position: relative;
+  top: 5px;
 }
 
 .last_detail h3 {
@@ -642,12 +682,13 @@
   gap: 10px;
 
 }
-/* .last_detail h3 span{
+
+.last_detail h3 span {
   font-size: 25px;
-    font-family: "Rimma";
+  font-family: "Rimma";
 
 
-} */
+}
 
 .nout_card {
   width: 100%;
